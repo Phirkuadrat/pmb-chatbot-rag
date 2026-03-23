@@ -1,0 +1,45 @@
+{
+  "program_studi": "Teknik Sipil",
+  "biaya_kuliah": {
+    "semester_1_ganjil": {
+      "ukt": 2500000,
+      "sks": {
+        "jumlah": 20,
+        "biaya_per_sks": 350000,
+        "total_biaya_sks": 7000000
+      },
+      "praktikum": 310000,
+      "total_biaya_semester": 9810000,
+      "keterangan": "Biaya ini berlaku untuk semester ganjil awal masuk.",
+      "dana_pengembangan_pendidikan_dpp": 17500000,
+      "simulasi_total_biaya_jalur_tes": 27310000,
+      "potongan_beasiswa_pmdk": {
+        "periode_1": {
+          "keterangan": "Potongan UKT 100%",
+          "potongan": 2500000,
+          "total_biaya_masuk": 24810000
+        },
+        "periode_2": {
+          "keterangan": "Potongan UKT 50%",
+          "potongan": 1250000,
+          "total_biaya_masuk": 26060000
+        },
+        "periode_3": {
+          "keterangan": "Potongan UKT 25%",
+          "potongan": 625000,
+          "total_biaya_masuk": 26685000
+        }
+      }
+    },
+    "semester_2_genap": {
+      "ukt": 2500000,
+      "sks": {
+        "jumlah": 20,
+        "biaya_per_sks": 350000,
+        "total_biaya_sks": 7000000
+      },
+      "praktikum": 265000,
+      "total_biaya_semester": 9765000
+    }
+  }
+}

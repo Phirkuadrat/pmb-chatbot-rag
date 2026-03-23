@@ -1,0 +1,6 @@
+input,expected_output
+"Berapa total biaya untuk masuk jurusan Informatika di semester 1?","Total biaya semester 1 ganjil untuk program studi Informatika adalah Rp 8.800.000, yang terdiri dari biaya UKT sebesar Rp 2.500.000 dan biaya SKS sebesar Rp 6.300.000 (18 SKS x Rp 350.000). Namun jika masuk melalui jalur tes dan ditambah dengan DPP, simulasi total biayanya adalah Rp 26.300.000."
+"Kalau saya dapat beasiswa PMDK periode 1 di Informatika, berapa potongannya?","Jika Anda mendapatkan beasiswa PMDK periode 1 di program studi Informatika, Anda akan mendapat potongan UKT 100% sebesar Rp 2.500.000, sehingga total biaya simulasi masuk menjadi Rp 23.800.000."
+"Berapa biaya per SKS di jurusan Informatika Itenas?","Biaya per SKS di program studi Informatika Itenas adalah Rp 350.000."
+"Saya mau tahu dong, kalau biaya masuk ganjil 1 ITenas itu udah sama praktikum belum?","Total biaya semester 1 ganjil adalah Rp 8.800.000 (UKT + SKS). Untuk jurusan Informatika saat ini biaya praktikum di semester pertama dicantumkan Rp 0."
+"Berapa sih potongan kalau ikut PMDK periode 2 di prodi informatika?","Untuk peserta PMDK periode 2 di Informatika, terdapat potongan UKT sebesar 50% atau senilai Rp 1.250.000."

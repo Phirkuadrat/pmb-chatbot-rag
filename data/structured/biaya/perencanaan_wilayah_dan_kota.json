@@ -1,0 +1,45 @@
+{
+  "program_studi": "Perencanaan Wilayah dan Kota",
+  "biaya_kuliah": {
+    "semester_1_ganjil": {
+      "ukt": 2500000,
+      "sks": {
+        "jumlah": 20,
+        "biaya_per_sks": 300000,
+        "total_biaya_sks": 6000000
+      },
+      "praktikum": 300000,
+      "total_biaya_semester": 8800000,
+      "keterangan": "Biaya ini berlaku untuk semester ganjil awal masuk.",
+      "dana_pengembangan_pendidikan_dpp": 12500000,
+      "simulasi_total_biaya_jalur_tes": 21300000,
+      "potongan_beasiswa_pmdk": {
+        "periode_1": {
+          "keterangan": "Potongan UKT 100%",
+          "potongan": 2500000,
+          "total_biaya_masuk": 18800000
+        },
+        "periode_2": {
+          "keterangan": "Potongan UKT 50%",
+          "potongan": 1250000,
+          "total_biaya_masuk": 20050000
+        },
+        "periode_3": {
+          "keterangan": "Potongan UKT 25%",
+          "potongan": 625000,
+          "total_biaya_masuk": 20675000
+        }
+      }
+    },
+    "semester_2_genap": {
+      "ukt": 2500000,
+      "sks": {
+        "jumlah": 18,
+        "biaya_per_sks": 300000,
+        "total_biaya_sks": 5400000
+      },
+      "praktikum": 650000,
+      "total_biaya_semester": 8550000
+    }
+  }
+}
