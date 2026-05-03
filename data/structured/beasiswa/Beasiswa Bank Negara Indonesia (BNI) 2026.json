@@ -1,0 +1,39 @@
+{
+  "nama_beasiswa": "Beasiswa Bank Negara Indonesia (BNI) 2026",
+  "deskripsi": "Beasiswa BNI adalah program bantuan pendidikan dari Bank Negara Indonesia untuk mahasiswa berprestasi (IPK min. 3,00) yang kurang mampu secara finansial, mencakup pembebasan biaya kuliah atau bantuan tunai. Program ini sering ditargetkan pada mahasiswa semester aktif (2-8) di universitas mitra.",
+  "periode_awal": "2026-06-28",
+  "periode_akhir": "2026-07-05",
+  "batas_pendaftaran": "2026-07-05",
+  "jenis_beasiswa": "Partial",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Surat Permohonan Beasiswa yang ditujukan kepada Rektor Itenas (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2024/06/Surat-Permohonan-Beasiswa-ITENAS.BKAF_MHS_BSW01.docx)",
+    "Mengisi Biodata pengajuan Beasiswa (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2024/06/Biodata-Pengajuan-ITENAS.BKAF_MHS_BSW02-1.docx)",
+    "Menyerahkan fotocopy Kartu Tanda Mahasiswa (KTM) dan Kartu Rencana Studi Mahasiswa (KRS) sebagai bukti mahasiswa aktif dan terdaftar di semester genap 2025/2026.",
+    "Melampirkan Surat Pernyataan tidak sedang menerima beasiswa dari sumber lain (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/05/Surat-Pernyataan-Tidak-Menerima-Beasiswa-Lain-ITENAS.BKAF_MHS_BSW03.doc-1-2-2.docx)",
+    "Menyertakan Transkrip Nilai dengan IPK minimum 3,00 dan disahkan pimpinan Program Studi, Transkrip Nilai dapat diprint di Portal Mahasiswa di menu Inguiry Point B (Nilai Semester).",
+    "Melampirkan Surat Keterangan perincian gaji/penghasilan orangtua perbulan yang ditandatangani oleh pejabat berwenang, sedangkan untuk wiraswasta / wirausaha dapat mengisi form (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/05/Surat-Pernyatan-Penghasilan-Wiraswasta-ITENAS.BKAF_MHS_BSW06-1.doc)",
+    "Menyerahkan fotocopy Kartu Tanda Penduduk (KTP)",
+    "Menyerahkan fotocopy Kartu Keluarga.",
+    "Melampirkan fotocopy sertifikat, piagam penghargaan atau bukti prestasi lainnya (ko-kurikuler dan atau ekstra kurikuler).",
+    "Menyerahkan Pas photo terbaru berwarna ukuran 3×",
+    "Surat keterangan Tidak Mampu (SKTM) yang dikeluarkan oleh kelurahan/desa."
+  ],
+  "benefit": [
+    "Bantuan biaya pendidikan kuliah per semester di kampus",
+    "Dana tunjangan bulanan untuk kebutuhan hidup sehari-hari selama masa studi.",
+    "Dukungan dana untuk menunjang kebutuhan literatur dan referensi akademik."
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Masa Pendaftaran Beasiswa BNI 2026",
+      "tanggal_mulai": "2026-06-28",
+      "tanggal_selesai": "2026-07-12"
+    }
+  ],
+  "tata_cara_pendaftaran": [
+    "Pendaftaran beasiswa ini dilakukan secara online. Berkas yang tidak lengkap tidak akan kami proses. Format Berkas PDF kecuali Pas Photo.",
+    "Berkas yang tidak lengkap tidak akan kami proses. Format Berkas PDF kecuali Pas Photo.",
+    "Berkas yang membutuhkan tanda tangan pejabat (Ketua Program Studi, Dekan, Kepala Biro BKA) dikosongkan saja dan langsung upload karena tanda tangan pejabat akan dikolektifkan oleh Biro Kemahasiswaan dan Alumni apabila mahasiswa lolos seleksi beasiswa."
+  ]
+}

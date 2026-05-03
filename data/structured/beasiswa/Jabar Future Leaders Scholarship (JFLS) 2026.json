@@ -1,0 +1,52 @@
+{
+  "nama_beasiswa": "Jabar Future Leaders Scholarship (JFLS) 2026",
+  "deskripsi": "Diberitahukan Kepada Mahasiswa Institut Teknologi Nasional Bandung, bahwa Pemerintah Provinsi Jawa Barat membuka kesempatan untuk mahasiswa S1 mendapatkan Beasiswa Jabar Future Leaders. Beasiswa JFLS  merupakan salah satu program unggulan Pemerintah Provinsi Jawa Barat yang tujuannya untuk memberikan beasiswa pendidikan kepada masyarakat Jawa Barat yang sedang menempuh pendidikan tinggi jenjang D3, D4, S1, S2, dan S3 yang berprestasi baik dalam bidang akademik maupun non-akademik.",
+  "periode_awal": "2026-06-20",
+  "periode_akhir": "2026-11-30",
+  "batas_pendaftaran": "2026-07-20",
+  "jenis_beasiswa": "Partial",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Maksimal batas tahun kelulusan dari SMA/SMK sederajat tiga tahun terakhir;",
+    "Melampirkan nilai USBN, dan jika ada SNBT, batas rata-rata nilai adalah 7,0 skala 10 atau 70,0 skala 100 (untuk mahasiswa Baru Itenas Angkatan 2023)",
+    "Memiliki surat keterangan diterima dari perguruan tinggi yang telah ditentukan.",
+    "Melampirkan transkrip nilai dengan IPK minimal 3,0 skala 4,0 (Untuk Mahasiswa Berjalan angkatan 2021, 2022, dan 2023 ). dapat diprint di Portal Mahasiswa di menu Inguiry Point B (Nilai Semester). Setelah diprint di scan, selanjutnya dikirim ke email Ketua Program Studi untuk ditandatangani.",
+    "Memiliki motivasi untuk kuliah"
+  ],
+  "benefit": [
+    "Uang pendidikan sebesar Rp. 8.000.000,- (Delapan Juta Rupiah) dan/atau Beasiswa pendidikan penuh selama 4 tahunUang pendidikan sebesar Rp. 8.000.000,- (Delapan Juta Rupiah) dan/atau Beasiswa pendidikan penuh selama 4 tahun"
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Masa Pendaftaran Beasiswa JFLS 2026",
+      "tanggal_mulai": "2026-06-20",
+      "tanggal_selesai": "2026-07-20"
+    },
+    {
+      "jenis_kegiatan": "Seleksi Administrasi",
+      "tanggal_mulai": "2026-07-24",
+      "tanggal_selesai": "2026-08-9"
+    },
+    {
+      "jenis_kegiatan": "Verifikasi Perguruan Tinggi",
+      "tanggal_mulai": "2026-08-14",
+      "tanggal_selesai": "2026-08-23"
+    },
+    {
+      "jenis_kegiatan": "Seleksi Pemprov Jabar",
+      "tanggal_mulai": "2026-08-28",
+      "tanggal_selesai": "2026-09-06"
+    },
+    {
+      "jenis_kegiatan": "Pengumuman Penerima",
+      "tanggal_mulai": "2026-09-25",
+      "tanggal_selesai": "2026-09-25"
+    },
+    {
+      "jenis_kegiatan": "Pencairan Dana Beasiswa",
+      "tanggal_mulai": "2026-10-31",
+      "tanggal_selesai": "2026-11-30"
+    }
+  ],
+  "tata_cara_pendaftaran": null
+}

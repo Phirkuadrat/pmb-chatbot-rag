@@ -1,0 +1,54 @@
+{
+  "nama_jalur_seleksi": "PMDK",
+  "biaya_pendaftaran": 50000,
+  "deskripsi": "Jalur PMDK Itenas adalah jalur masuk tanpa tes yang ditujukan bagi siswa berprestasi, aktif berorganisasi, atau memiliki nilai akademik yang baik. Tersedia tiga jalur: Jalur Prestasi (non-akademik), Jalur Keorganisasian, dan Jalur Akademik.",
+  "periode": {
+    "nama_periode": "Periode 3",
+    "tanggal_mulai": "2026-04-10",
+    "tanggal_selesai": "2026-05-10"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-04-10",
+      "tanggal_selesai": "2026-05-10"
+    },
+    {
+      "jenis_kegiatan": "Pengumuman Hasil",
+      "tanggal_mulai": "2026-05-15",
+      "tanggal_selesai": "2026-05-15"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-05-15",
+      "tanggal_selesai": "2026-05-22"
+    }
+  ],
+  "persyaratan_umum": [
+    "Diperuntukkan bagi siswa Kelas 12 atau yang belum lulus SMA/SMK/MA sederajat.",
+    "Bagi Warga Negara Asing (WNA), wajib memenuhi seluruh persyaratan izin belajar dari kementerian terkait.",
+    "Bebas buta warna total maupun parsial (khusus pendaftar Program Studi Teknik Lingkungan, Teknik Kimia, Desain Interior, Desain Produk, dan Desain Komunikasi Visual).",
+    "Jalur Keorganisasian: Aktif dalam organisasi di sekolah atau luar sekolah (misalnya Pengurus OSIS, Unit Kegiatan Siswa).",
+    "Jalur Prestasi (Non-Akademik): Memiliki penghargaan minimal juara 3 tingkat provinsi/nasional atau finalis tingkat internasional dalam 2 tahun terakhir.",
+    "Jalur Prestasi Media Sosial: Aktif sebagai Content Creator. Syarat minimum: Youtube (1.000 subscribers) atau Instagram/TikTok (10.000 followers). Konten wajib bebas SARA, pornografi, dan ujaran kebencian.",
+    "Jalur Akademik: Merupakan lulusan tahun 2026, dan memiliki nilai di atas Kriteria Ketuntasan Minimal (KKM) untuk semua mata pelajaran dari semester 1 hingga semester 4.",
+    "Peserta seleksi Program PMDK hanya diperbolehkan mengikuti proses seleksi sebanyak satu kali."
+  ],
+  "tata_cara_pendaftaran": [
+    "Calon peserta mengakses laman khusus PMDK dan mengisi data awal (nama, tempat tanggal lahir, dan 1 pilihan Program Studi) untuk mendapatkan nomor Virtual Account (VA).",
+    "Calon peserta melakukan pembayaran biaya pendaftaran sebesar Rp 50.000 melalui transfer bank/ATM ke rekening tujuan nomor VA tersebut.",
+    "Peserta login kembali ke laman SPMB Itenas untuk mengisi formulir pendaftaran, melengkapi biodata diri, dan mengunggah pas foto terbaru.",
+    "Peserta mengunggah seluruh dokumen persyaratan yang diminta.",
+    "Peserta melakukan tahap finalisasi pendaftaran dan mencetak Kartu Peserta."
+  ],
+  "dokumen_pendaftaran": [
+    "Pas foto asli (hasil jepretan kamera langsung, bukan foto dari pas foto yang dicetak).",
+    "Akte Kelahiran dan Kartu Keluarga (KK).",
+    "Kartu Tanda Penduduk (KTP) jika sudah memiliki.",
+    "Nilai rapor kelas X dan XI (mencakup halaman identitas siswa dan nilai Semester 1 hingga 4) yang telah dilegalisir oleh Kepala Sekolah.",
+    "Surat rekomendasi dari Kepala Sekolah untuk mengikuti seleksi jalur PMDK.",
+    "Salinan bukti sertifikat prestasi yang dilegalisir sekolah (khusus pendaftar jalur prestasi/non-akademik).",
+    "File PDF berisi tangkapan layar (screenshot) akun media sosial beserta tautannya (khusus pendaftar jalur prestasi media sosial)."
+  ],
+  "materi_ujian": null
+}

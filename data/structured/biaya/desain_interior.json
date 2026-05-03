@@ -1,5 +1,7 @@
 {
   "program_studi": "Desain Interior",
+  "jenjang": "Sarjana (S1)",
+  "akreditasi": "Unggul",
   "biaya_kuliah": {
     "semester_1_ganjil": {
       "ukt": 2500000,
@@ -40,6 +42,12 @@
       },
       "praktikum": 450000,
       "total_biaya_semester": 8550000
+    },
+    "jalur_rpl": {
+      "biaya_pendaftaran": 500000,
+      "biaya_konversi_per_sks": 100000,
+      "jumlah_uang_kuliah": 8500000,
+      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL)"
     }
   }
 }

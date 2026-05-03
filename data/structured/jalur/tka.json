@@ -1,0 +1,46 @@
+{
+  "nama_jalur_seleksi": "TKA",
+  "biaya_pendaftaran": 50000,
+  "deskripsi": "Tes Kemampuan Akademik (TKA) adalah jalur seleksi penerimaan mahasiswa baru untuk menilai kemampuan akademik calon mahasiswa secara objektif dan terstandar, terbuka bagi semua program studi, dengan pendaftaran yang dilakukan secara online melalui laman SPMB Itenas.",
+  "periode": {
+    "nama_periode": "Periode 1",
+    "tanggal_mulai": "2025-10-06",
+    "tanggal_selesai": "2026-08-31"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-01-01",
+      "tanggal_selesai": "2026-08-31"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-08-31",
+      "tanggal_selesai": "2026-09-01"
+    }
+  ],
+  "persyaratan_umum": [
+    "SPMB jalur TKA dibuka untuk semua Program Studi.",
+    "Peserta seleksi yang dapat diterima melalui jalur TKA harus memenuhi syarat sebagai berikut:",
+    "Memenuhi persyaratan administratif sebagai peserta seleksi, sebagaimana tercantum pasal 3 (tiga);",
+    "Memiliki nilai TKA",
+    "Mata uji TKA untuk SMA/MA/program paket C/ sederajat dan SMK/MAK terdiri atas: Bahasa Indonesia, Matematika, Bahasa Inggris, dan mata pelajaran pilihan.",
+    "*Peserta seleksi dinyatakan lulus apabila nilai sekurang-kurangnya 50 (lima puluh) pada setiap mata uji dan kategori capaian pada setiap mata uji TKA sekurang-kurangnya Memadai."
+  ],
+  "tata_cara_pendaftaran": [
+    "Pendaftaran dilakukan secara online melalui laman SPMB Itenas, calon peserta TKA melakukan pengisian data awal berupa pilihan jalur TKA, nama, tempat tanggal lahir, jenis kelamin, email dan nomor handphone untuk mendapatkan nomor Virtual Account (VA).",
+    "Calon peserta TKA melakukan pembayaran di Bank atau ATM melalui proses transfer dengan rekening tujuan adalah nomor VA.",
+    "Calon peserta TKA melakukan verifikasi pembayaran dan akan menerima Nomor Peserta serta kode PIN yang akan dikirim melalui email dan SMS.",
+    "Peserta seleksi melakukan pendaftaran di laman khusus SPMB dengan melengkapi isian biodata dan melampirkan data (upload)",
+    "Peserta melakukan finalisasi dan mencetak Kartu Peserta."
+  ],
+  "dokumen_pendaftaran": [
+    "Pas foto terbaru",
+    "Akte kelahiran",
+    "Kartu Tanda Penduduk (KTP)",
+    "Kartu Keluarga (KK)",
+    "Surat keterangan tidak buta warna total maupun parsial dari dokter (6 bulan terakhir), 1 (satu) rangkap fotocopy dan memperlihatkan yang asli bagi yang akan pindah ke Program Studi Teknik Kimia, Teknik Lingkungan, Desain Interior, Desain Produk, dan Desain Komunikasi Visual",
+    "Surat Pernyataan Dana Pengembangan Pendidikan (DPP)."
+  ],
+  "materi_ujian": null
+}

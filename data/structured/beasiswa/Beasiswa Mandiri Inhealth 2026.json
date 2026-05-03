@@ -1,0 +1,41 @@
+{
+  "nama_beasiswa": "Beasiswa Mandiri Inhealth 2026",
+  "deskripsi": "Mandiri Inhealth adalah perusahaan asuransi jiwa dan kesehatan dengan jaminan kesehatan komersial untuk perusahaan swasta, BUMN, dan institusi pemerintahan. Dalam rangka memotivasi mahasiswa untuk meningkatkan prestasi akademik dan menyelesaikan Pendidikan Tinggi, Mandiri Inhealth melaksanakan program kemitraan yaitu Mandiri Inhealth",
+  "periode_awal": "2026-03-21",
+  "periode_akhir": "2026-09-14",
+  "batas_pendaftaran": "2026-04-04",
+  "jenis_beasiswa": "Partial",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Persyaratan untuk dapat mengikuti Beasiswa Mandiri Inhealth:",
+    "Mengisi Surat Permohonan Beasiswa (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/03/Surat-Permohonan-Beasiswa-ITENAS.BKAF_MHS_BSW01.docx)",
+    "Mengisi Biodata pengajuan Beasiswa (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/03/Biodata-Pengajuan-ITENAS.BKAF_MHS_BSW02.docx) setelah pengisian kemudian diupload*.",
+    "Upload/Unggah Kartu Tanda Mahasiswa (KTM) dan Kartu Rencana Studi Mahasiswa (KRS) sebagai bukti mahasiswa aktif (Angkatan 2021 & 2022) dan terdaftar di semester Genap 2022/2023.",
+    "Melampirkan Surat Pernyataan tidak sedang menerima beasiswa dari sumber lain (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/03/Surat-Pernyataan-Tidak-Menerima-Beasiswa-Lain-ITENAS.BKAF_MHS_BSW03.doc-1-2.docx), setelah dilakukan pengisian kemudian diupload*.",
+    "Upload/Unggah Transkrip Nilai dengan IPK minimum 2.75, Transkrip Nilai dapat diprint di Portal Mahasiswa pada menu Inquiry Point B (Nilai Semester).",
+    "Melampirkan Surat Keterangan perincian gaji/penghasilan orang tua perbulan yang ditandatangani oleh pejabat berwenang, sedangkan untuk wiraswasta / wirausaha dapat mengisi form (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/03/Surat-Pernyatan-Penghasilan-Wiraswasta-ITENAS.BKAF_MHS_BSW06-1.doc)",
+    "Bagi Calon penerima beasiswa, aktif dalam kegiatan kemahasiswaan dilengkapi bukti dokumen keaktifan. Upload/Unggah.",
+    "Upload/Unggah sertifikat, piagam penghargaan atau bukti prestasi lainnya (ko-kurikuler dan atau ekstra kurikuler)."
+  ],
+  "benefit": [
+    "Pengurangan 50% Uang Kuliah Tetap (UKT) Semester Ganjil 2026/2027"
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Pendaftaran Beasiswa Mandiri Inhealth",
+      "tanggal_mulai": "2026-03-21",
+      "tanggal_selesai": "2026-04-04"
+    },
+    {
+      "jenis_kegiatan": "Pengumuman Hasil",
+      "tanggal_mulai": "2026-09-14",
+      "tanggal_selesai": "2026-09-14"
+    }
+  ],
+  "tata_cara_pendaftaran": [
+    "Pendaftaran beasiswa ini dilakukan secara online.",
+    "Format Berkas PDF kecuali Pas Photo. Berkas yang tidak lengkap tidak akan kami proses.",
+    "Berkas yang membutuhkan tanda tangan pejabat (Ketua Program Studi, Dekan, Kepala Biro BKA) dikosongkan saja dan langsung upload karena tanda tangan pejabat akan dikolektifkan oleh Biro Kemahasiswaan dan Alumni apabila mahasiswa lolos seleksi beasiswa",
+    "Untuk informasi lebih lanjut dapat menghubungi Biro Kemahasiswaan dan Alumni. Instagram: kemahasiswaan.itenas"
+  ]
+}

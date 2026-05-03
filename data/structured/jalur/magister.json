@@ -1,0 +1,42 @@
+{
+  "nama_jalur_seleksi": "Magister (S2)",
+  "biaya_pendaftaran": 250000,
+  "deskripsi": "Penerimaan Program Magister (S2) Itenas terbuka bagi lulusan sarjana (S1) yang ingin melanjutkan pendidikan ke jenjang pascasarjana. Itenas menawarkan program Magister Teknik Sipil, Magister Teknik Mesin, dan Magister Teknik Industri dengan kurikulum yang dirancang untuk menjawab tantangan industri dan kebutuhan pengembangan keilmuan secara profesional.",
+  "periode": {
+    "nama_periode": "Periode 1",
+    "tanggal_mulai": "2025-10-06",
+    "tanggal_selesai": "2026-08-31"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-01-01",
+      "tanggal_selesai": "2026-08-31"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-08-31",
+      "tanggal_selesai": "2026-09-01"
+    }
+  ],
+  "persyaratan_umum": [
+    "Peserta seleksi harus sudah lulus sarjana dari program studi yang terakreditasi atau yang disamakan.",
+    "Calon mahasiswa wajib melengkapi persyaratan administrasi dengan mengisi biodata dan menyerahkan foto secara online, selain itu juga menyerahkan surat pernyataan, salinan akte kelahiran/surat kenal lahir, salinan ijazah S1 yang dilegalisir, transkrip akademik yang dilegalisir serta sertifikat nilai English Language Proficiency Test (ELPT Itenas) atau TOEFL ITP.",
+    "Calon mahasiswa juga harus mempunyai kesehatan yang memadai sehingga kelancaran proses pembelajaran di program studinya tidak akan terganggu."
+  ],
+  "tata_cara_pendaftaran": [
+    "Calon peserta magister melakukan pengisian data awal berupa nama, tempat tanggal lahir, dan jumlah pilihan Program Studi melalui laman khusus SPMB untuk mendapatkan Nomor Virtual Account (VA).",
+    "Calon peserta magister melakukan pembayaran di bank atau ATM melalui proses transfer dengan rekening tujuan adalah Nomor VA.",
+    "Peserta seleksi magister melakukan pendaftaran di laman khusus SPMB dengan melengkapi formulir yang tersedia serta mengunggah pas foto terbaru berwarna & ukuran file maks. 100 kb. Dan cetak kartu ujian",
+    "Menyerahkan persyaratan ke Biro Akademik",
+    "Mengikuti wawancara sesuai Prodi yang dipilih berdasarkan jadwal yang ditetapkan oleh masing-masing program."
+  ],
+  "dokumen_pendaftaran": [
+    "Surat pernyataan dapat diunduh di disini: https://drive.google.com/file/d/1ZHXQsFUz5QReJJR-2qZTgM3yja15j-vu/view?usp=sharing",
+    "Salinan Akte Kelahiran/Surat Kenal Lahir",
+    "Salinan Ijazah S1 yang dilegalisir",
+    "Transkrip akademik yang dilegalisir",
+    "Sertifikat nilai English Language Proficiency Test (ELP ITENAS atau TOEFL ITP)"
+  ],
+  "materi_ujian": null
+}

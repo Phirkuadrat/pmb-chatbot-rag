@@ -1,6 +1,11 @@
 {
   "program_studi": "Teknik Mesin",
-  "biaya_kuliah": {
+  "akreditasi": "Unggul",
+  "jenjang_tersedia": [
+    "Sarjana (S1)",
+    "Magister (S2)"
+  ],
+  "biaya_sarjana_s1": {
     "semester_1_ganjil": {
       "ukt": 2500000,
       "sks": {
@@ -40,6 +45,47 @@
       },
       "praktikum": 0,
       "total_biaya_semester": 9150000
+    },
+    "jalur_rpl": {
+      "biaya_pendaftaran": 500000,
+      "biaya_konversi_per_sks": 100000,
+      "jumlah_uang_kuliah": 8500000,
+      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL) jenjang S1"
+    }
+  },
+  "biaya_magister_s2": {
+    "estimasi_total_hingga_lulus": 39000000,
+    "rincian_per_semester": {
+      "semester_1": {
+        "ukt": 3000000,
+        "sks": 12,
+        "biaya_per_sks": 750000,
+        "total_biaya_semester": 12000000
+      },
+      "semester_2": {
+        "ukt": 3000000,
+        "sks": 12,
+        "biaya_per_sks": 750000,
+        "total_biaya_semester": 12000000
+      },
+      "semester_3": {
+        "ukt": 3000000,
+        "sks": 6,
+        "biaya_per_sks": 750000,
+        "total_biaya_semester": 7500000
+      },
+      "semester_4": {
+        "ukt": 3000000,
+        "sks": 6,
+        "biaya_per_sks": 750000,
+        "total_biaya_semester": 7500000
+      }
+    },
+    "jalur_rpl": {
+      "biaya_pendaftaran": 500000,
+      "biaya_konversi_per_sks": 250000,
+      "jumlah_uang_kuliah": 9500000,
+      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL) jenjang S2"
     }
   }
 }

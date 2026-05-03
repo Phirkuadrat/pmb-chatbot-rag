@@ -22,10 +22,10 @@ def run_ingestion():
     documents = loader.load()
     
     if not documents:
-        print("⚠️ Tidak ada file PDF ditemukan di folder tersebut.")
+        print("Tidak ada file PDF ditemukan di folder tersebut.")
         return
         
-    print(f"📄 Berhasil memuat total {len(documents)} halaman dari seluruh PDF.")
+    print(f"Berhasil memuat total {len(documents)} halaman dari seluruh PDF.")
 
     # Split Documents
     text_splitter = RecursiveCharacterTextSplitter(
@@ -38,7 +38,7 @@ def run_ingestion():
 
     # Embedding dan Simpan ke Vector Store
     print("Memuat model embedding lokal...")
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="paraphrase-multilingual-MiniLM-L12-v2")
 
     print(f"Menyimpan data vektor ke: {db_dir}")
     vector_store = Chroma.from_documents(

@@ -1,0 +1,36 @@
+{
+  "nama_beasiswa": "Beasiswa Rawan Melanjutkan Pendidikan (RMP) Tahun 2026",
+  "deskripsi": "Beasiswa RMP merupakan beasiswa bagi mahasiswa Rawan Melanjutkan Pendidikan (RMP) yang diberikan oleh Walikota Bandung.",
+  "periode_awal": "2026-04-26",
+  "periode_akhir": "2026-05-10",
+  "batas_pendaftaran": "2026-05-10",
+  "jenis_beasiswa": "Partial",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Persyaratan untuk dapat mengikuti Beasiswa RMP Tahun 2025, sebagai berikut:",
+    "Mengisi surat pengajuan Beasiswa (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2023/08/Surat-Permohonan-Beasiswa-ITENAS.BKAF_MHS_BSW01-1.docx) setelah pengisian kemudian diupload.",
+    "Upload fotocopy Kartu Tanda Mahasiswa (KTM) dan Kartu Rencana Studi Mahasiswa (KRS) sebagai bukti mahasiswa aktif dan terdaftar di semester genap 2023/2024.",
+    "Melampirkan Surat Pernyataan tidak sedang menerima beasiswa dari sumber lain (https://kemahasiswaan.itenas.ac.id/wp-content/uploads/2022/11/Surat-Pernyataan-Tidak-Menerima-Beasiswa-Lain-ITENAS.BKAF_MHS_BSW03.doc-1-2.docx), setelah dilakukan pengisian kemudian diupload.",
+    "Menyertakan Transkrip Nilai dengan IPK minimum 2.50, Transkrip Nilai dapat diprint di Portal Mahasiswa di menu Inquiry Point B (Nilai Semester).",
+    "Upload KTP & Kartu Keluarga (Domisili Kota bandung)",
+    "Upload Pas Foto terbaru berwarna ukuran 3 x 4 cm",
+    "Mahasiswa terdata di Data Terpadu Kesejahteraan Sosial (DTKS), yang dapat di cek melalui Hotline Dinsos Kota Bandung",
+    "Semua dokumen persyaratan discan terlebih dahulu selanjutnya dikirim dalam bentuk pdf diupload ke https://bit.ly/BeasiswaRMP_Itenas"
+  ],
+  "benefit": [
+    "Subsidi Biaya Pendidikan: Bantuan langsung digunakan untuk membayar atau mengurangi beban DPP/SPP di perguruan tinggi mitra."
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Masa Pendaftaran Beasiswa RMP 2026",
+      "tanggal_mulai": "2026-04-26",
+      "tanggal_selesai": "2026-05-10"
+    }
+  ],
+  "tata_cara_pendaftaran": [
+    "Pendaftaran beasiswa ini dilakukan secara online.",
+    "Format Berkas PDF. Berkas yang tidak lengkap tidak akan kami proses.",
+    "Berkas yang membutuhkan tanda tangan pejabat diabaikan dan langsung upload karena tanda tangan pejabat akan dikolektifkan oleh Biro Kemahasiswaan dan Alumni.",
+    "Untuk informasi lebih lanjut dapat menghubungi Biro Kemahasiswaan dan Alumni. Instagram: kemahasiswaan.itenas"
+  ]
+}

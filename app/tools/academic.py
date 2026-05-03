@@ -7,8 +7,8 @@ from sentence_transformers import CrossEncoder
 from dotenv import load_dotenv
 
 load_dotenv()
-VECTOR_DB_DIR = os.getenv("VECTOR_DB_DIR", "./data/chromadb")
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+VECTOR_DB_DIR = os.getenv("VECTOR_DB_PATH", "./data/chromadb")
+EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
 @tool
 def search_knowledge_base(query: str) -> str:
@@ -24,8 +24,8 @@ def search_knowledge_base(query: str) -> str:
         embedding_function=embeddings
     )
     
-    # 1. Base Retrieval (Get top 10 as candidates)
-    retriever = vector_store.as_retriever(search_kwargs={"k": 10})
+    # 1. Base Retrieval (Get top 20 as candidates for Re-Ranker)
+    retriever = vector_store.as_retriever(search_kwargs={"k": 20})
     base_docs = retriever.invoke(query)
     
     if not base_docs:
@@ -34,7 +34,7 @@ def search_knowledge_base(query: str) -> str:
     # 2. Re-Ranking (CrossEncoder)
     try:
         # Pake model ringan bahasa Indonesia/Multibahasa untuk reranking
-        cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2') 
+        cross_encoder = CrossEncoder('cross-encoder/mmarco-mMiniLMv2-L12-H384-v1') 
         
         # Format pasangan [query, document_text]
         pairs = [[query, doc.page_content] for doc in base_docs]
@@ -45,17 +45,13 @@ def search_knowledge_base(query: str) -> str:
         # Sort dari yang score tertinggi
         scored_docs.sort(key=lambda x: x[1], reverse=True)
         
-        # 3. Filter and take Top 3 paling relevan
-        top_docs = [doc for doc, score in scored_docs[:3] if score > 0] # Asumsi threshold dasar
+        # 3. Filter and take Top 4 paling relevan (tanpa threshold ketat agar LLM selalu dapat konteks)
+        top_docs = [doc for doc, score in scored_docs[:4]]
         
-        if not top_docs:
-            # Fallback kalau reranker nge-drop semua (terlalu strict)
-            top_docs = base_docs[:3]
-            
     except Exception as e:
         print(f"⚠️ Re-ranking failed (using base docs): {e}")
-        top_docs = base_docs[:3]
-        
+        top_docs = base_docs[:4]
+    
     # Collect Content and Metadata
     combined_content = "\n\n".join([doc.page_content for doc in top_docs])
     metadata_list = []

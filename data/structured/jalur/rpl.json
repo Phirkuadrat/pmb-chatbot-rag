@@ -1,0 +1,47 @@
+{
+  "nama_jalur_seleksi": "RPL",
+  "biaya_pendaftaran": 500000,
+  "deskripsi": "Program ini ditujukan bagi para pekerja, ASN, TNI/POLRI, pegawai, Praktisi, lulusan SMA/SMK dan Diploma (D3/D4) yang pernah/sedang bekerja. Program RPL dirancang untuk mempercepat waktu studi dengan pengakuan sks berdasarkan pengalaman kerja/kompetensi di masa lampau, serta memiliki waktu kuliah yang fleksibel.",
+  "periode": {
+    "nama_periode": "Periode 1",
+    "tanggal_mulai": "2025-10-06",
+    "tanggal_selesai": "2026-08-31"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-01-01",
+      "tanggal_selesai": "2026-08-31"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-08-31",
+      "tanggal_selesai": "2026-09-01"
+    }
+  ],
+  "persyaratan_umum": [
+    "Jenis RPL di Itenas terdiri atas dua tipe: Alih Kredit (Pengakuan hasil belajar formal yang sudah ditempuh sebelumnya) dan Perolehan Kredit (Pengakuan hasil belajar dari belajar nonformal, informal, dan/atau pengalaman kerja).",
+    "Persyaratan Khusus RPL Tipe A Alih Kredit dan Tipe A Perolehan Kredit diatur secara spesifik dalam Pedoman yang ditetapkan Rektor.",
+    "Persyaratan Umum khusus RPL Tipe A Perolehan Kredit: Calon peserta diwajibkan mempunyai pengalaman kerja paling sedikit 2 (dua) tahun.",
+    "Peserta yang telah dinyatakan lolos asesmen akan mendapatkan Keputusan Rektor tentang Pengakuan Alih Kredit yang isinya mencakup: masa studi, mata kuliah yang diakui, mata kuliah yang harus ditempuh, serta jumlah SKS."
+  ],
+  "tata_cara_pendaftaran": [
+    "Calon peserta melakukan pendaftaran melalui laman khusus SPMB Itenas dengan mengisi data awal (nama, tempat tanggal lahir, jumlah pilihan Program Studi) untuk mendapatkan Nomor Virtual Account (VA).",
+    "Calon peserta melakukan pembayaran biaya pendaftaran sebesar Rp 500.000 di bank atau ATM melalui proses transfer ke rekening tujuan Nomor VA.",
+    "Calon peserta melakukan verifikasi pembayaran untuk mendapatkan nomor peserta dan kode PIN.",
+    "Calon peserta login dan melengkapi pengisian biodata pada laman https://rpl.itenas.ac.id/.",
+    "Calon peserta mengunggah dokumen persyaratan secara lengkap.",
+    "Bagi peserta yang telah memenuhi persyaratan, wajib mengikuti tahapan asesmen dan rekognisi yang dilakukan oleh Tim Asesor RPL Itenas."
+  ],
+  "dokumen_pendaftaran": [
+    "Ijazah dari jenjang pendidikan sebelumnya.",
+    "Transkrip Nilai dari jenjang pendidikan sebelumnya.",
+    "Sertifikat Akreditasi Program Studi dan Perguruan Tinggi asal pada saat lulus (Khusus pendaftar RPL Tipe A Alih Kredit).",
+    "Surat pernyataan dari peserta (Khusus pendaftar RPL Tipe A Perolehan Kredit).",
+    "Daftar riwayat hidup (Khusus pendaftar RPL Tipe A Perolehan Kredit).",
+    "Surat keterangan berkelakuan baik dari kepolisian (Khusus pendaftar RPL Tipe A Perolehan Kredit).",
+    "Dokumen asesmen mandiri terhadap Capaian Pembelajaran / CP (Khusus pendaftar RPL Tipe A Perolehan Kredit).",
+    "Dokumen pendukung lainnya terkait pengalaman kerja (Khusus pendaftar RPL Tipe A Perolehan Kredit)."
+  ],
+  "materi_ujian": null
+}

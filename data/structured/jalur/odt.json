@@ -1,0 +1,42 @@
+{
+  "nama_jalur_seleksi": "ODT",
+  "biaya_pendaftaran": 350000,
+  "deskripsi": "One Day Test (ODT) adalah jalur seleksi mahasiswa baru Itenas yang dilaksanakan secara daring. Peserta ODT dapat memilih sendiri tanggal ujian sesuai jam kerja yang tersedia. Pilihan jam ujian terdiri dari dua sesi: Sesi 1 pukul 08.00 WIB dan Sesi 2 pukul 13.00 WIB. Ujian berlangsung selama satu hari, dan hasilnya diumumkan satu hari setelah tes selesai. Jalur ini menawarkan proses seleksi yang cepat, fleksibel, dan praktis.",
+  "periode": {
+    "nama_periode": "Periode 1",
+    "tanggal_mulai": "2025-10-06",
+    "tanggal_selesai": "2026-08-31"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-01-01",
+      "tanggal_selesai": "2026-08-31"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-08-31",
+      "tanggal_selesai": "2026-09-01"
+    }
+  ],
+  "persyaratan_umum": [
+    "Memiliki ijazah (Surat Tanda Tamat Belajar) tingkat Sekolah Menengah Atas atau Sekolah Menengah Kejuruan.",
+    "Bagi peserta seleksi baru berkewarganegaraan asing, harus memenuhi seluruh persyaratan ijin belajar yang dikeluarkan Kelembagaan Ilmu Pengetahuan, Teknologi, dan Pendidikan Tinggi, Kementerian Riset, Teknologi, dan Pendidikan Tinggi.",
+    "Memenuhi persyaratan administrasi tentang prosedur pendaftaran.",
+    "Bebas buta warna total maupun parsial untuk yang memilih Program Studi Teknik Lingkungan, Teknik Kimia, Desain Interior, Desain Produk, dan Desain Komunikasi Visual.",
+    "Mengikuti proses pendaftaran sesuai dengan tata cara pendaftaran SPMB jalur One Day Test pada jadwal yang telah ditetapkan.",
+    "Mengikuti ujian sesuai Program Studi yang dipilih pada jadwal yang telah ditetapkan.",
+    "Memiliki nilai ujian saringan masuk yang lebih tinggi dari batas nilai yang dapat diterima sebagai mahasiswa.",
+    "Berkelakuan baik yang ditunjukan dengan Surat Keterangan Berkelakuan Baik yang dikeluarkan oleh sekolah asal atau kepolisian Negara Republik Indonesia.",
+    "*Pengumuman hasil ODT akan keluar 1 hari setelah test"
+  ],
+  "tata_cara_pendaftaran": [
+    "Calon peserta One Day Test melakukan pengisian data awal berupa nama, tempat tanggal lahir, dan jumlah pilihan Program Studi melalui laman khusus SPMB.",
+    "Calon peserta ODT mendapatkan nomor Virtual Account (VA) untuk melakukan pembayaran di bank atau ATM melalui proses transfer dengan rekening tujuan adalah Nomor VA.",
+    "Peserta seleksi ODT melakukan pendaftaran di laman khusus SPMB dengan melengkapi formulir yang tersedia serta mengunggah pas foto terbaru.",
+    "Calon peserta melakukan finalisasi dan mencetak Kartu Peserta Test",
+    "Ujian One Day Test dilaksanakan secara online link odt.itenas.ac.id"
+  ],
+  "dokumen_pendaftaran": null,
+  "materi_ujian": null
+}

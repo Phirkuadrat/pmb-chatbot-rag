@@ -1,5 +1,7 @@
 {
   "program_studi": "Desain Komunikasi Visual",
+  "jenjang": "Sarjana (S1)",
+  "akreditasi": "A",
   "biaya_kuliah": {
     "semester_1_ganjil": {
       "ukt": 2500000,
@@ -40,6 +42,12 @@
       },
       "praktikum": 720000,
       "total_biaya_semester": 9520000
+    },
+    "jalur_rpl": {
+      "biaya_pendaftaran": 500000,
+      "biaya_konversi_per_sks": 100000,
+      "jumlah_uang_kuliah": 8500000,
+      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL)"
     }
   }
 }

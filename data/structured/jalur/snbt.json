@@ -1,0 +1,39 @@
+{
+  "nama_jalur_seleksi": "SNBT atau UTBK",
+  "biaya_pendaftaran": 50000,
+  "deskripsi": "Institut Teknologi Nasional memberikan kesempatan kepada lulusan SMA dan SMK untuk bisa mengikuti seleksi masuk melalui jalur UTBK SNBT (Seleksi Bersama Berdasarkan Test) Tahun 2025 atau 2026. Sertifikat yang dapat digunakan adalah Sertifikat UTBK/SNBT 2025 dan 2026.",
+  "periode": {
+    "nama_periode": "Periode 1",
+    "tanggal_mulai": "2025-10-06",
+    "tanggal_selesai": "2026-08-31"
+  },
+  "jadwal_pelaksanaan": [
+    {
+      "jenis_kegiatan": "Pendaftaran",
+      "tanggal_mulai": "2026-01-01",
+      "tanggal_selesai": "2026-08-31"
+    },
+    {
+      "jenis_kegiatan": "Registrasi Ulang",
+      "tanggal_mulai": "2026-08-31",
+      "tanggal_selesai": "2026-09-01"
+    }
+  ],
+  "persyaratan_umum": [
+    "Sertifikat hasil UTBK/SNBT 2025 atau 2026",
+    "Pas foto terbaru 3x4.",
+    "Akte Kelahiran",
+    "Kartu Tanda Penduduk (KTP)",
+    "Kartu Keluarga (KK)",
+    "*Pengumuman hasil UTBK/SNBT diproses setelah calon mahasiswa baru melakukan finalisasi (paling lambat 2 hari kerja)"
+  ],
+  "tata_cara_pendaftaran": [
+    "Proses pendaftaran dilakukan secara online melalui laman SPMB Itenas.",
+    "Calon peserta jalur UTBK melakukan pengisisan data awal berupa nama, tempat tanggal lahir dan 2 Program Studi yang dipilih untuk mendapatkan nomor Virtual Account (VA).",
+    "Calon peserta melakukan pembayaran di Bank atau ATM melalui proses transfer dengan rekening tujuan adalah nomor VA.",
+    "Peserta seleksi mengisi formulir pendaftaran jalur UTBK, data diri, dan mengunggah pas foto terbaru melalui laman SPMB Itenas.",
+    "Peserta seleksi mengunggah dokumen persyaratan:"
+  ],
+  "dokumen_pendaftaran": null,
+  "materi_ujian": null
+}

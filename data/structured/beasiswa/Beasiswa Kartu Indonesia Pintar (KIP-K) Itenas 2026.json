@@ -1,0 +1,32 @@
+{
+  "nama_beasiswa": "Beasiswa Kartu Indonesia Pintar (KIP-K) Itenas 2026",
+  "deskripsi": "Pemerintah Indonesia terus berkomitmen untuk fokus meningkatkan pembangunan Sumberdaya Manusia melalui berbagai upaya cerdas. Kartu Indonesia Pintar Kuliah (KIP-Kuliah) adalah salah satu upaya untuk membantu asa para siswa yang memiliki keterbatasan ekonomi tetapi berprestasi untuk melanjutkan studi di perguruan tinggi.",
+  "periode_awal": "2026-07-01",
+  "periode_akhir": "2026-09-01",
+  "batas_pendaftaran": "2026-08-01",
+  "jenis_beasiswa": "Full",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Siswa MA/SMA/SMK Tahun Lulusan 2025 & 2026",
+    "Siswa telah mempunyai kartu KIP-K dan terdaftar Data Terpadu Kesejahteraan Sosial (DTKS)",
+    "Mempunyai no pendaftaran KIP-K yang didapatkan setelah daftar pada laman : http://kip-kuliah.kemdikbud.go.id",
+    "Mendaftarkan Program Studi (Prodi harus sesuai dengan yang dipilih pada laman : http://kip-kuliah.kemdikbud.go.id)",
+    "Melampirkan bukti gaji orang tua yang sudah di tanda tangani",
+    "Melampirkan foto depan rumah dengan keluarga",
+    "Melampirkan bukti tagihan listrik."
+  ],
+  "benefit": [
+    "Bantuan biaya pendidikan  penuh selama masa studi 4 tahun.",
+    "Bantuan biaya hidup bulanan"
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Pendaftaran KIPK Itenas",
+      "tanggal_mulai": "2026-07-08",
+      "tanggal_selesai": "2026-07-22"
+    }
+  ],
+  "tata_cara_pendaftaran": [
+    "Proses pendaftaran dilakukan secara online pada laman http://kip-k.itenas.ac.id/"
+  ]
+}

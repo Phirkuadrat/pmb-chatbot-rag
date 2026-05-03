@@ -1,0 +1,68 @@
+{
+  "nama_beasiswa": "Online Scholarship Competition (OSC) S1",
+  "deskripsi": "Online Scholarship Competition (OSC) adalah kompetisi beasiswa online pertama di Indonesia yang diselenggarakan sejak 2015 oleh Surya Edukasi Bangsa Foundation bersama Medcom.id. Program ini membuka akses beasiswa S1 dan S2 di perguruan tinggi favorit melalui kolaborasi dengan perguruan tinggi swasta, guna mendukung pemerataan pendidikan dan pengembangan SDM unggul bagi putra-putri Indonesia dari berbagai latar belakang.",
+  "periode_awal": "2026-08-21",
+  "periode_akhir": "2026-11-12",
+  "batas_pendaftaran": "2026-11-12",
+  "jenis_beasiswa": "Full",
+  "kategori_beasiswa": "External",
+  "persyaratan_umum": [
+    "Setiap peserta OSC S1 diwajibkan untuk mengetahui semua syarat yang berlaku, diantaranya :",
+    "Mengisi formulir data diri lengkap dan melakukan pembayaran registrasi sebesar Rp. 35.000,- di https://osc.medcom.id/",
+    "Siswa/i SMA/SMK/MA Sederajat & Santri yang duduk di kelas 3/XII, dan akan lulus di 2027",
+    "Siswa/i SMA/SMK/MA Sederajat & Santri yang telah lulus di 2026 dan Tahun 2026, tapi belum kuliah (Gapyear)",
+    "Siswa/i tidak pernah menerima program beasiswa dari lembaga beasiswa lainnya",
+    "Memiliki prestasi akademik dan atau non akademik",
+    "Memiliki keinginan kuliah yang kuat / tinggi",
+    "Mengupload twibbon peserta Beasiswa OSC 2026 ke Instagram dan tag ke @beasiswaosc",
+    "Follow akun sosial media : Instagram dan Twitter @BeasiswaOSC, Instagram dan Twitter @medcomid, dan Instagram @suryaedukasibangsa"
+  ],
+  "benefit": [
+    "Bantuan biaya pendidikan penuh selama masa studi 4 tahun.",
+    "Mahasiswa dari luar daerah memperoleh bantuan biaya hidup sesuai ketentuan."
+  ],
+  "timeline_beasiswa": [
+    {
+      "jenis_kegiatan": "Pembukaan Pendaftaran Beasiswa OSC S1 dan Beasiswa OSC S2 2025",
+      "tanggal_mulai": "2026-08-21",
+      "tanggal_selesai": "2026-11-12"
+    },
+    {
+      "jenis_kegiatan": "Pelaksanaan Tryout Wajib Peserta",
+      "tanggal_mulai": "2026-09-07",
+      "tanggal_selesai": "2026-09-08"
+    },
+    {
+      "jenis_kegiatan": "Tahap seleksi I Online Test",
+      "tanggal_mulai": "2026-09-15",
+      "tanggal_selesai": "2026-09-15"
+    },
+    {
+      "jenis_kegiatan": "Pengumuman hasil tahap seleksi I Online Test",
+      "tanggal_mulai": "2026-09-21",
+      "tanggal_selesai": "2026-09-21"
+    },
+    {
+      "jenis_kegiatan": "Pengumuman persiapan berkas",
+      "tanggal_mulai": "2026-09-21",
+      "tanggal_selesai": "2026-09-21"
+    },
+    {
+      "jenis_kegiatan": "Tahap Seleksi II Final Test",
+      "tanggal_mulai": "2026-09-21",
+      "tanggal_selesai": "2026-12-05"
+    },
+    {
+      "jenis_kegiatan": "OSC Awards",
+      "tanggal_mulai": "2026-12-19",
+      "tanggal_selesai": "2026-12-19"
+    }
+  ],
+  "tata_cara_pendaftaran": [
+    "Setelah mengisi data diri dengan lengkap, peserta hanya diperbolehkan memilih 1 dari universitas yang tersedia",
+    "Peserta dapat memilih 2 program studi (prodi) dari 1 universitas yang dipilih (pilihan universitas & prodi TIDAK BISA diubah). Pilihan pertama peserta, akan dianggap sebagai prioritas utama peserta dalam pemilihan prodi",
+    "Peserta WAJIB mengikuti Try Out OSC secara online menggunakan voucher free Tryout yang sudah termasuk dalam pendaftaranPeserta WAJIB mengikuti ONLINE TEST yang telah ditentukan waktunya. Peserta WAJIB menjawab semua soal test yang tersedia, sesuai dengan batas waktu yang telah ditentukan. Peserta yang lolos tahap pertama online test, WAJIB mengikuti tahap FINAL TEST",
+    "Untuk peserta yang lolos ke tahap FINAL TEST WAJIB mengirimkan berkas sebagai berikut: Form data diri beasiswa OSC (download di laman profil kampus tujuan). Pas foto ukuran 4x6 dengan warna latar belakang sesuai tahun lahir. Scan raport kelas 10 dan 11 (untuk gap year sertakan juga scan raport kelas 12). Scan surat pengantar dari sekolah (untuk kelas 12) dan ijazah SMA/SMK/MA Sederajat & Pesantren/Boarding School (untuk gap year). Scan sertifikat / piagam penghargaan akademik dan non akademik (bila ada). Portofolio karya berupa karya tulis / foto / design / dll (bila ada)",
+    "Peserta yang TIDAK MENGIKUTI Final Test beasiswa OSC, akan dinyatakan GUGUR. Peserta WAJIB mengikuti seluruh proses atau tahapan yang ada di beasiswa OSC"
+  ]
+}

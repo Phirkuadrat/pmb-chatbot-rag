@@ -10,6 +10,15 @@ from app.models.chat import ChatRequest, ChatResponse, ChatResponseData, SourceM
 from app.services.rag_engine import PMBRagEngine
 
 router = APIRouter()
+from app.services.ingestion import run_ingestion
+
+@router.get("/ingest")
+async def trigger_ingestion():
+    try:
+        run_ingestion()
+        return {"status": "Ingesti berhasil diselesaikan!"}
+    except Exception as e:
+        return {"status": f"Error: {e}"}
 
 
 # Dependency for RAG Engine - Cached to preserve chat history (MemorySaver)
@@ -38,7 +47,6 @@ def get_redis():
 
 
 def generate_cache_key(query: str, session_id: str) -> str:
-    # Hash the query alongside the session_id so personal context is isolated
     unique_str = f"{session_id}:{query.lower().strip()}"
     return "pmb_chat:" + hashlib.md5(unique_str.encode()).hexdigest()
 
@@ -81,4 +89,4 @@ async def chat_endpoint(
             data=ChatResponseData(**response_data)
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
