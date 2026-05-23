@@ -1,7 +1,8 @@
 import json
+import redis
 from langchain_groq import ChatGroq
 from langgraph.prebuilt import create_react_agent
-from langgraph.checkpoint.memory import MemorySaver
+from langgraph.checkpoint.redis import RedisSaver
 from langchain_core.messages import SystemMessage
 
 from app.core.config import settings
@@ -50,7 +51,21 @@ class PMBRagEngine:
         )
 
         # 4. Initialize Checkpointer (Memory)
-        self.memory = MemorySaver()
+        try:
+            redis_conn = redis.Redis(
+                host=settings.redis_host,
+                port=settings.redis_port,
+                db=settings.redis_db,
+                socket_timeout=1
+            )
+            # PING to ensure connection is valid
+            redis_conn.ping()
+            self.memory = RedisSaver(redis_conn)
+            print("✅ RedisSaver berhasil diinisialisasi untuk memori percakapan.")
+        except Exception as e:
+            print(f"⚠️ Gagal koneksi ke Redis untuk Checkpointer: {e}. Fallback ke MemorySaver.")
+            from langgraph.checkpoint.memory import MemorySaver
+            self.memory = MemorySaver()
 
         # 5. Create the LangGraph Agent Core
         print("Membangun Agent State Graph...")
