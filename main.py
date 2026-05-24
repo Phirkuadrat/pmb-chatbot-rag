@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.api import router as chat_router
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import settings
 import logging
 
 # Configure basic logging for Production visibility
@@ -18,7 +19,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

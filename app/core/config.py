@@ -25,6 +25,12 @@ class Settings(BaseSettings):
     redis_db: int = 0
     redis_cache_ttl: int = 3600  # seconds (1 jam)
 
+    # === Security / CORS ===
+    allowed_origins: list[str] = [
+        "http://localhost:8501", 
+        "http://127.0.0.1:8501"
+    ]
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
