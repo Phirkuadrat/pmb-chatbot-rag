@@ -191,6 +191,80 @@ class PMBRagEngine:
                 seen.add(t)
                 deduped_detailed_sources.append(d)
 
+        # 5. Build Result Dictionary
+        result = {
+            "answer": answer,
+            "detailed_sources": deduped_detailed_sources,
+            "retrieval_context": retrieval_context,
+            "latency": round(time.time() - start_time, 2),
+        }
+        return result
+
+    async def ask_stream(self, query: str, session_id: str = "default_session"):
+        import time
+        start_time = time.time()
+        print(f"\nPertanyaan User [{session_id}] (Streaming): {query}")
+
+        # Step 1-2: Query Rewriting
+        rewritten_query = self._rewrite_query(query)
+
+        # Define the config for tracking threads (chat history)
+        config = {"configurable": {"thread_id": session_id}}
+
+        # Prompt Repetition
+        repeated_query_prompt = f"Tolong jawab pertanyaan berikut: {rewritten_query}\n\n(Sekali lagi, ingat kembali pertanyaan utamanya: '{rewritten_query}')"
+
+        # 1. Stream the tokens (AI message chunks)
+        async for msg, metadata in self.agent.astream(
+            {"messages": [("user", repeated_query_prompt)]}, 
+            config=config, 
+            stream_mode="messages"
+        ):
+            if msg.content and getattr(msg, "type", "") == "ai" and not msg.tool_calls:
+                yield {"type": "chunk", "content": msg.content}
+                
+        # 2. Get the final state to extract metadata
+        state = self.agent.get_state(config)
+        messages = state.values.get("messages", [])
+        
+        sources_used = []
+        detailed_sources = []
+        retrieval_context = []
+
+        import json
+        for msg in messages:
+            if msg.type == "tool":
+                sources_used.append(msg.name)
+                try:
+                    tool_output = json.loads(msg.content)
+                    if "metadata" in tool_output:
+                        detailed_sources.extend(tool_output["metadata"])
+                    if "content" in tool_output and tool_output["content"]:
+                        raw_content = tool_output["content"]
+                        chunks = [c.strip() for c in raw_content.split("\n\n") if c.strip()]
+                        retrieval_context.extend(chunks)
+                except Exception:
+                    pass
+
+        # Deduplicate sources
+        seen = set()
+        deduped_detailed_sources = []
+        for d in detailed_sources:
+            t = tuple(d.items())
+            if t not in seen:
+                seen.add(t)
+                deduped_detailed_sources.append(d)
+
+        latency = round(time.time() - start_time, 2)
+        
+        # 3. Yield the final metadata chunk
+        yield {
+            "type": "metadata",
+            "sources": deduped_detailed_sources,
+            "retrieval_context": retrieval_context,
+            "latency": latency
+        }
+
         processing_time = round(time.time() - start_time, 2)
 
         return {

@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends
+from fastapi.responses import StreamingResponse
 import redis
 import hashlib
 import json as _json
@@ -90,3 +91,20 @@ async def chat_endpoint(
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/chat/stream")
+async def chat_stream_endpoint(
+    request: ChatRequest,
+    engine: PMBRagEngine = Depends(get_engine),
+    cache: Optional[redis.Redis] = Depends(get_redis)
+):
+    async def event_generator():
+        try:
+            # We don't read from cache for the stream to keep it simple and real-time.
+            # You could add cache logic here if needed.
+            async for chunk in engine.ask_stream(request.query, request.session_id):
+                yield f"data: {_json.dumps(chunk)}\n\n"
+        except Exception as e:
+            yield f"data: {_json.dumps({'type': 'error', 'content': str(e)})}\n\n"
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")

@@ -80,6 +80,7 @@ if "messages" not in st.session_state:
 
 # API Endpoint (Sesuaikan dengan backend Anda)
 API_URL = "http://127.0.0.1:8000/api/v1/chat"
+API_STREAM_URL = "http://127.0.0.1:8000/api/v1/chat/stream"
 
 # --- HEADER UI (Dengan Tombol Reset di Kanan) ---
 col1, col2 = st.columns([3, 1])
@@ -146,30 +147,51 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
     message_placeholder.markdown(html_loading, unsafe_allow_html=True)
     
     try:
-        # Panggil API RAG
+        # Panggil API RAG Streaming
         response = requests.post(
-            API_URL, 
+            API_STREAM_URL, 
             json={"query": prompt, "session_id": st.session_state.session_id},
+            stream=True,
             timeout=45
         )
         
         if response.status_code == 200:
-            result = response.json()
-            data = result.get("data", {})
+            answer = ""
+            sources = []
             
-            # Jika backend Anda merespon 'answer' (sesuaikan key json Anda)
-            answer = data.get("answer", "Maaf, saya tidak dapat menemukan jawaban tersebut.")
-            sources = data.get("sources", [])
-            
-            # Ganti animasi loading dengan jawaban asli
-            html_answer = f"""
-            <div class="chat-row row-bot">
-                <div class="bot-avatar">🤖</div>
-                <div class="chat-bubble bubble-bot">{answer}</div>
-            </div>
-            """
-            message_placeholder.markdown(html_answer, unsafe_allow_html=True)
-            
+            # Baca aliran data (Server-Sent Events) baris demi baris
+            for line in response.iter_lines():
+                if line:
+                    line_str = line.decode('utf-8')
+                    if line_str.startswith("data: "):
+                        import json
+                        try:
+                            data_chunk = json.loads(line_str[6:])
+                            
+                            if data_chunk.get("type") == "chunk":
+                                answer += data_chunk.get("content", "")
+                                # Update UI dengan efek mengetik (kursor blok ▌)
+                                html_answer = f"""
+                                <div class="chat-row row-bot">
+                                    <div class="bot-avatar">🤖</div>
+                                    <div class="chat-bubble bubble-bot">{answer}▌</div>
+                                </div>
+                                """
+                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
+                                
+                            elif data_chunk.get("type") == "metadata":
+                                sources = data_chunk.get("sources", [])
+                                # Hapus kursor berkedip di akhir kalimat
+                                html_answer = f"""
+                                <div class="chat-row row-bot">
+                                    <div class="bot-avatar">🤖</div>
+                                    <div class="chat-bubble bubble-bot">{answer}</div>
+                                </div>
+                                """
+                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
+                        except json.JSONDecodeError:
+                            pass
+                            
             # Simpan respons ke state memory UI
             st.session_state.messages.append({
                 "role": "assistant", 
