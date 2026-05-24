@@ -1,5 +1,6 @@
 import json
 import redis
+import logging
 from langchain_groq import ChatGroq
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.redis import RedisSaver
@@ -8,12 +9,15 @@ from langchain_core.messages import SystemMessage
 from app.core.config import settings
 from app.tools import get_tuition_fee, search_knowledge_base, get_admission_path, get_scholarship_info
 
+# Configure Logger
+logger = logging.getLogger(__name__)
+
 # === DEFINE THE ENGINE ===
 
 
 class PMBRagEngine:
     def __init__(self):
-        print("Menginisialisasi Agentic RAG (Llama 3 via Groq)...")
+        logger.info("Menginisialisasi Agentic RAG (Llama 3 via Groq)...")
 
         # 1. Initialize LLM
         self.llm = ChatGroq(
@@ -61,14 +65,14 @@ class PMBRagEngine:
             # PING to ensure connection is valid
             redis_conn.ping()
             self.memory = RedisSaver(redis_conn)
-            print("✅ RedisSaver berhasil diinisialisasi untuk memori percakapan.")
+            logger.info("✅ RedisSaver berhasil diinisialisasi untuk memori percakapan.")
         except Exception as e:
-            print(f"⚠️ Gagal koneksi ke Redis untuk Checkpointer: {e}. Fallback ke MemorySaver.")
+            logger.warning(f"⚠️ Gagal koneksi ke Redis untuk Checkpointer: {e}. Fallback ke MemorySaver.")
             from langgraph.checkpoint.memory import MemorySaver
             self.memory = MemorySaver()
 
         # 5. Create the LangGraph Agent Core
-        print("Membangun Agent State Graph...")
+        logger.info("Membangun Agent State Graph...")
         self.agent = create_react_agent(
             model=self.llm,
             tools=self.tools,
@@ -119,17 +123,17 @@ class PMBRagEngine:
             rewritten = response.content.strip().strip('"')
             if len(rewritten) < 5:
                 return query
-            print(f'Query Rewrite: "{query}" → "{rewritten}"')
+            logger.info(f'Query Rewrite: "{query}" → "{rewritten}"')
             return rewritten
         except Exception as e:
-            print(f"Query rewrite gagal (menggunakan query asli): {e}")
+            logger.warning(f"Query rewrite gagal (menggunakan query asli): {e}")
             return query
 
     def ask(self, query: str, session_id: str = "default_session") -> dict:
         import time
 
         start_time = time.time()
-        print(f"\nPertanyaan User [{session_id}]: {query}")
+        logger.info(f"\nPertanyaan User [{session_id}]: {query}")
 
         # Step 1-2: Query Rewriting (Agentic RAG)
         rewritten_query = self._rewrite_query(query)
@@ -203,7 +207,7 @@ class PMBRagEngine:
     async def ask_stream(self, query: str, session_id: str = "default_session"):
         import time
         start_time = time.time()
-        print(f"\nPertanyaan User [{session_id}] (Streaming): {query}")
+        logger.info(f"\nPertanyaan User [{session_id}] (Streaming): {query}")
 
         # Step 1-2: Query Rewriting
         rewritten_query = self._rewrite_query(query)
