@@ -16,10 +16,10 @@ load_dotenv()
 
 class GeminiJudge(DeepEvalBaseLLM):
     def __init__(self):
-        # Gemini 1.5 Flash: andal untuk output JSON terstruktur,
+        # Gemini 2.5 Pro Preview: andal untuk output JSON terstruktur,
         # quota besar, pool terpisah dari Groq (RAG)
         self.model = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview",
+            model="gemini-2.5-flash",
             google_api_key=os.getenv("GEMINI_API_KEY"),
             temperature=0,
         )
@@ -35,7 +35,7 @@ class GeminiJudge(DeepEvalBaseLLM):
         return res.content
 
     def get_model_name(self):
-        return "Gemini 1.5 Flash"
+        return "Gemini 2.5 Pro Preview"
 
 llm_judge = GeminiJudge()
 rag_engine = PMBRagEngine()

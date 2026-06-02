@@ -25,6 +25,13 @@ class Settings(BaseSettings):
     redis_db: int = 0
     redis_cache_ttl: int = 3600  # seconds (1 jam)
 
+    # === Database ===
+    db_host: str = "localhost"
+    db_port: int = 3306
+    db_user: str = "root"
+    db_password: str = ""
+    db_name: str = "pmb_itenas"
+
     # === Security / CORS ===
     allowed_origins: list[str] = [
         "http://localhost:8501", 

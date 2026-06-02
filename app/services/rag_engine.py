@@ -235,7 +235,6 @@ class PMBRagEngine:
         detailed_sources = []
         retrieval_context = []
 
-        import json
         for msg in messages:
             if msg.type == "tool":
                 sources_used.append(msg.name)
@@ -267,16 +266,4 @@ class PMBRagEngine:
             "sources": deduped_detailed_sources,
             "retrieval_context": retrieval_context,
             "latency": latency
-        }
-
-        processing_time = round(time.time() - start_time, 2)
-
-        return {
-            "query": query,
-            "rewritten_query": rewritten_query,
-            "answer": answer,
-            "source": source_str,
-            "detailed_sources": deduped_detailed_sources,
-            "retrieval_context": retrieval_context,
-            "latency": processing_time,
         }

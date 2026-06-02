@@ -146,9 +146,9 @@ def get_scholarship_info(beasiswa: str) -> str:
     if not target_filepath:
         for file in os.listdir(target_dir):
              if file.endswith(".json") and beasiswa_clean in file.lower():
-                 target_filepath = os.path.join(target_dir, file)
-                 matched_filename = file
-                 break
+                  target_filepath = os.path.join(target_dir, file)
+                  matched_filename = file
+                  break
 
     if not target_filepath:
         # Return a list of all available scholarships

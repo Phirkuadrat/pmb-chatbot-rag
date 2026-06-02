@@ -17,7 +17,9 @@
     "Melengkapi profil pendaftaran di laman osc.medcom.id",
     "Memiliki motivasi untuk kuliah"
   ],
-  "benefit": ["Bantuan biaya pendidikan penuh selama masa studi 4 tahun."],
+  "benefit": [
+    "Bantuan biaya pendidikan penuh selama masa studi 4 tahun."
+  ],
   "timeline_beasiswa": [
     {
       "jenis_kegiatan": "Masa Pendaftaran Beasiswa OSC S2",

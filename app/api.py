@@ -1,9 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.responses import StreamingResponse
-import redis
-import hashlib
 import json as _json
-from typing import Optional
 from functools import lru_cache
 
 from app.core.config import settings
@@ -13,7 +10,7 @@ from app.services.rag_engine import PMBRagEngine
 router = APIRouter()
 from app.services.ingestion import run_ingestion
 
-@router.get("/ingest")
+@router.post("/ingest")
 async def trigger_ingestion():
     try:
         run_ingestion()

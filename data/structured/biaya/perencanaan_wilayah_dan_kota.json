@@ -1,8 +1,10 @@
 {
   "program_studi": "Perencanaan Wilayah dan Kota",
-  "jenjang": "Sarjana (S1)",
-  "akreditasi": "B",
-  "biaya_kuliah": {
+  "akreditasi": "Unggul",
+  "jenjang_tersedia": [
+    "Sarjana (S1)"
+  ],
+  "biaya_sarjana_s1": {
     "semester_1_ganjil": {
       "ukt": 2500000,
       "sks": {
@@ -49,5 +51,6 @@
       "jumlah_uang_kuliah": 8500000,
       "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL)"
     }
-  }
+  },
+  "biaya_magister_s2": null
 }

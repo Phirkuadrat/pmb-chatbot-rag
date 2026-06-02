@@ -16,7 +16,9 @@
     "Melampirkan CV (termasuk foto diri) dan transkrip nilai terakhir menggunakan link google drive",
     "Taat dan patuh terhadap peraturan Universitas/Kampus serta perjanjian Beasiswa"
   ],
-  "benefit": ["Biaya kuliah dan bantuan biaya hidup untuk 2 semester"],
+  "benefit": [
+    "Biaya kuliah dan bantuan biaya hidup untuk 2 semester"
+  ],
   "timeline_beasiswa": [
     {
       "jenis_kegiatan": "Masa Pendaftaran Beasiswa PT. TKG Taekwang Indonesia 2026",

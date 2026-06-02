@@ -10,6 +10,14 @@ load_dotenv()
 VECTOR_DB_DIR = os.getenv("VECTOR_DB_PATH", "./data/chromadb")
 EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
+# Instantiate Globally to avoid loading model every time (Caching)
+_embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+_vector_store = Chroma(
+    persist_directory=VECTOR_DB_DIR,
+    embedding_function=_embeddings
+)
+_cross_encoder = CrossEncoder('cross-encoder/mmarco-mMiniLMv2-L12-H384-v1')
+
 @tool
 def search_knowledge_base(query: str) -> str:
     """Useful for searching ANY unstructured information from the campus knowledge base, such as academic rules, graduation requirements, schedules, scholarship info, registration periods, etc.
@@ -18,14 +26,8 @@ def search_knowledge_base(query: str) -> str:
     Returns:
         JSON string containing relevant paragraphs and source metadata.
     """
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
-    vector_store = Chroma(
-        persist_directory=VECTOR_DB_DIR,
-        embedding_function=embeddings
-    )
-    
     # 1. Base Retrieval (Get top 20 as candidates for Re-Ranker)
-    retriever = vector_store.as_retriever(search_kwargs={"k": 20})
+    retriever = _vector_store.as_retriever(search_kwargs={"k": 20})
     base_docs = retriever.invoke(query)
     
     if not base_docs:
@@ -33,12 +35,9 @@ def search_knowledge_base(query: str) -> str:
         
     # 2. Re-Ranking (CrossEncoder)
     try:
-        # Pake model ringan bahasa Indonesia/Multibahasa untuk reranking
-        cross_encoder = CrossEncoder('cross-encoder/mmarco-mMiniLMv2-L12-H384-v1') 
-        
         # Format pasangan [query, document_text]
         pairs = [[query, doc.page_content] for doc in base_docs]
-        scores = cross_encoder.predict(pairs)
+        scores = _cross_encoder.predict(pairs)
         
         # Gabungkan doc dengan score-nya
         scored_docs = list(zip(base_docs, scores))

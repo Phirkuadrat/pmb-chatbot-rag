@@ -4,6 +4,7 @@ import requests
 import plotly.graph_objects as go
 import time
 import json
+import re
 from dotenv import load_dotenv
 import os
 from threading import Lock
@@ -15,7 +16,8 @@ MIN_REQUEST_INTERVAL = 10  # detik
 load_dotenv()
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-API_URL     = "http://127.0.0.1:8000/api/v1/chat"
+_BASE = os.getenv("API_BASE_URL", "http://127.0.0.1:8000/api/v1")
+API_URL     = f"{_BASE}/chat"
 METRIC_NAMES = [
     "Contextual Relevancy",
     "Contextual Recall",

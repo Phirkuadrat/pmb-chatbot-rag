@@ -1,14 +1,15 @@
 import streamlit as st
 import requests
 import uuid
+import os
 
 # --- KONFIGURASI HALAMAN ---
 # Set initial_sidebar_state="collapsed" agar sidebar benar-benar hilang secara default
-st.set_page_config(
-    page_title="Tenice - Chatbot PMB Itenas", 
-    page_icon="🎓", 
-    initial_sidebar_state="collapsed"
-)
+# st.set_page_config(
+#     page_title="Tenice - Chatbot PMB Itenas", 
+#     page_icon="🎓", 
+#     initial_sidebar_state="collapsed"
+# )
 
 # --- SUNTIKAN CUSTOM CSS ---
 st.markdown("""
@@ -78,9 +79,10 @@ if "session_id" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# API Endpoint (Sesuaikan dengan backend Anda)
-API_URL = "http://127.0.0.1:8000/api/v1/chat"
-API_STREAM_URL = "http://127.0.0.1:8000/api/v1/chat/stream"
+# API Endpoint (Bisa di-override via .env: API_BASE_URL)
+_BASE = os.getenv("API_BASE_URL", "http://127.0.0.1:8000/api/v1")
+API_URL = f"{_BASE}/chat"
+API_STREAM_URL = f"{_BASE}/chat/stream"
 
 # --- HEADER UI (Dengan Tombol Reset di Kanan) ---
 col1, col2 = st.columns([3, 1])

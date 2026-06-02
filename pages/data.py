@@ -5,12 +5,12 @@ import pandas as pd
 from io import BytesIO
 
 # --- KONFIGURASI HALAMAN ---
-st.set_page_config(
-    page_title="Tenice KB Manager",
-    page_icon="🗄️",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# st.set_page_config(
+#     page_title="Tenice KB Manager",
+#     page_icon="🗄️",
+#     layout="wide",
+#     initial_sidebar_state="expanded"
+# )
 
 # --- KUSTOMISASI CSS ---
 st.markdown("""
@@ -140,7 +140,7 @@ with tab_vector:
                         from langchain_chroma import Chroma
                         
                         st.write("Memuat Model Embedding...")
-                        EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+                        EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
                         embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
                         vector_store = Chroma(persist_directory=VECTOR_DB_DIR, embedding_function=embeddings)
                         
@@ -170,9 +170,9 @@ with tab_vector:
                             
                             # 2. Split teks
                             text_splitter = RecursiveCharacterTextSplitter(
-                                chunk_size=1000,
+                                chunk_size=800,
                                 chunk_overlap=150,
-                                separators=["\n\n", "\n", " ", ""]
+                                separators=["\n\n", "\n", ". ", " "]
                             )
                             chunks = text_splitter.split_documents(docs)
                             all_chunks.extend(chunks)
@@ -200,7 +200,7 @@ with tab_vector:
             from langchain_huggingface import HuggingFaceEmbeddings
             from langchain_chroma import Chroma
             
-            EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+            EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
             embeddings_viz = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
             vector_store_viz = Chroma(persist_directory=VECTOR_DB_DIR, embedding_function=embeddings_viz)
             

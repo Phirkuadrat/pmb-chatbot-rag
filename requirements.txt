@@ -9,4 +9,11 @@ langchain-chroma
 langchain-huggingface
 sentence-transformers
 pypdf
-python-dotenv
+python-dotenv
+redis
+langgraph
+langgraph-checkpoint-redis
+deepeval
+streamlit
+pandas
+pymupdf

@@ -1,5 +1,5 @@
 {
-  "nama_jalur_seleksi": "SNBT atau UTBK",
+  "nama_jalur_seleksi": "SNBT",
   "biaya_pendaftaran": 50000,
   "deskripsi": "Institut Teknologi Nasional memberikan kesempatan kepada lulusan SMA dan SMK untuk bisa mengikuti seleksi masuk melalui jalur UTBK SNBT (Seleksi Bersama Berdasarkan Test) Tahun 2025 atau 2026. Sertifikat yang dapat digunakan adalah Sertifikat UTBK/SNBT 2025 dan 2026.",
   "periode": {
@@ -34,6 +34,6 @@
     "Peserta seleksi mengisi formulir pendaftaran jalur UTBK, data diri, dan mengunggah pas foto terbaru melalui laman SPMB Itenas.",
     "Peserta seleksi mengunggah dokumen persyaratan:"
   ],
-  "dokumen_pendaftaran": null,
+  "dokumen_pendaftaran": [],
   "materi_ujian": null
 }

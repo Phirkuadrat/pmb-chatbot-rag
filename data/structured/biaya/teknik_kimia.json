@@ -1,7 +1,9 @@
 {
   "program_studi": "Teknik Kimia",
   "akreditasi": "Baik Sekali",
-  "jenjang_tersedia": ["Sarjana (S1)"],
+  "jenjang_tersedia": [
+    "Sarjana (S1)"
+  ],
   "biaya_sarjana_s1": {
     "semester_1_ganjil": {
       "ukt": 2500000,
@@ -47,7 +49,8 @@
       "biaya_pendaftaran": 500000,
       "biaya_konversi_per_sks": 100000,
       "jumlah_uang_kuliah": 8500000,
-      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL) jenjang S1"
+      "keterangan": "Jalur Rekognisi Pembelajaran Lampau (RPL)"
     }
-  }
+  },
+  "biaya_magister_s2": null
 }
