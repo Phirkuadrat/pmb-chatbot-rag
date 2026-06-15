@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: DP - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Pengantar Transformasi Digital (2 SKS), Gambar Bentuk 1 (3 SKS), Gambar Konstruktif 1 (3 SKS), Rupa Dasar 2 Dimensi 1 (3 SKS), Rupa Dasar 3 Dimensi 1 (3 SKS), Pengantar Desain Produk (2 SKS).
+
+Semester 2 berisi mata kuliah: Gambar Bentuk 2 (3 SKS), Gambar Konstruktif 2 (3 SKS), Rupa Dasar 2 Dimensi 2 (3 SKS), Rupa Dasar 3 Dimensi 2 (3 SKS), Kreativitas & Inovasi (2 SKS), Teori Estetik (2 SKS), Wawasan Nusantara & Kepariwisataan (2 SKS).
+
+Semester 3 berisi mata kuliah: Proyek Desain 1 (6 SKS), Bahan & Teknologi Produksi 1 (3 SKS), Sketsa Desain (3 SKS), Metode Gambar Produksi (3 SKS), Metodologi Desain (2 SKS), Metode Estetik (2 SKS).
+
+Semester 4 berisi mata kuliah: Proyek Desain 2 (6 SKS), Permodelan Digital (3 SKS), Bahan & Teknologi Produksi 2 (3 SKS), Teknik Presentasi (3 SKS), Teknik Purwarupa Produk (3 SKS), Kewirausahaan 1: Original & Manajemen Perusahaan (3 SKS).
+
+Semester 5 berisi mata kuliah: Proyek Desain 3 (6 SKS), Kritik Desain (2 SKS), Kewirausahaan 2 (2 SKS), Bahasa Inggris 1: Writing (2 SKS), Bahasa Indonesia: Penulisan Karya Ilmiah (2 SKS), MK Pilihan 1 (3 SKS), MK Pilihan 2 (3 SKS).
+
+Semester 6 berisi mata kuliah: Proyek Desain 4 (6 SKS), Desain dan Sosial Budaya (2 SKS), Desain Berkelanjutan (2 SKS), Bahasa Inggris 2: Presentation (2 SKS), MK Pilihan 3 (3 SKS), Perilaku Konsumen (2 SKS), Ergonomi Desain (2 SKS).
+
+Semester 7 berisi mata kuliah: Proyek Desain 5 (4 SKS), Kerja Profesi (6 SKS), Desain untuk Masyarakat (3 SKS), Kolokium (3 SKS).
+
+Semester 8 berisi mata kuliah: Tata Laksana Proyek (2 SKS), HKI & Etika Profesi (2 SKS), Agama (2 SKS), Proyek Akhir (6 SKS).
+
+Mata kuliah pilihan yang tersedia: Desain Furnitur, Green Design, Fotografi Produk, Craft Design, Fashion Design, Bisnis & Industri Kreatif, Footwear Design, Digital Art, Styling Design.
+
+---
+

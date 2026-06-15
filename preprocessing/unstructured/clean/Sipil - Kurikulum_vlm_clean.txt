@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Sipil - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Civics (2 SKS), Mathematics 1 (3 SKS), Introduction to Digital Transformation (2 SKS), Introduction to Sustainable Infrastructure (2 SKS), Physics 1 (3 SKS), Earth Science (2 SKS), Engineering Drawing (2 SKS), Civil Engineering Programming (2 SKS).
+
+Semester 2 berisi mata kuliah: Chemistry (2 SKS), Physics 2 (3 SKS), Fluid Mechanics and Hydraulics (3 SKS), Environmental Science (2 SKS), Statistics & Probability (3 SKS), Mathematics 2 (3 SKS), Transportation Connectivity System (2 SKS), Mapping (2 SKS).
+
+Semester 3 berisi mata kuliah: Matrix Algebra (3 SKS), Discrete Mathematics (2 SKS), Hydrological Engineering (3 SKS), Transportation Engineering (2 SKS), Engineering Mechanics (3 SKS), Soil Mechanics 1 (3 SKS), Construction Materials (3 SKS), Construction Material Testing (1 SKS).
+
+Semester 4 berisi mata kuliah: Differential Mathematics (3 SKS), Steel Structure (3 SKS), Reinforced Concrete Structure (3 SKS), Drainage (2 SKS), Soil Mechanics 2 (3 SKS), Structural Analysis 1 (3 SKS), Traffic Engineering and Management (3 SKS).
+
+Semester 5 berisi mata kuliah: Structural Analysis 2 (3 SKS), English 2 (2 SKS), Bahasa Indonesia (2 SKS), Construction Management (2 SKS), Road Pavement Engineering (2 SKS), Foundation Engineering (3 SKS), Road Geometric Engineering (2 SKS), Construction Method (2 SKS).
+
+Semester 6 berisi mata kuliah: Advanced Reinforced Concrete Structure (3 SKS), Coastal and Port Engineering (3 SKS), Hydraulic Structure (2 SKS), Retaining wall (2 SKS), Construction Equipment (2 SKS), Airport Engineering (2 SKS), Engineering Economics (2 SKS), Elective Course 1 (2 SKS).
+
+Semester 7 berisi mata kuliah: English 2 (2 SKS), Civil Engineering Connectivity Infrastructure Design (4 SKS), Internship (3 SKS), Soil Improvement (2 SKS), Advanced Steel Structure (3 SKS), Elective Course 2 (2 SKS).
+
+Semester 8 berisi mata kuliah: Religion (2 SKS), Entrepreneurship (2 SKS), Final Project (4 SKS), Elective Course 3 (2 SKS), Elective Course 4 (2 SKS).
+
+Mata kuliah pilihan yang tersedia: Irrigation Engineering (2 SKS), River Engineering (2 SKS), Soil Investigation (2 SKS), Earthquake Engineering (2 SKS), Bridge Engineering (2 SKS), Numerical Method (2 SKS), Reservoir Optimization (2 SKS), Wood Structure (2 SKS), Transportation Softwares (2 SKS), Geotechnical Softwares (2 SKS), Construction Engineering Management Softwares (2 SKS), Advanced Port Planning (2 SKS), Prestressed Concrete Structure (2 SKS), Water Damage Control (2 SKS), Legal Aspects & Contract Administration (2 SKS), Building Engineering (2 SKS), Construction Cost Estimation (2 SKS), Dynamic of Structure (2 SKS), Railroad Engineering (2 SKS), Road Maintenance & Rehabilitation (2 SKS), Building Information Modelling (2 SKS), Disaster Mitigation (2 SKS), Advanced Construction Method (2 SKS), Structural Softwares (2 SKS), Water Resources Softwares (2 SKS), Environmental Impact Analysis (2 SKS), Swamp Engineering (2 SKS), Highway Safety Engineering (2 SKS), Introduction to Transportation Economics (2 SKS), Dynamic of Foundation (2 SKS).
+
+---
+

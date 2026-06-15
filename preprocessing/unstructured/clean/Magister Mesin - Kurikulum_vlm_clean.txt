@@ -1,0 +1,16 @@
+# Data Ekstraksi VLM: Magister Mesin - Kurikulum
+
+## Bagian 1
+
+Berikut adalah daftar mata kuliah yang disajikan dalam kurikulum ini.
+
+Semester 1 berisi mata kuliah: Sistem Energi Termal, Manajemen Energi, Energi Baru Dan Terbarukan, Metode Analisis Teknik, Metode Numerik dan Simulasi.
+
+Semester 2 berisi mata kuliah: Metode Eksperimental, Metodologi Penelitian, Teknologi Pembangkit Listrik 1, Mata Kuliah Pilihan 1, Mata Kuliah Pilihan 2, Seminar Penelitian Tesis 1.
+
+Semester 3 berisi mata kuliah: Teknologi Pembangkit Listrik 2, Mata Kuliah Pilihan 3, Publikasi Ilmiah, Seminar Penelitian Tesis 2.
+
+Semester 4 berisi mata kuliah: Tesis.
+
+---
+

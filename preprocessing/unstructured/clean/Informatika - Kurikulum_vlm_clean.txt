@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Informatika - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (3 SKS), Kewarganegaraan (3 SKS), Matematika (3 SKS), Matematika Komputer (3 SKS), Probabilitas & Statistika (3 SKS), Pengantar Sains Komputer (2 SKS), Algoritma Dasar (3 SKS).
+
+Semester 2 berisi mata kuliah: Pengantar IoT (2 SKS), Basis Data (3 SKS), Matematika Lanjut (3 SKS), Algoritma Lanjut (3 SKS), Pengantar Sains Data (2 SKS), Organisasi & Arsitektur Komputer (3 SKS), Pengantar Transformasi Digital (2 SKS).
+
+Semester 3 berisi mata kuliah: Grafika Komputer Terapan (2 SKS), Interaksi Manusia & Komputer (2 SKS), Pemrograman Basis Data (3 SKS), Pemrograman Dasar (4 SKS), Sistem Operasi (3 SKS), Pemrograman Web (3 SKS), Rekayasa Perangkat Lunak (3 SKS).
+
+Semester 4 berisi mata kuliah: Pemrograman Berorientasi Objek (4 SKS), Jaringan Komputer (4 SKS), Komputasi Paralel & Sistem Terdistribusi (3 SKS), Pengolahan Citra Digital (4 SKS), Pemrograman Web Lanjut (3 SKS).
+
+Semester 5 berisi mata kuliah: Computer Vision (3 SKS), Teknik Multimedia (3 SKS), Kecerdasan Buatan (3 SKS), Data Mining & Information Retrieval (4 SKS), Pemrograman IoT (4 SKS), MK Pilihan 1 (2 SKS), Bahasa Inggris 1 (2 SKS).
+
+Semester 6 berisi mata kuliah: Keamanan Jaringan (2 SKS), Sistem Pakar & Bahasa Alamiah (3 SKS), Pengenalan Ucapan & Teks ke Ucapan (3 SKS), Pemrograman Robotika (3 SKS), Mechanical Learning (4 SKS), Pemrograman Game (3 SKS), MK Pilihan 2 (2 SKS).
+
+Semester 7 berisi mata kuliah: Manajemen Proyek (3 SKS), Metode Penelitian & Pra TA (3 SKS), Praktik Kerja (2 SKS), Informatika Terapan (2 SKS), MK Pilihan 3 (2 SKS), Kewirausahaan (2 SKS), Bahasa Inggris 2 (2 SKS), Agama (2 SKS).
+
+Semester 8 berisi mata kuliah: Tugas Akhir (4 SKS), Bahasa Inggris 3 (2 SKS), MK Pilihan 4 (2 SKS), Bahasa Indonesia (2 SKS).
+
+Mata kuliah pilihan yang tersedia: Jaringan Syaraf Tiruan, Pemrograman Mobile, Bisnis Intelijen, Big Data, Komputasi Awan, Basis Data Lanjut, Transaksi Elektronik, Sistem Operasi Lanjut, Jaringan Komputer Lanjut, Deep Learning.
+
+---
+

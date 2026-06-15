@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Sistem Informasi - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Matematika (3 SKS), Logika Matematika (3 SKS), Algoritma & Pemrograman (3 SKS), Dasar-dasar Sistem Informasi (3 SKS), Pengetahuan Lingkungan (2 SKS).
+
+Semester 2 berisi mata kuliah: Statistika & Probabilitas (3 SKS), Pemrograman Dasar (4 SKS), Matematika Diskrit (3 SKS), Analisa & Desain Sistem 1 (4 SKS), Pengantar Transformasi Digital (2 SKS), Pengantar Bisnis dan Manajemen (2 SKS).
+
+Semester 3 berisi mata kuliah: Basisdata 1 (4 SKS), Interaksi Manusia Komputer (2 SKS), Pemrograman Berorientasi Obyek (4 SKS), Analisa & Desain Sistem 2 (4 SKS), Organisasi & Arsitektur Komputer (2 SKS), Manajemen Sistem Informasi (3 SKS).
+
+Semester 4 berisi mata kuliah: Rekayasa Perangkat Lunak (4 SKS), Struktur Data (3 SKS), Manajemen Proyek Sistem Informasi (3 SKS), Sistem Operasi (2 SKS), Manajemen Proses Bisnis (3 SKS), Basisdata 2 (4 SKS).
+
+Semester 5 berisi mata kuliah: Perencanaan Sumber Daya Enterprise (4 SKS), Bisnis Intelejen (3 SKS), Keamanan dan Manajemen Risiko Sistem Informasi (3 SKS), Bahasa Inggris 1 (2 SKS), Jaringan Komputer (3 SKS), Sistem Informasi Selular (4 SKS).
+
+Semester 6 berisi mata kuliah: Aplikasi Multimedia untuk Masyarakat (3 SKS), Data Mining (3 SKS), Tata Kelola Teknologi Informasi (3 SKS), Pelayanan Teknologi Informasi (3 SKS), Sistem Informasi Berbasis Web (4 SKS), MK Pilihan 1 (3 SKS).
+
+Semester 7 berisi mata kuliah: Agama (2 SKS), Berpikir Kreatif (2 SKS), Pra - Tugas Akhir (2 SKS), Bahasa Inggris 2 (2 SKS), Bahasa Indonesia (2 SKS), MK Pilihan 2 (2 SKS), Analisa Kuantitatif (2 SKS), Etika Profesi & Kewirausahaan (2 SKS), Praktik Kerja (2 SKS).
+
+Semester 8 berisi mata kuliah: Sistem Informasi Perusahaan (3 SKS), Tugas Akhir (4 SKS), Bahasa Inggris 3 (2 SKS), MK Pilihan 3 (2 SKS), MK Pilihan 4 (3 SKS).
+
+Mata kuliah pilihan yang tersedia: Arsitektur Berorientasi Layanan, Pengelolaan Hubungan Pelanggan, Kriptografi, Perencanaan Arsitektur Enterprise, Manajemen Data, Pembelajaran Mesin, Pengelolaan Pengetahuan, Pengujian Perangkat Lunak, Manajemen Pemasaran, Basis Data Non Relasional, Proses Mining, Kecerdasan Buatan.
+
+---
+

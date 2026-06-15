@@ -1,0 +1,14 @@
+# Data Ekstraksi VLM: Magister Industri - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Analisis & Perancangan Teknik Industri Dasar, Falsafah Teknik Industri, Metode Optimisasi, Metodologi Sistem, Analisis Data Multivariat.
+
+Semester 2 berisi mata kuliah: Analitika Bisnis, Metodologi Penelitian, Seminar Penelitian Tesis. Mata kuliah pilihan yang tersedia: Mata Kuliah Pilihan 1, Mata Kuliah Pilihan 2.
+
+Semester 3 berisi mata kuliah: Seminar Kemajuan Tesis. Mata kuliah pilihan yang tersedia: Mata Kuliah Pilihan 3, Mata Kuliah Pilihan 4.
+
+Semester 4 berisi mata kuliah: Tesis.
+
+---
+

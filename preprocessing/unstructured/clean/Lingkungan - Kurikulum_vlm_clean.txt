@@ -1,0 +1,26 @@
+# Data Ekstraksi VLM: Lingkungan - Kurikulum
+
+## Bagian 1
+
+Berikut adalah daftar mata kuliah untuk program studi Lingkungan:
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Pengantar Transformasi Digital (2 SKS), Ilmu Kebumian (2 SKS), Matematika 1 (3 SKS), Fisika (3 SKS), Kimia 1 + P (3 SKS), Gambar Teknik + P (3 SKS).
+
+Semester 2 berisi mata kuliah: Matematika 2 (3 SKS), Statistika 1 (2 SKS), Kimia 2 (3 SKS), Mekanika Fluida 1 + P (3 SKS), Hidrogeologi (2 SKS), Pengantar Mekanika Tanah & Struktur (2 SKS), Dasar Teknik Lingkungan & Resources Recovery (2 SKS), Pengukuran & Analisis Kualitas Lingkungan 1 + P (3 SKS).
+
+Semester 3 berisi mata kuliah: Biologi 1 (2 SKS), Statistika 2 (2 SKS), Mekanika Fluida 2 (2 SKS), Pengukuran & Analisis Kualitas Lingkungan 2 + P (3 SKS), Sistem Informasi Geografis (2 SKS), Perencanaan Sistem Ekodrainase (3 SKS), Kesehatan Lingkungan (2 SKS), Pengelolaan & Konservasi Lingkungan (2 SKS).
+
+Semester 4 berisi mata kuliah: Biologi 2 (3 SKS), Matematika 3 (3 SKS), Desain Pengelolaan Fisika Kimia 1 (3 SKS), Teknik Penyediaan Air Minum (3 SKS), Pengelolaan Persampahan (3 SKS), Pengelolaan B3 dan LB3 (3 SKS).
+
+Semester 5 berisi mata kuliah: Bahasa Indonesia (2 SKS), Bahasa Inggris 1 (2 SKS), Desain Pengolahan Fisika Kimia 2 (3 SKS), Penyaluran Air Limbah (3 SKS), Desain Pengolahan Biologi (3 SKS), Pencemaran Udara (3 SKS), MK Pilihan 1 (2 SKS).
+
+Semester 6 berisi mata kuliah: Bahasa Inggris 2 (2 SKS), Kewirausahaan (3 SKS), Epidemiologi (2 SKS), Pengendalian Pencemaran Udara (3 SKS), Pemodelan Teknik Lingkungan + P (Labkom) (3 SKS), Dasar Perancangan Desain & Penelitian (2 SKS), Proyek Desain Instalasi Pengolahan Air Minum (3 SKS), Manajemen Proyek (2 SKS).
+
+Semester 7 berisi mata kuliah: Desain Pemrosesan Akhir Sampah (3 SKS), Proyek Desain Instalasi Pengolahan Air Limbah (4 SKS), Praktik Kerja (2 SKS), MK Pilihan 2 (2 SKS), MK Pilihan 3 (2 SKS), MK Pilihan 4 (2 SKS), MK Pilihan 5 (2 SKS).
+
+Semester 8 berisi mata kuliah: Agama (2 SKS), Kesehatan & Keselamatan Kerja (2 SKS), Analisis Mengenai Dampak Lingkungan (3 SKS), Teknologi Lingkungan Tepat Guna (3 SKS), Tugas Akhir (6 SKS).
+
+Mata kuliah pilihan yang tersedia: Pemulihan Sumberdaya Persampahan, Teknik Pengumpulan & Pengangkutan Limbah, Sanitasi & Pemulihan Sumberdaya, Hukum & Kebijakan Lingkungan, Pengelolaan Kualitas Udara, Rekayasa Lingkungan Industri Ekstraktif, Ekologi Industri, Audit Lingkungan, Pengendalian Bising, Plumbing & Peralatan Instrumentasi, Ekonomi Lingkungan & Valuasi, Sistem Manajemen Kesehatan & Keselamatan, Toksikologi Lingkungan, Limbah & Energi Terbarukan, Teknologi Bersih.
+
+---
+

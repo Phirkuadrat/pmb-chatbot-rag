@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: DI - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Pengantar Transformasi Digital (2 SKS), Gambar Bentuk (3 SKS), Gambar Konstruktif (3 SKS), Rupa Dasar 2 Dimensi (3 SKS), Rupa Dasar 3 Dimensi (3 SKS), Metoder Berpikir Kreatif (2 SKS).
+
+Semester 2 berisi mata kuliah: Wawasan Budaya (2 SKS), Gambar Dasar Interior (3 SKS), Gambar Teknik Interior (3 SKS), Rupa dan Ruang Interior (3 SKS), Estetika Desain Interior (2 SKS), Metodologi Desain Interior (3 SKS).
+
+Semester 3 berisi mata kuliah: Desain Interior Residencial 1 (5 SKS), Dasar Desain Furnitur (3 SKS), Konstruksi Bangunan (2 SKS), Pengetahuan Bahan Interior (2 SKS), Sketsa Proyek (3 SKS), Pengantar Arsitektur (2 SKS), Sejarah Desain Interior (2 SKS).
+
+Semester 4 berisi mata kuliah: Desain Interior Residencial 2 (5 SKS), Desain Furnitur Sarana Kerja (3 SKS), Konstruksi Desain Interior (3 SKS), Gambar Digital Interior (3 SKS), Psikologi Desain Interior (2 SKS), Ergonomi Interior (2 SKS), Utilitas Bangunan (2 SKS).
+
+Semester 5 berisi mata kuliah: Desain Interior Komersial (5 SKS), Desain Furnitur Sarana Simpan (3 SKS), Bahan dan Proses (2 SKS), Rendering Digital Interior (3 SKS), Desain Interior dan Ekologi (2 SKS), Bahasa Indonesia (2 SKS), Bahasa Inggris 1 (2 SKS).
+
+Semester 6 berisi mata kuliah: Desain Interior Publik (6 SKS), Desain Furnitur Sarana Duduk (4 SKS), Manajemen Proyek Interior 1 (2 SKS), Metode Presentasi (2 SKS), MK Pilihan 1 (2 SKS), MK Pilihan 2 (3 SKS).
+
+Semester 7 berisi mata kuliah: Seminar Tugas Akhir (4 SKS), Peraturan Bangunan dan K3 (2 SKS), Ekonomi Kreatif & Pariwisata (2 SKS), Bahasa Inggris 2 (2 SKS), Kerja Profesi (3 SKS), MK Pilihan 3 (2 SKS), MK Pilihan 4 (3 SKS).
+
+Semester 8 berisi mata kuliah: Tugas Akhir (6 SKS), Etika Profesi Desain Interior (2 SKS), Kewirausahaan Desain Interior (2 SKS), Agama (2 SKS).
+
+Mata kuliah pilihan yang tersedia: Penelitian Desain Interior, Fotografi Interior, Desain Interior Kontemporer, Tinjauan Desain Interior, Pemodelan Digital, Desain Armatur Lampu, Estetika Sunda, Elemen Estetis Interior, Desain Panggung & Pameran, Manajemen Proyek Interior 2.
+
+---
+

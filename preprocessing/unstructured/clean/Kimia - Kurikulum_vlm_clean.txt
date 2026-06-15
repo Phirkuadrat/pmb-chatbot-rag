@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Kimia - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Kalkulus 1 (3 SKS), Fisika 1 (3 SKS), Kimia Dasar (3 SKS), Asas Teknik Kimia 1 (3 SKS), Ilmu Lingkungan (2 SKS).
+
+Semester 2 berisi mata kuliah: Pengantar Transformasi Digital (2 SKS), Kalkulus 2 (3 SKS), Fisika 2 (3 SKS), Kimia Fisik (3 SKS), Proses Industri Kimia (3 SKS), Asas Teknik Kimia 2 (2 SKS), Mikrobiologi Dasar (2 SKS).
+
+Semester 3 berisi mata kuliah: Kimia Organik (3 SKS), Matematika Teknik Kimia 1 (3 SKS), Termodinamika Teknik Kimia (3 SKS), Mekanika Fluida & Partikel (3 SKS), Teknik Reaksi Kimia 1 (3 SKS), Alat Industri Kimia (3 SKS).
+
+Semester 4 berisi mata kuliah: Kimia Analitik (3 SKS), Matematika Teknik Kimia 2 (3 SKS), Kesetimbangan Fasa & Reaksi (2 SKS), Operasi Perpindahan Kalor (3 SKS), Teknik Reaksi Kimia 2 (3 SKS), Perancangan Alat Proses (3 SKS), Bahan Konstruksi (2 SKS).
+
+Semester 5 berisi mata kuliah: Operasi Perpindahan Massa (3 SKS), Pengendalian Proses (3 SKS), Ekonomi Proses (2 SKS), Kajian Teknologi Kimia 1 (3 SKS), Sistem Utilitas (3 SKS), Manajemen Proyek & Industri Kimia (2 SKS), MK Pilihan 1 (3 SKS).
+
+Semester 6 berisi mata kuliah: Perancangan Proses Kimia (3 SKS), Pengolahan Air & Limbah Industri (3 SKS), Keselamatan Proses Kimia (3 SKS), Kajian Teknologi Kimia 2 (3 SKS), Penulisan Usulan Penelitian (2 SKS), MK Pilihan 2 (3 SKS).
+
+Semester 7 berisi mata kuliah: Agama (2 SKS), Bahasa Inggris 1 (2 SKS), Kewirausahaan (2 SKS), Praktik Kerja (2 SKS), Perancangan Pabrik (4 SKS), MK Pilihan 3 (3 SKS), MK Pilihan 4 (3 SKS).
+
+Semester 8 berisi mata kuliah: Bahasa Indonesia (2 SKS), Bahasa Inggris 2 (2 SKS), Tugas Akhir (4 SKS), Peristiwa Perpindahan (3 SKS), Simulasi Proses (3 SKS), MK Pilihan 5 (3 SKS).
+
+Mata kuliah pilihan yang tersedia: Teknologi Daur Ulang & Pemanfaatan CO2, Statistik & Rancangan Percobaan, Teknologi Cat & Pelapisan, Teknologi Membran, Teknologi Polimer, Teknologi Bioproses, Kapita Selekta B, Teknologi Minyak Atsiri, Energi Terbarukan, Teknologi Adhesif Industri Kayu, Teknologi Nano, Kapita Selekta A, Korosi.
+
+---
+

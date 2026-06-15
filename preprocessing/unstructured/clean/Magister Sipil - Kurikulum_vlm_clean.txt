@@ -1,0 +1,12 @@
+# Data Ekstraksi VLM: Magister Sipil - Kurikulum
+
+## Bagian 1
+
+Berikut adalah daftar mata kuliah untuk program Magister Sipil:
+
+Untuk program Geoteknik Infrastruktur Transportasi, Semester 1 berisi mata kuliah: Statistika Rekayasa, Mekanika Tanah Lanjut, Rekayasa Fondasi Lanjut, Rekayasa Tanah Lunak dan Perbaikan Tanah, Perilaku Tanah, Mata Kuliah Pilihan 1, Dinamika Tanah dan Rekayasa Gempa, Penyelidikan Geoteknik Lanjut, Interaksi Tanah dan Struktur. Semester 2 berisi mata kuliah: Metodologi Penelitian dan Publikasi, Masalah Stabilitas dalam Geoteknik, Aplikasi Metode Numerik dalam Geoteknik, Proposal Tesis, Mata Kuliah Pilihan 2, Topik Khusus Rekayasa Geoteknik, Geoteknik Terowongan, Geoteknik Lingkungan. Semester 3 berisi mata kuliah: Kemajuan Penelitian Tesis. Semester 4 berisi mata kuliah: Tesis.
+
+Untuk program Manajemen Infrastruktur Transportasi, Semester 1 berisi mata kuliah: Statistika Rekayasa, Ekonomi Transportasi, Amdal dan Keselamatan Transportasi, Perencanaan dan Pemodelan Transportasi, Manajemen Pemeliharaan Infrastruktur, Mata Kuliah Pilihan 1, Sistem Jaringan Transportasi, Pemodelan Keputusan Diskrit, Angkutan Publik Perkotaan. Semester 2 berisi mata kuliah: Pembiayaan Infrastruktur, Teknologi Preservasi Rehabilitasi Jalan, Metodologi Penelitian dan Publikasi, Proposal Tesis, Mata Kuliah Pilihan 2, Sistem Pendukung Kebijakan Perencanaan, Teknologi Preservasi Rehabilitasi Jembatan, Topik Khusus Manajemen Transportasi. Semester 3 berisi mata kuliah: Kemajuan Penelitian Tesis. Semester 4 berisi mata kuliah: Tesis.
+
+---
+

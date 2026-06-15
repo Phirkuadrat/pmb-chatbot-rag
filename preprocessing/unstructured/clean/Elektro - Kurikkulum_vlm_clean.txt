@@ -1,0 +1,18 @@
+# Data Ekstraksi VLM: Elektro - Kurikkulum
+
+## Bagian 1
+
+Dokumen ini merinci alur studi dan kurikulum program studi Elektro. Alur studi terbagi menjadi empat tahun, dimulai dengan Tahun ke-1 di mana mahasiswa pada Semester 1 dan 2 dibekali dasar teknik, etika, serta pemahaman awal kelistrikan dan digital. Berlanjut ke Tahun ke-2, mahasiswa pada Semester 3 dan 4 mempelajari dasar teknik elektro, elektronik, kontrol, dan kecerdasan buatan. Pada Tahun ke-3, yang mencakup Semester 5 dan 6, mahasiswa merancang sistem mikrokontroler dan mengasah keterampilan melalui praktik industri. Terakhir, Tahun ke-4, yaitu Semester 7 dan 8, difokuskan pada pengembangan solusi cerdas, persiapan tugas akhir, dan pendalaman keahlian industri.
+
+Kurikulum program ini tersusun per semester. Pada Tahun ke-1, Semester 1 meliputi mata kuliah Pancasila (2 SKS), Kewarganegaraan (2 SKS), Algoritma Pemrograman (2 SKS), Dasar Sistem Elektro Cerdas (3 SKS), Kesehatan dan Keselamatan Kerja (2 SKS), Matematika 1 (4 SKS), dan Fisika 1 (3 SKS). Semester 2 mencakup Pengukuran Listrik (2 SKS), Matematika Diskrit (3 SKS), Pengantar Transformasi Digital (2 SKS), Dasar Analisis Rangkaian (2 SKS), Probabilitas dan Statistik (3 SKS), Matematika 2 (3 SKS), dan Fisika 2 (3 SKS).
+
+Untuk Tahun ke-2, Semester 3 terdiri dari Persamaan Diferensial (3 SKS), Dasar Energi Elektrik (3 SKS), Rangkaian Elektrik 1 (3 SKS), Dasar Elektronika (3 SKS), Dasar Telekomunikasi (3 SKS), Pemrograman Komputer (3 SKS), dan Dasar Teknik Elektro 1 (1 SKS). Semester 4 meliputi Aljabar Linier dan Vektor (3 SKS), Elektronika Analog (3 SKS), Rangkaian Elektrik 2 (3 SKS), Elektronika Digital (3 SKS), Dasar Kecerdasan Buatan (3 SKS), Medan Elektromagnetik (3 SKS), dan Dasar Teknik Elektro 2 (1 SKS).
+
+Pada Tahun ke-3, Semester 5 memiliki mata kuliah Agama (2 SKS), Mikrokontroler (2 SKS), Sistem Linear (3 SKS), Jaringan & Komunikasi Data (3 SKS), Aplikasi Teknik Elektro 1 (1 SKS), MK Pilihan 1 (3 SKS), MK Pilihan 2 (3 SKS), dan Sistem Kendali (3 SKS). Semester 6 mencakup Bahasa Indonesia (2 SKS), Bahasa Inggris 1 (2 SKS), Sistem Otomasi (3 SKS), Metode Numerik (2 SKS), Sistem Instrumentasi Cerdas (3 SKS), Praktik Kerja (2 SKS), Aplikasi Teknik Elektro 2 (1 SKS), MK Pilihan 3 (3 SKS), dan MK Pilihan 4 (2 SKS).
+
+Tahun ke-4, Semester 7 memiliki mata kuliah Bahasa Inggris 2 (2 SKS), Kewirausahaan (2 SKS), Metode Penelitian & Seminar Proposal (2 SKS), Perancangan Sistem Cerdas (3 SKS), Teknologi Berorientasi Masyarakat (3 SKS), Aplikasi Teknik Elektro 3 (1 SKS), MK Pilihan 5 (3 SKS), MK Pilihan 6 (3 SKS), dan MK Pilihan 7 (2 SKS). Semester 8 diisi dengan Tugas Akhir (4 SKS), MK Pilihan 8 (2 SKS), MK Pilihan 9 (2 SKS), dan MK Pilihan 10 (2 SKS).
+
+Selain mata kuliah wajib, tersedia juga berbagai mata kuliah pilihan, yang semuanya bernilai 2 SKS. Mata kuliah pilihan tersebut antara lain: Gardu Induk, Instalasi Industri, Pembangkit Energi Elektrik, Smart Grid, Energi Listrik Terbarukan, Sistem Transmisi Komunikasi, Sistem Komunikasi Satelit, Optical Wireless Communication, Kecerdasan Artifisial, Avionik, Computer Vision, Sistem Digital, Manajemen Proyek, Pengukuran Energi Listrik, Aplikasi Motor Elektrik, Kompatibilitas Elektromagnetik, Transportasi Listrik, Elektronika Telekomunikasi, Radar, Navigasi, dan Remote Sensing, Pengolahan Citra, mmWave Technology, Mobile Application, Big Data, Dasar Nano Elektronika, Topik Khusus Teknik Elektro, dan Etika Profesi.
+
+---
+

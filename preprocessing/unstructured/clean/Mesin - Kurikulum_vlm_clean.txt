@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Mesin - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Kalkulus 1 (4 SKS), Material Teknik (3 SKS), Fisika 1 (3 SKS), Pengujian Fisika 1 (1 SKS), Kimia (3 SKS), Menggambar Mesin (2 SKS).
+
+Semester 2 berisi mata kuliah: Pengantar Transformasi Digital (2 SKS), Statika Struktur (3 SKS), Kalkulus 2 (4 SKS), Metalurgi Fisik (2 SKS), Fisika 2 (3 SKS), Pengujian Fisika 2 (1 SKS), Ilmu Bumi (3 SKS), CAD (1 SKS).
+
+Semester 3 berisi mata kuliah: Statistika & Probabilitas (3 SKS), Kinematika (2 SKS), Mekanika Kekuatan Material (3 SKS), Aljabar (4 SKS), Pengujian Material Teknik (1 SKS), Termodinamika Teknik 1 (3 SKS), Mekanika Fluida 1 (3 SKS).
+
+Semester 4 berisi mata kuliah: Proses Manufaktur 1 (3 SKS), Dinamika Teknik (2 SKS), Elemen Mesin 1 (3 SKS), Pengukuran Teknik (2 SKS), Aplikasi Pengukuran Teknik (1 SKS), Termodinamika Teknik 2 (2 SKS), Mekanika Fluida 2 (2 SKS), Perpindahan Panas 1 (2 SKS).
+
+Semester 5 berisi mata kuliah: Proyek Manufaktur (1 SKS), Elemen Mesin 2 (3 SKS), Getaran Mekanik (2 SKS), Teknik Pengaturan (2 SKS), Perpindahan Panas 2 (2 SKS), Desain & Simulasi Teknik (3 SKS), Proyek Manufaktur 2 (2 SKS).
+
+Semester 6 berisi mata kuliah: Bahasa Inggris 1 (2 SKS), Bahasa Indonesia (2 SKS), Hidrolik & Pneumatik (2 SKS), Pengujian Hidrolik Pneumatik (1 SKS), Uji Fenomena Dasar Mesin (1 SKS), Mekatronika (2 SKS), Mesin Konversi Energi (3 SKS), Metode Perancangan Teknik (2 SKS), Aplikasi Teknik Mesin pada Masyarakat (2 SKS).
+
+Semester 7 berisi mata kuliah: Agama (2 SKS), Bahasa Inggris 2 (2 SKS), Kewirausahaan (2 SKS), Proyek Rekayasa Sistem Mekanikal (4 SKS), Uji Prestasi Mesin (1 SKS), MK Pilihan 1 (3 SKS), MK Pilihan 2 (3 SKS), Praktik Kerja (1 SKS).
+
+Semester 8 berisi mata kuliah: Teknologi Energi Baru & Terbarukan (2 SKS), Manajemen Lingkungan (2 SKS), Manajemen Proyek (2 SKS), MK Pilihan 3 (3 SKS), MK Pilihan 4 (3 SKS), Tugas Akhir (5 SKS).
+
+Mata kuliah pilihan yang tersedia: Rekayasa Perpipaan, Proses Pengelasan, Proses Pemesinan, Teknik Plambing, Teknik Pengkondisian Udara & Refrigerasi, Teknik Pembangkit Uap, Bejana Tekan, Teknik Kehandalan, Analisa Kegagalan, Metoda Numerik, Pemilihan Bahan & Proses, Kapita Selekta A, Kapita Selekta C, Proses Pengecoran, Mesin Perkakas, Keselamatan Kerja & Manajemen Risiko, Teknik Penukar Kalor, Teknologi Drone, Inspeksi Umur Peralatan, Manajemen Perawatan Mesin, Metrologi Industri, Mesin Fluida, Kapita Selekta B, Kapita Selekta D.
+
+---
+

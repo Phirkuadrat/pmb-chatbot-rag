@@ -7,7 +7,10 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
 
     # === LLM Configuration ===
-    llm_model_name: str = "llama-3.3-70b-versatile"
+    # llama-3.3-70b-versatile
+    # llama-3.1-8b-instant
+    # qwen/qwen3-32b
+    llm_model_name: str = "qwen/qwen3-32b"
     llm_temperature: float = 0.1
     llm_max_tokens: int = 1024
 

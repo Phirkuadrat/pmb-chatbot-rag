@@ -191,6 +191,16 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
                                 </div>
                                 """
                                 message_placeholder.markdown(html_answer, unsafe_allow_html=True)
+                                
+                            elif data_chunk.get("type") == "error":
+                                answer = "❌ Maaf Kak, saat ini server Tenice sedang sangat sibuk atau melampaui batas penggunaan (Sistem sedang beristirahat sebentar). Silakan coba lagi dalam beberapa menit ya, atau klik tombol **'Chat Baru'**."
+                                html_answer = f"""
+                                <div class="chat-row row-bot">
+                                    <div class="bot-avatar">🤖</div>
+                                    <div class="chat-bubble bubble-bot" style="border-color: red;">{answer}</div>
+                                </div>
+                                """
+                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
                         except json.JSONDecodeError:
                             pass
                             

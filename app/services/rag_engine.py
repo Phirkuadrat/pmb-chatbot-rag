@@ -4,7 +4,9 @@ import logging
 from langchain_groq import ChatGroq
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.redis import RedisSaver
-from langchain_core.messages import SystemMessage
+from langchain_core.messages import SystemMessage, HumanMessage
+from groq import BadRequestError as GroqBadRequestError
+from groq import RateLimitError as GroqRateLimitError
 
 from app.core.config import settings
 from app.tools import get_tuition_fee, search_knowledge_base, get_admission_path, get_scholarship_info
@@ -12,46 +14,56 @@ from app.tools import get_tuition_fee, search_knowledge_base, get_admission_path
 # Configure Logger
 logger = logging.getLogger(__name__)
 
-# === DEFINE THE ENGINE ===
-
 
 class PMBRagEngine:
     def __init__(self):
         logger.info("Menginisialisasi Agentic RAG (Llama 3 via Groq)...")
 
-        # 1. Initialize LLM
+        # Inisialisasi model LLM via Groq
         self.llm = ChatGroq(
             model=settings.llm_model_name,
             temperature=settings.llm_temperature,
             max_tokens=settings.llm_max_tokens,
         )
 
-        # 2. Register the Tools we created above
+        # Daftarkan tools pencarian data
         self.tools = [get_tuition_fee, search_knowledge_base, get_admission_path, get_scholarship_info]
 
-        # 3. Create instruction block (giving direction & specify format)
-        system_prompt = SystemMessage(
-            content="""Anda adalah Asisten Virtual Cerdas untuk Penerimaan Mahasiswa Baru (PMB) Institut Teknologi Nasional (Itenas) Bandung yang bernama 'Tenice'.
-                # PANDUAN KARAKTER (PERSONA):
-                1. Anda sangat ramah, suportif, antusias, dan senatural manusia layaknya seorang kakak tingkat yang sedang membantu adik-adik calon mahasiswa.
-                2. Gunakan sapaan 'Kakak' untuk menyapa pengguna agar netral secara gender.
-                3. JANGAN mengulang-ulang sapaan pembuka (seperti "Halo Kak!") di setiap balasan jika percakapan sudah berlangsung. Langsung saja to the point menjawab pertanyaannya dengan ramah.
-                4. JANGAN pernah terdengar seperti robot AI yang sedang membaca buku petunjuk. Gunakan bahasa Indonesia kasual yang profesional dan luwes (gabungan bahasa formal dan santai yang enak dibaca).
+        # System Prompt utama dengan persona asisten Itenas
+        self.system_prompt = SystemMessage(
+            content="""Kamu adalah Tenice, asisten virtual PMB (Penerimaan Mahasiswa Baru) Institut Teknologi Nasional (Itenas) Bandung.
 
-                # ATURAN MENGGUNAKAN TOOLS & MENJAWAB:
-                - Anda HANYA boleh memberikan fakta berdasarkan informasi yang didapat dari memanggil alat (tools). JANGAN pernah menebak-nebak atau mengarang fakta (berhalusinasi) mengenai kampus.
-                - Jika user BERTANYA TENTANG BIAYA (UKT, uang kuliah, pendaftaran, dll), Anda WAJIB memanggil tool 'get_tuition_fee'.
-                - Jika user BERTANYA TENTANG JALUR PENDAFTARAN ATAU JADWAL SELEKSI (PMDK, ODT, TKA, UTBK, RPL, Magister dll), Anda WAJIB memanggil tool 'get_admission_path'.
-                - Jika user BERTANYA TENTANG BEASISWA (Daftar beasiswa, Syarat, KIP-K, JFLS, OSC dll), Anda WAJIB memanggil tool 'get_scholarship_info' (Gunakan argumen 'umum' jika ditanya daftarnya).
-                - Jika user BERTANYA TENTANG INFORMASI UMUM (aturan kampus, fasilitas, prospek karir prodi, akreditasi), Anda WAJIB memanggil tool 'search_knowledge_base'.
-                - Output alat (tool) sekarang berbentuk JSON yang mengandung ["content"] dan ["metadata"].
-                - Rangkai ulang KONTEN (content) tersebut ke dalam kalimat Anda sendiri yang sangat luwes dan mengalir. JANGAN sekadar 'copy-paste' mentah-mentah dari data.
-                - Pastikan semua angka nominal (terutama uang) diformat rapi dengan titik ribuan (contoh: Rp 7.500.000).
-                - Jika alat / dokumen tidak mengandung informasi yang ditanyakan (dokumen kosong atau error), Anda harus jujur dan dengan sopan mengatakan: "Maaf Ka, sayangnya informasi mengenai [topik] belum ada di catatan Tenice saat ini. Kakak bisa coba tanyakan hal lain atau mengecek langsung website resmi pmb.itenas.ac.id yaa 🙏".
+Kamu adalah kakak tingkat yang helpful, hangat, dan tahu segalanya tentang Itenas. Kamu ngobrol seperti teman yang peduli — bukan mesin yang membaca SOP.
 
-                # HAL LAINNYA:
-                - Jika user hanya menyapa santai (seperti "Halo", "Hai", "Pagi"), Anda TIDAK PERLU memanggil tool apa pun. Cukup balas sapaannya dengan hangat dan tanyakan: "Halo! Tenice di sini, ada yang bisa dibantu terkait info PMB Itenas?".
-                """
+## Cara Berkomunikasi
+- Bahasa Indonesia santai tapi sopan. Contoh: "Nah, untuk Sistem Informasi Kak..."
+- Sapaan "Kakak" untuk user agar netral gender.
+- Jika percakapan sudah berlangsung, langsung nyambung ke topik — jangan ulangi sapaan.
+- Boleh pakai kata natural: "nah", "jadi gini Kak", "oh iya", "kalau untuk itu..." dll.
+- Jawaban mengalir, bukan daftar kaku — kecuali data memang berbentuk list/tabel.
+- Angka uang selalu pakai format: Rp 7.500.000.
+
+## Memahami Pertanyaan dengan Konteks
+Kamu memiliki riwayat percakapan. Gunakan itu untuk memahami pertanyaan yang ambigu:
+- Singkatan → perluas (IF=Informatika, SI=Sistem Informasi, TI=Teknik Industri, DKV=Desain Komunikasi Visual, PWK=Perencanaan Wilayah dan Kota, dll)
+- Pertanyaan lanjutan tanpa subjek → hubungkan ke topik sebelumnya. Contoh: jika sebelumnya membahas biaya Informatika lalu user bertanya "kalau di SI?", maka kamu tahu maksudnya adalah "biaya di Sistem Informasi".
+- Referensi implisit → selesaikan dari konteks.
+
+## Menggunakan Tools
+Kamu punya 4 tools untuk mencari fakta dari database Itenas:
+- `get_tuition_fee(major)` → biaya UKT, SKS, total biaya kuliah per prodi
+- `get_admission_path(jalur)` → jalur masuk (PMDK, TKA, UTBK, RPL, Magister, dll) dan jadwal seleksi
+- `get_scholarship_info(beasiswa)` → info beasiswa (KIP-K, JFLS, OSC, dll). Gunakan 'umum' untuk daftar lengkap.
+- `search_knowledge_base(query)` → info umum kampus: akreditasi, fasilitas, prospek karir, dll.
+
+Panduan penggunaan tools:
+- **JANGAN memanggil tool** jika informasi penting dari user belum lengkap (misal: user bertanya biaya kuliah secara umum tanpa menyebutkan nama prodi). Cukup jawab dengan bertanya balik untuk melengkapi informasi tersebut (contoh: "Boleh tahu Kakak tertarik ke prodi apa?").
+- **Hanya gunakan tool** saat parameter yang diperlukan sudah jelas disebutkan oleh user atau sudah diketahui dari konteks sebelumnya.
+- Pertanyaan faktual tentang Itenas yang informasinya sudah lengkap → selalu gunakan tool yang sesuai sebelum menjawab.
+- Sapaan, basa-basi, pertanyaan pendapat/non-faktual → jawab langsung secara ramah tanpa memanggil tool.
+- Hasil tools kosong atau tidak relevan → jujur dan arahkan ke pmb.itenas.ac.id.
+
+Selalu rangkai data dari tools ke dalam kalimatmu sendiri — jangan copy-paste mentah."""
         )
 
         # 4. Initialize Checkpointer (Memory)
@@ -62,208 +74,272 @@ class PMBRagEngine:
                 db=settings.redis_db,
                 socket_timeout=1
             )
-            # PING to ensure connection is valid
             redis_conn.ping()
             self.memory = RedisSaver(redis_conn)
-            logger.info("✅ RedisSaver berhasil diinisialisasi untuk memori percakapan.")
+            logger.info("✅ RedisSaver berhasil diinisialisasi.")
         except Exception as e:
-            logger.warning(f"⚠️ Gagal koneksi ke Redis untuk Checkpointer: {e}. Fallback ke MemorySaver.")
+            logger.warning(f"⚠️ Gagal koneksi ke Redis: {e}. Fallback ke MemorySaver.")
             from langgraph.checkpoint.memory import MemorySaver
             self.memory = MemorySaver()
 
-        # 5. Create the LangGraph Agent Core
+        # 5. Build Agent with Memory-Trimming Prompt Modifier
         logger.info("Membangun Agent State Graph...")
+
+        def messages_modifier(state):
+            """
+            Kirim ke LLM: System Prompt + 4 pesan Q&A terakhir + giliran saat ini.
+            Tool messages & intermediate AI tool-call steps dibuang dari history
+            untuk menjaga token tetap minimal.
+            """
+            messages = state["messages"]
+
+            # Temukan batas antara history dan giliran saat ini
+            latest_user_idx = 0
+            for i in range(len(messages) - 1, -1, -1):
+                if getattr(messages[i], "type", "") == "user":
+                    latest_user_idx = i
+                    break
+
+            history = messages[:latest_user_idx]
+            current_turn = messages[latest_user_idx:]
+
+            # Dari history, hanya simpan: pertanyaan User + jawaban final AI
+            # Buang: ToolMessage (hasil retrieval) & AIMessage perantara (tool_calls)
+            filtered_history = []
+            for msg in history:
+                msg_type = getattr(msg, "type", "")
+                if msg_type == "human":
+                    filtered_history.append(msg)
+                elif msg_type == "ai" and msg.content and not getattr(msg, "tool_calls", []):
+                    filtered_history.append(msg)
+
+            # Batasi maksimal 4 pesan (= 2 pasang tanya-jawab)
+            trimmed_history = filtered_history[-4:]
+
+            return [self.system_prompt] + trimmed_history + current_turn
+
         self.agent = create_react_agent(
             model=self.llm,
             tools=self.tools,
-            prompt=system_prompt,
+            prompt=messages_modifier,
             checkpointer=self.memory,
         )
 
-    GREETING_WORDS = {
-        "halo",
-        "hai",
-        "hi",
-        "hey",
-        "pagi",
-        "siang",
-        "sore",
-        "malam",
-        "hola",
-        "hello",
-        "assalamualaikum",
-        "selamat",
-    }
-
-    def _is_greeting(self, query: str) -> bool:
-        """Cek apakah query hanya sapaan singkat yang tidak perlu di-rewrite."""
-        words = set(query.lower().strip().rstrip("!?.").split())
-        # Jika seluruh kata dalam query adalah sapaan, maka ini greeting
-        return len(words) <= 3 and bool(words & self.GREETING_WORDS)
-
-    def _rewrite_query(self, query: str) -> str:
-        if self._is_greeting(query):
-            return query  
-
-        rewrite_prompt = f"""Tulis ulang pertanyaan berikut agar lebih jelas, lengkap, dan optimal untuk pencarian di database informasi kampus.
-
-        Aturan:
-        - Jika ada kata 'Itenas' atau 'ITENAS', pastikan konteksnya selalu mengarah ke 'Institut Teknologi Nasional (Itenas) Bandung'.
-        - Perluas singkatan (IF→Informatika, SI→Sistem Informasi, TI→Teknik Industri, DKV→Desain Komunikasi Visual, PWK→Perencanaan Wilayah dan Kota, dll)
-        - Tambahkan konteks yang implisit (misal: "biaya" → "rincian biaya UKT dan SKS")
-        - Pertahankan bahasa Indonesia
-        - HANYA kembalikan query yang sudah ditulis ulang, TANPA penjelasan tambahan
-        - Jika query sudah cukup jelas, kembalikan apa adanya tanpa perubahan
-
-        Pertanyaan asli: "{query}"
-        Pertanyaan yang ditulis ulang:"""
-
-        try:
-            response = self.llm.invoke(rewrite_prompt)
-            rewritten = response.content.strip().strip('"')
-            if len(rewritten) < 5:
-                return query
-            logger.info(f'Query Rewrite: "{query}" → "{rewritten}"')
-            return rewritten
-        except Exception as e:
-            logger.warning(f"Query rewrite gagal (menggunakan query asli): {e}")
-            return query
+    # ─────────────────────────────────────────────
+    # Public Methods
+    # ─────────────────────────────────────────────
 
     def ask(self, query: str, session_id: str = "default_session") -> dict:
+        """Synchronous call — returns full answer dict."""
         import time
-
         start_time = time.time()
         logger.info(f"\nPertanyaan User [{session_id}]: {query}")
 
-        # Step 1-2: Query Rewriting (Agentic RAG)
-        rewritten_query = self._rewrite_query(query)
-
-        # Define the config for tracking threads (chat history)
         config = {"configurable": {"thread_id": session_id}}
 
-        # Prompt Repetition
-        repeated_query_prompt = f"Tolong jawab pertanyaan berikut: {rewritten_query}\n\n(Sekali lagi, ingat kembali pertanyaan utamanya: '{rewritten_query}')"
+        try:
+            response_state = self.agent.invoke(
+                {"messages": [("user", query)]}, config=config
+            )
+            answer = self._strip_function_tags(response_state["messages"][-1].content)
+            detailed_sources, retrieval_context = self._extract_sources(response_state["messages"])
+        except GroqBadRequestError as e:
+            # Groq 400: Model generated mixed text+tool_call in one response.
+            # Smart fallback: parse tool call from error and execute manually.
+            logger.warning(f"Groq 400 tool_use_failed — smart fallback: {type(e).__name__}")
+            answer, detailed_sources, retrieval_context = self._smart_fallback(query, e)
+        except GroqRateLimitError as e:
+            # Groq 429: Token/request rate limit exceeded.
+            logger.warning(f"Groq 429 rate limit: {e}")
+            answer = (
+                "Maaf Kak, saat ini server Tenice sedang sangat sibuk atau melampaui batas penggunaan "
+                "(Sistem sedang beristirahat sebentar). Silakan coba lagi dalam beberapa menit ya, "
+                "atau klik tombol **'Chat Baru'**."
+            )
+            detailed_sources, retrieval_context = [], []
 
-        # The agent dynamically decides which tools to run, runs them, and generates final reply
-        response_state = self.agent.invoke(
-            {"messages": [("user", repeated_query_prompt)]}, config=config
-        )
-
-        # The final answer is the last AI message in the state
-        answer = response_state["messages"][-1].content
-
-        # Extract traces (what tools were called) for logging and metadata extraction
-        sources_used = []
-        detailed_sources = []
-        retrieval_context = []  # Teks chunk asli untuk DeepEval
-
-        for msg in response_state["messages"]:
-            if msg.type == "tool":
-                sources_used.append(msg.name)
-                # Try parsing the metadata from our new JSON tool outputs
-                try:
-                    tool_output = json.loads(msg.content)
-
-                    # Ekstrak metadata sumber dokumen
-                    if "metadata" in tool_output:
-                        detailed_sources.extend(tool_output["metadata"])
-
-                    # Ekstrak teks chunk asli (content) untuk DeepEval retrieval_context
-                    if "content" in tool_output and tool_output["content"]:
-                        # Pisahkan per paragraf jika ada beberapa chunk
-                        raw_content = tool_output["content"]
-                        chunks = [
-                            c.strip() for c in raw_content.split("\n\n") if c.strip()
-                        ]
-                        retrieval_context.extend(chunks)
-
-                except Exception:
-                    pass
-
-        source_str = "Agent (General Knowledge)"
-        if sources_used:
-            # deduplicate string names
-            sources_used = list(set(sources_used))
-            source_str = f"Agent Tools: {', '.join(sources_used)}"
-
-        # Deduplicate the parsed metadata dicts (by document name and row/page)
-        seen = set()
-        deduped_detailed_sources = []
-        for d in detailed_sources:
-            t = tuple(d.items())
-            if t not in seen:
-                seen.add(t)
-                deduped_detailed_sources.append(d)
-
-        # 5. Build Result Dictionary
-        result = {
+        return {
             "answer": answer,
-            "detailed_sources": deduped_detailed_sources,
+            "detailed_sources": detailed_sources,
             "retrieval_context": retrieval_context,
             "latency": round(time.time() - start_time, 2),
         }
-        return result
 
     async def ask_stream(self, query: str, session_id: str = "default_session"):
+        """Async streaming call — yields chunks then final metadata."""
         import time
         start_time = time.time()
         logger.info(f"\nPertanyaan User [{session_id}] (Streaming): {query}")
 
-        # Step 1-2: Query Rewriting
-        rewritten_query = self._rewrite_query(query)
-
-        # Define the config for tracking threads (chat history)
         config = {"configurable": {"thread_id": session_id}}
 
-        # Prompt Repetition
-        repeated_query_prompt = f"Tolong jawab pertanyaan berikut: {rewritten_query}\n\n(Sekali lagi, ingat kembali pertanyaan utamanya: '{rewritten_query}')"
+        try:
+            # Stream token-by-token
+            async for msg, metadata in self.agent.astream(
+                {"messages": [("user", query)]},
+                config=config,
+                stream_mode="messages"
+            ):
+                msg_type = getattr(msg, "type", "")
+                if msg.content and msg_type in ("ai", "AIMessageChunk") and not getattr(msg, "tool_calls", []):
+                    yield {"type": "chunk", "content": msg.content}
 
-        # 1. Stream the tokens (AI message chunks)
-        async for msg, metadata in self.agent.astream(
-            {"messages": [("user", repeated_query_prompt)]}, 
-            config=config, 
-            stream_mode="messages"
-        ):
-            if msg.content and getattr(msg, "type", "") == "ai" and not msg.tool_calls:
-                yield {"type": "chunk", "content": msg.content}
-                
-        # 2. Get the final state to extract metadata
-        state = self.agent.get_state(config)
-        messages = state.values.get("messages", [])
-        
-        sources_used = []
+            # After streaming, extract metadata from final state
+            state = self.agent.get_state(config)
+            all_messages = state.values.get("messages", [])
+            detailed_sources, retrieval_context = self._extract_sources(all_messages)
+
+        except GroqBadRequestError as e:
+            # Groq 400: Smart fallback—parse tool from error, execute it, answer with data.
+            logger.warning(f"Groq 400 tool_use_failed (stream) — smart fallback: {type(e).__name__}")
+            fallback_answer, detailed_sources, retrieval_context = self._smart_fallback(query, e)
+            # Yield fallback answer word-by-word for consistent streaming UI
+            for word in fallback_answer.split(" "):
+                yield {"type": "chunk", "content": word + " "}
+        except GroqRateLimitError as e:
+            # Groq 429: Token/request rate limit exceeded.
+            logger.warning(f"Groq 429 rate limit (stream): {e}")
+            rate_msg = (
+                "Maaf Kak, saat ini server Tenice sedang sangat sibuk atau melampaui batas penggunaan "
+                "(Sistem sedang beristirahat sebentar). Silakan coba lagi dalam beberapa menit ya, "
+                "atau klik tombol **'Chat Baru'**."
+            )
+            for word in rate_msg.split(" "):
+                yield {"type": "chunk", "content": word + " "}
+            detailed_sources, retrieval_context = [], []
+
+        yield {
+            "type": "metadata",
+            "sources": detailed_sources,
+            "retrieval_context": retrieval_context,
+            "latency": round(time.time() - start_time, 2),
+        }
+
+    # ─────────────────────────────────────────────
+    # Private Helpers
+    # ─────────────────────────────────────────────
+
+    def _smart_fallback(self, query: str, error: GroqBadRequestError) -> tuple[str, list, list]:
+        """
+        Smart fallback ketika Groq mengembalikan 400 tool_use_failed.
+        Langkah:
+          1. Parse 'failed_generation' dari error untuk mengekstrak tool name + args.
+          2. Eksekusi tool tersebut secara manual untuk mendapatkan data dari database.
+          3. Berikan hasil tool ke LLM untuk dirangkai menjadi jawaban yang natural.
+          4. Jika gagal, gunakan pure LLM fallback tanpa database.
+        """
+        import re, json as _json
+
+        # Step 1: Extract failed_generation from error body
+        failed_gen = ""
+        try:
+            # GroqBadRequestError stores response body as error.body
+            body = getattr(error, 'body', None) or {}
+            failed_gen = body.get("error", {}).get("failed_generation", "")
+        except Exception:
+            pass
+
+        # Step 2: Parse tool name and args from <function=tool_name{...}> format
+        # Llama 3 uses: <function=tool_name {"key": "val"}> or <function=tool_name{"key": "val"}>
+        tool_result_text = None
+        matched_tool_name = None
+        if failed_gen:
+            # Allow zero or more spaces between tool name and args
+            pattern = re.search(r'<function=(\w+)\s*({.*?})\s*<?\/?function>', failed_gen, re.DOTALL)
+            if not pattern:
+                pattern = re.search(r'<function=(\w+)\s*({[^<]*})', failed_gen, re.DOTALL)
+            if pattern:
+                tool_name = pattern.group(1)
+                try:
+                    args = _json.loads(pattern.group(2))
+                    tool_map = {t.name: t for t in self.tools}
+                    if tool_name in tool_map:
+                        logger.info(f"Smart fallback: manually calling {tool_name}({args})")
+                        tool_result_text = tool_map[tool_name].invoke(args)
+                        matched_tool_name = tool_name
+                except Exception as te:
+                    logger.warning(f"Smart fallback tool execution failed: {te}")
+
+        # Step 3: Call LLM with tool result as injected context
+        if tool_result_text:
+            try:
+                context_prompt = (
+                    f"Berikut adalah data dari database Itenas untuk menjawab pertanyaan user:\n"
+                    f"{tool_result_text}\n\n"
+                    f"Gunakan data di atas untuk menjawab pertanyaan berikut secara natural "
+                    f"(jangan tampilkan JSON mentah, rangkai dalam kalimat yang mengalir):"
+                )
+                response = self.llm.invoke([
+                    self.system_prompt,
+                    HumanMessage(content=query),
+                    HumanMessage(content=context_prompt),
+                ])
+                answer = self._strip_function_tags(response.content)
+                # Parse sources from tool result
+                try:
+                    parsed = _json.loads(tool_result_text)
+                    sources = parsed.get("metadata", [])
+                    context_chunks = [c.strip() for c in parsed.get("content", "").split("\n\n") if c.strip()]
+                except Exception:
+                    sources, context_chunks = [], []
+                return answer, sources, context_chunks
+            except Exception as llm_err:
+                logger.warning(f"Smart fallback LLM with context failed: {llm_err}")
+
+        # Step 4: Pure LLM fallback — no tools, no database
+        # Tell the LLM explicitly: answer from knowledge, NO code blocks, NO function calls.
+        strict_prompt = (
+            "Jawab pertanyaan berikut dari pengetahuanmu secara natural dalam Bahasa Indonesia. "
+            "JANGAN tampilkan kode Python, function call, atau blok kode apapun. "
+            "Jika tidak tahu data pastinya, sampaikan dengan jujur dan sarankan user mengunjungi pmb.itenas.ac.id."
+        )
+        try:
+            response = self.llm.invoke([
+                self.system_prompt,
+                HumanMessage(content=query),
+                HumanMessage(content=strict_prompt),
+            ])
+            return self._strip_function_tags(response.content), [], []
+        except Exception as final_err:
+            logger.error(f"All fallbacks failed: {final_err}")
+            return "Maaf Kak, ada gangguan sementara. Silakan coba ulangi pertanyaan dalam beberapa saat.", [], []
+
+    def _strip_function_tags(self, text: str) -> str:
+        """Remove any leaked <function=...> tags from LLM output.
+        Llama 3 sometimes leaks these into the response content even when
+        tools are not being used as formal tool calls.
+        """
+        import re
+        # Remove <function=...>...</function> or <function=...> standalone tags
+        text = re.sub(r'<function=\w+[^>]*>.*?</function>', '', text, flags=re.DOTALL)
+        text = re.sub(r'<function=\w+[^<]*>', '', text)
+        return text.strip()
+
+    def _extract_sources(self, messages: list) -> tuple[list, list]:
+        """Parse tool messages to extract source metadata and retrieval context chunks."""
         detailed_sources = []
         retrieval_context = []
 
         for msg in messages:
-            if msg.type == "tool":
-                sources_used.append(msg.name)
-                try:
-                    tool_output = json.loads(msg.content)
-                    if "metadata" in tool_output:
-                        detailed_sources.extend(tool_output["metadata"])
-                    if "content" in tool_output and tool_output["content"]:
-                        raw_content = tool_output["content"]
-                        chunks = [c.strip() for c in raw_content.split("\n\n") if c.strip()]
-                        retrieval_context.extend(chunks)
-                except Exception:
-                    pass
+            if getattr(msg, "type", "") != "tool":
+                continue
+            try:
+                tool_output = json.loads(msg.content)
+                if "metadata" in tool_output:
+                    detailed_sources.extend(tool_output["metadata"])
+                if "content" in tool_output and tool_output["content"]:
+                    chunks = [c.strip() for c in tool_output["content"].split("\n\n") if c.strip()]
+                    retrieval_context.extend(chunks)
+            except Exception:
+                pass
 
         # Deduplicate sources
         seen = set()
-        deduped_detailed_sources = []
+        deduped = []
         for d in detailed_sources:
-            t = tuple(d.items())
-            if t not in seen:
-                seen.add(t)
-                deduped_detailed_sources.append(d)
+            key = tuple(sorted(d.items()))
+            if key not in seen:
+                seen.add(key)
+                deduped.append(d)
 
-        latency = round(time.time() - start_time, 2)
-        
-        # 3. Yield the final metadata chunk
-        yield {
-            "type": "metadata",
-            "sources": deduped_detailed_sources,
-            "retrieval_context": retrieval_context,
-            "latency": latency
-        }
+        return deduped, retrieval_context

@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: PWK - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Pengantar Transformasi Digital (2 SKS), Teknik Presentasi & Komunikasi (4 SKS), Statistika untuk Perencanaan (3 SKS), Geologi Lingkungan (2 SKS), Kependudukan (2 SKS), Pengantar Perencanaan Wilayah & Kota (3 SKS).
+
+Semester 2 berisi mata kuliah: Analisis Spasial Dasar (3 SKS), Metode Analisis Perencanaan (4 SKS), Analisis Sumber Daya Alam & Lingkungan (3 SKS), Ekonomi Kota (4 SKS), Proses Perencanaan (4 SKS).
+
+Semester 3 berisi mata kuliah: Bahasa Indonesia (2 SKS), Sistem Informasi Perencanaan (3 SKS), Analisis Lokasi & Pola Ruang (4 SKS), Sosiologi Perkotaan (2 SKS), Pembiayaan Pembangunan (3 SKS), Perencanaan & Pengolahan Lahan (4 SKS).
+
+Semester 4 berisi mata kuliah: Prasarana Wilayah & Kota (4 SKS), Tata Kelola Pembangunan Kota (3 SKS), Aspek Perancangan Kota (3 SKS), Perencanaan & Pengolahan Wilayah (3 SKS), Praktik Perencanaan & Pengelolaan Wilayah (4 SKS).
+
+Semester 5 berisi mata kuliah: Bahasa Inggris 1 (2 SKS), Perencanaan Pengangkutan (3 SKS), Perencanaan & Pengelolaan Kota (3 SKS), Metode Penelitian (4 SKS), Praktik Perencanaan & Pengelolaan Kota (4 SKS), MK Pilihan 1 (2 SKS).
+
+Semester 6 berisi mata kuliah: Bahasa Inggris 2 (2 SKS), Pengelolaan Transportasi (3 SKS), Sains Data untuk Perencanaan (3 SKS), Permasalahan Perencanaan (3 SKS), Praktik Perencanaan & Pengelolaan Perangkutan (4 SKS), MK Pilihan 2 (2 SKS).
+
+Semester 7 berisi mata kuliah: Teknik Evaluasi Perencanaan (3 SKS), Perencanaan Partisipatif (2 SKS), Metode Penelitian Lanjut (4 SKS), Kerja Praktek (3 SKS), MK Pilihan 3 (2 SKS), MK Pilihan 4 (2 SKS), MK Pilihan 5 (2 SKS).
+
+Semester 8 berisi mata kuliah: Kewirausahaan (2 SKS), Agama (2 SKS), Teori Perencanaan (3 SKS), Analisis Kebijakan Publik (3 SKS), Skripsi (6 SKS), MK Pilihan 6 (2 SKS).
+
+Mata kuliah pilihan yang tersedia: Pengembangan Periurban (2 SKS), Pengembangan Kawasan Pesisir (2 SKS), Pengembangan Ekonomi Lokal (2 SKS), Pengelolaan Sektor Informal (2 SKS), Konservasi Kawasan Perkotaan (2 SKS), Ekonomi Kreatif (2 SKS), Kampung Kota (2 SKS), Pengembangan Pariwisata (2 SKS), Fotografi Perkotaan (2 SKS), Sejarah Perencanaan Kota (2 SKS), Isu Gender di Perkotaan (2 SKS), Perencanaan Angkutan Umum (2 SKS), Transportasi Berkelanjutan (2 SKS), Sistem Transportasi Wilayah Metropolitan (2 SKS), Pemasaran Daerah (2 SKS), Manajemen Konflik (2 SKS), Profesi Perencana (2 SKS), Manajemen Risiko Bencana (2 SKS), Ruang Virtual & Perencanaan Spasial (2 SKS), Aspek Kesehatan Kota (2 SKS), Pemodelan Spasial (2 SKS), Pemodelan Sistem Dinamis (2 SKS), Pengembangan Perumahan (2 SKS), Kota Masa Depan (2 SKS), Permasalahan Kontemporer Keruangan (2 SKS).
+
+---
+

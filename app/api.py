@@ -19,11 +19,9 @@ async def trigger_ingestion():
         return {"status": f"Error: {e}"}
 
 
-# Dependency for RAG Engine - Cached to preserve chat history (MemorySaver)
+# Cache engine agar riwayat percakapan tidak hilang antar request
 @lru_cache()
 def get_engine():
-    # Using lru_cache ensures PMBRagEngine and its checkpointer act as a singleton
-    # across requests. Otherwise, memory is wiped clean every HTTP hit.
     return PMBRagEngine()
 
 
@@ -57,8 +55,7 @@ async def chat_stream_endpoint(
 ):
     async def event_generator():
         try:
-            # We don't read from cache for the stream to keep it simple and real-time.
-            # You could add cache logic here if needed.
+            # Stream respon secara real-time tanpa cache
             async for chunk in engine.ask_stream(request.query, request.session_id):
                 yield f"data: {_json.dumps(chunk)}\n\n"
         except Exception as e:

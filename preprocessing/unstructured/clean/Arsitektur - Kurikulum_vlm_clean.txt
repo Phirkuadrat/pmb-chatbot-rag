@@ -1,0 +1,24 @@
+# Data Ekstraksi VLM: Arsitektur - Kurikulum
+
+## Bagian 1
+
+Semester 1 berisi mata kuliah: Pancasila (2 SKS), Kewarganegaraan (2 SKS), Pengantar Transformasi Digital (2 SKS), Desain Perancangan Arsitektur (6 SKS), Dasar Struktur Konstruksi Bangunan (3 SKS), Matematika (2 SKS), Pengantar Arsitektur (2 SKS).
+
+Semester 2 berisi mata kuliah: Perancangan Arsitektur 1 (6 SKS), Struktur Konstruksi 1 (4 SKS), Arsitektur Nusantara (2 SKS), Metode Perancangan (2 SKS), Teknologi Bahan (2 SKS), Perencanaan Tapak (2 SKS).
+
+Semester 3 berisi mata kuliah: Perancangan Arsitektur 2 (6 SKS), Struktur Konstruksi 2 (4 SKS), Dasar Arsitektur Digital (3 SKS), Arsitektur Timur & Barat (2 SKS), Dasar Utilitas Bangunan (2 SKS), Fisika Bangunan (2 SKS).
+
+Semester 4 berisi mata kuliah: Perancangan Arsitektur 3 (6 SKS), Struktur Konstruksi 3 (4 SKS), Permodelan Informasi Bangunan (3 SKS), Pendekatan Ide Desain Arsitektur (2 SKS), Utilitas Bangunan Lanjutan (2 SKS), Manajemen Proyek (2 SKS).
+
+Semester 5 berisi mata kuliah: Perancangan Arsitektur 4 (6 SKS), Struktur Konstruksi 4 (4 SKS), Bahasa Inggris 1 (2 SKS), Bahasa Indonesia (2 SKS), Perumahan & Pemukiman (2 SKS), MK Pilihan 1 (2 SKS).
+
+Semester 6 berisi mata kuliah: Perancangan Arsitektur 5 (6 SKS), Praktik Kerja (3 SKS), Bahasa Inggris 2 (2 SKS), Agama (2 SKS), Simulasi Sains Bangunan (2 SKS), MK Pilihan 2 (2 SKS), MK Pilihan 3 (2 SKS).
+
+Semester 7 berisi mata kuliah: Perancangan Arsitektur 6 (6 SKS), Isu Arsitektural Lingkungan Binaan (4 SKS), Arsitektur Kota (2 SKS), Metodologi Riset Arsitektur (2 SKS), MK Pilihan 4 (2 SKS), MK Pilihan 5 (2 SKS).
+
+Semester 8 berisi mata kuliah: Tugas Akhir (8 SKS), Kewirausahaan (2 SKS), Pranata Pembangunan (2 SKS), MK Pilihan 6 (2 SKS).
+
+Mata kuliah pilihan yang tersedia: Desain Komputasi Arsitektur, Isu Perumahan Permukiman, Industri Properti, Arsitektur Lanskap, Ekonomi Bangunan, Kritik Arsitektur, Arsitektur Energi, Psikologi Arsitektur, Arsitektur Kontekstual, Teknologi Konstruksi, Arsitektur Ekologi, Tipologi-Morfologi Bangunan.
+
+---
+
