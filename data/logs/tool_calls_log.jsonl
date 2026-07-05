@@ -1,0 +1,220 @@
+{"timestamp": "2026-06-17T17:08:45.463741", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-17T17:10:05.651422", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-06-17T17:14:13.718313", "tool_name": "get_admission_path", "args": {"jalur": "semua"}, "status": "hit", "detail": "Daftar semua jalur"}
+{"timestamp": "2026-06-17T17:16:18.484974", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-06-17T17:19:01.093902", "tool_name": "get_admission_path", "args": {"jalur": "tka"}, "status": "hit", "detail": "Mapped to tka.json"}
+{"timestamp": "2026-06-17T17:19:42.921613", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T17:20:40.857794", "tool_name": "get_scholarship_info", "args": {"beasiswa": "osc"}, "status": "hit", "detail": "Mapped to Online Scholarship Competition (OSC) S1.json"}
+{"timestamp": "2026-06-17T18:24:42.651466", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum sistem informasi mata kuliah"}, "status": "hit", "detail": "Returned 7 docs"}
+{"timestamp": "2026-06-17T19:53:07.672904", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T19:53:20.495640", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T19:53:27.596724", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T19:53:36.736910", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-17T20:15:15.268194", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T20:15:35.975577", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T20:23:54.100971", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T20:24:06.287467", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T20:24:13.492649", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T20:24:22.859740", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-17T20:46:45.658393", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T20:46:57.043861", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T20:47:03.950623", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T20:47:13.080805", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-17T20:51:08.212273", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T20:51:19.583315", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T20:51:26.780566", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T20:51:35.815282", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-17T20:55:30.623339", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T20:55:41.554227", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T20:55:49.759325", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T20:55:58.590538", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah"}, "status": "hit", "detail": "Returned 9 docs"}
+{"timestamp": "2026-06-17T23:57:39.426269", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-17T23:57:54.590425", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-17T23:58:25.029494", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-17T23:58:38.235539", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 5 docs"}
+{"timestamp": "2026-06-18T00:40:29.838270", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T00:40:49.229575", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T00:41:03.713600", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T00:41:17.603926", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T01:27:45.222987", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T01:28:07.125419", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T01:28:18.869954", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T01:28:31.022985", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T01:34:22.228101", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T01:34:37.534957", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T01:34:47.131395", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T01:34:59.330239", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T01:46:14.679185", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T01:46:28.446695", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T01:46:41.276015", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T01:46:52.336635", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T01:57:30.508454", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T01:57:44.850538", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T01:57:55.051510", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T01:58:07.317060", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-18T02:10:24.417505", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:10:37.833804", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana S1 Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T02:14:38.691228", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:14:54.717661", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T02:15:09.678236", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T02:15:23.425998", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum sistem informasi itenas mata kuliah"}, "status": "hit", "detail": "Returned 9 docs"}
+{"timestamp": "2026-06-18T02:15:29.964906", "tool_name": "search_knowledge_base", "args": {"query": "mata kuliah wajib dan pilihan sistem informasi itenas kurikulum"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T02:18:18.668824", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:18:34.471491", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana S1 Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T02:22:35.550465", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:22:51.816157", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T02:23:04.089833", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T02:23:17.124028", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-18T02:26:11.109777", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:26:27.176925", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana S1 Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T02:29:24.938895", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T02:29:36.323360", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T17:03:47.226762", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-18T17:04:07.549376", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-18T17:04:10.067872", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-18T17:04:20.644223", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T17:42:33.986860", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T17:42:48.467700", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T17:42:58.851863", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T17:43:11.530059", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T17:59:02.474757", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:12:10.547175", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T18:12:26.093542", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:12:38.082003", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T18:12:51.492994", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-29T18:24:21.020686", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T18:24:35.907190", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:28:56.010558", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T18:29:09.751247", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:29:23.913530", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T18:29:36.487816", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T18:41:23.188856", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T18:41:38.083954", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:41:50.575302", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T18:42:03.150980", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T18:45:53.704504", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T18:46:08.573761", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T18:46:19.202854", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T18:46:31.661831", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T19:03:18.052567", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T19:06:00.230824", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T19:06:15.126664", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T19:06:28.190460", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T19:06:41.130228", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 5 docs"}
+{"timestamp": "2026-06-29T19:18:54.110499", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-29T19:19:08.011737", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-29T19:19:18.120437", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-29T19:19:30.888248", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas mata kuliah"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T19:19:38.278816", "tool_name": "search_knowledge_base", "args": {"query": "mata kuliah wajib Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-29T19:27:26.908997", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi mata kuliah yang dipelajari"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-29T19:31:00.773180", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-30T00:34:57.282645", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T00:35:27.852428", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-30T00:35:48.904796", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T00:36:07.615295", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T00:52:20.172662", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T00:54:05.565913", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T00:54:29.015587", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T00:55:01.675726", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi"}, "status": "hit", "detail": "Returned 4 docs"}
+{"timestamp": "2026-06-30T00:57:57.905208", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T00:58:33.113348", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T00:58:59.895474", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T00:59:24.108392", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T01:19:48.519039", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T01:20:16.781378", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T01:20:38.965805", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T02:03:59.056493", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T02:04:23.540126", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T02:04:45.211508", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T02:05:11.677579", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T02:08:15.703794", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T02:10:34.296648", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T02:10:34.302315", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T02:11:02.448756", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T02:11:22.457363", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T02:11:45.766660", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T02:27:58.019547", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T02:27:58.021129", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T02:34:08.763172", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T02:34:08.763781", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T02:34:42.177333", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-30T02:35:05.212904", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T02:35:28.378236", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T14:34:53.181927", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T14:35:31.030544", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T14:44:18.728925", "tool_name": "search_knowledge_base", "args": {"query": "biaya masuk Informatika jalur UTBK"}, "status": "miss", "detail": "Tidak ada doc melampaui threshold 0.01"}
+{"timestamp": "2026-06-30T14:45:00.589669", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T14:45:44.018026", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T14:58:33.758050", "tool_name": "search_knowledge_base", "args": {"query": "biaya masuk jalur UTBK Informatika"}, "status": "miss", "detail": "Tidak ada doc melampaui threshold 0.01"}
+{"timestamp": "2026-06-30T14:59:05.047021", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T15:00:19.343059", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T15:04:31.971489", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-06-30T15:24:50.069576", "tool_name": "search_knowledge_base", "args": {"query": "biaya masuk UTBK Informatika Itenas"}, "status": "hit", "detail": "Returned 1 docs"}
+{"timestamp": "2026-06-30T15:25:27.123337", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T15:25:44.432037", "tool_name": "get_scholarship_info", "args": {"beasiswa": "semua"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T15:26:07.057573", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum Sistem Informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T15:35:39.700321", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T15:35:39.702206", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T15:40:45.505515", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T15:41:10.804720", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana di Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-30T15:41:34.873301", "tool_name": "get_scholarship_info", "args": {"beasiswa": "umum"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T15:41:56.972662", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum sistem informasi Itenas"}, "status": "hit", "detail": "Returned 8 docs"}
+{"timestamp": "2026-06-30T16:34:59.554495", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T16:35:47.605414", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T16:36:36.380893", "tool_name": "get_scholarship_info", "args": {"beasiswa": "umum"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T16:41:36.293633", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-06-30T16:42:29.522046", "tool_name": "search_knowledge_base", "args": {"query": "syarat kelulusan program sarjana"}, "status": "hit", "detail": "Returned 3 docs"}
+{"timestamp": "2026-06-30T16:42:57.931788", "tool_name": "get_scholarship_info", "args": {"beasiswa": "umum"}, "status": "hit", "detail": "Daftar beasiswa"}
+{"timestamp": "2026-06-30T16:43:36.720241", "tool_name": "search_knowledge_base", "args": {"query": "kurikulum prodi sistem informasi"}, "status": "hit", "detail": "Returned 6 docs"}
+{"timestamp": "2026-06-30T20:55:16.680217", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-06-30T20:55:26.050413", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-06-30T20:55:50.006446", "tool_name": "get_tuition_fee", "args": {"major": "desain komunikasi visual"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-06-30T20:56:04.233016", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-06-30T20:56:25.672815", "tool_name": "search_knowledge_base", "args": {"query": "prodi Desain Komunikasi Visual syarat bebas buta warna"}, "status": "miss", "detail": "Tidak ada doc melampaui threshold 0.01"}
+{"timestamp": "2026-06-30T20:56:39.746709", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-06-30T20:56:52.202463", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-06-30T20:57:03.496573", "tool_name": "get_scholarship_info", "args": {"beasiswa": "bni"}, "status": "hit", "detail": "Mapped to Beasiswa Bank Negara Indonesia (BNI) 2026.json"}
+{"timestamp": "2026-06-30T20:57:23.649402", "tool_name": "search_knowledge_base", "args": {"query": "akreditasi program studi Informatika Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-06-30T20:57:36.948994", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-06-30T21:17:34.524104", "tool_name": "search_knowledge_base", "args": {"query": "biaya masuk Desain Komunikasi Visual jalur UTBK"}, "status": "miss", "detail": "Tidak ada doc melampaui threshold 0.01"}
+{"timestamp": "2026-06-30T21:17:43.671727", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T21:18:04.204066", "tool_name": "get_admission_path", "args": {"jalur": "utbk"}, "status": "hit", "detail": "Mapped to snbt.json"}
+{"timestamp": "2026-06-30T21:18:16.332533", "tool_name": "get_tuition_fee", "args": {"major": "desain komunikasi visual"}, "status": "hit", "detail": "Mapped to desain_komunikasi_visual.json"}
+{"timestamp": "2026-07-01T16:56:07.654441", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T16:56:14.362846", "tool_name": "get_scholarship_info", "args": {"beasiswa": "bni"}, "status": "hit", "detail": "Mapped to Beasiswa Bank Negara Indonesia (BNI) 2026.json"}
+{"timestamp": "2026-07-01T16:56:25.323244", "tool_name": "get_tuition_fee", "args": {"major": "Sistem Informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T16:56:40.988027", "tool_name": "get_admission_path", "args": {"jalur": "odt"}, "status": "hit", "detail": "Mapped to odt.json"}
+{"timestamp": "2026-07-01T16:57:01.954529", "tool_name": "search_admission_requirements", "args": {"keyword": "buta warna"}, "status": "hit", "detail": "Found in 3 paths"}
+{"timestamp": "2026-07-01T16:57:08.876835", "tool_name": "search_admission_requirements", "args": {"keyword": "pengalaman kerja"}, "status": "hit", "detail": "Found in 1 paths"}
+{"timestamp": "2026-07-01T16:57:14.537141", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T16:57:31.821386", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T16:57:59.761972", "tool_name": "search_knowledge_base", "args": {"query": "akreditasi program studi Informatika Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-07-01T16:58:05.369481", "tool_name": "get_scholarship_info", "args": {"beasiswa": "kip"}, "status": "hit", "detail": "Mapped to Beasiswa Kartu Indonesia Pintar (KIP-K) Itenas 2026.json"}
+{"timestamp": "2026-07-01T17:25:35.938030", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T17:25:39.812641", "tool_name": "get_scholarship_info", "args": {"beasiswa": "BNI"}, "status": "hit", "detail": "Mapped to Beasiswa Bank Negara Indonesia (BNI) 2026.json"}
+{"timestamp": "2026-07-01T17:25:41.427124", "tool_name": "get_scholarship_info", "args": {"beasiswa": "BNI"}, "status": "hit", "detail": "Mapped to Beasiswa Bank Negara Indonesia (BNI) 2026.json"}
+{"timestamp": "2026-07-01T17:25:45.577008", "tool_name": "get_tuition_fee", "args": {"major": "Sistem Informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T17:25:51.035568", "tool_name": "get_admission_path", "args": {"jalur": "odt"}, "status": "hit", "detail": "Mapped to odt.json"}
+{"timestamp": "2026-07-01T17:26:02.983838", "tool_name": "search_admission_requirements", "args": {"keyword": "buta warna desain komunikasi visual"}, "status": "miss", "detail": "Keyword not found in any path"}
+{"timestamp": "2026-07-01T17:26:07.177790", "tool_name": "search_admission_requirements", "args": {"keyword": "pengalaman kerja RPL Tipe A Perolehan Kredit"}, "status": "miss", "detail": "Keyword not found in any path"}
+{"timestamp": "2026-07-01T17:26:10.599896", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T17:26:14.331571", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T17:26:24.477934", "tool_name": "search_knowledge_base", "args": {"query": "akreditasi program studi Informatika Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-07-01T17:26:33.095480", "tool_name": "search_knowledge_base", "args": {"query": "akreditasi program studi Informatika Itenas"}, "status": "hit", "detail": "Returned 10 docs"}
+{"timestamp": "2026-07-01T17:26:37.643980", "tool_name": "get_scholarship_info", "args": {"beasiswa": "KIP Kuliah"}, "status": "hit", "detail": "Mapped to Beasiswa Kartu Indonesia Pintar (KIP-K) Itenas 2026.json"}
+{"timestamp": "2026-07-01T17:47:55.961190", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T17:48:02.451066", "tool_name": "get_scholarship_info", "args": {"beasiswa": "bni"}, "status": "hit", "detail": "Mapped to Beasiswa Bank Negara Indonesia (BNI) 2026.json"}
+{"timestamp": "2026-07-01T17:48:10.825724", "tool_name": "get_tuition_fee", "args": {"major": "Sistem Informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T17:48:16.570197", "tool_name": "get_admission_path", "args": {"jalur": "odt"}, "status": "hit", "detail": "Mapped to odt.json"}
+{"timestamp": "2026-07-01T17:48:25.984864", "tool_name": "search_admission_requirements", "args": {"keyword": "buta warna"}, "status": "hit", "detail": "Found in 3 paths"}
+{"timestamp": "2026-07-01T17:48:43.781927", "tool_name": "get_admission_path", "args": {"jalur": "rpl"}, "status": "hit", "detail": "Mapped to rpl.json"}
+{"timestamp": "2026-07-01T17:48:58.155998", "tool_name": "get_tuition_fee", "args": {"major": "Sistem Informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-01T17:49:03.872095", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-01T17:49:16.077195", "tool_name": "search_knowledge_base", "args": {"query": "akreditasi program studi informatika"}, "status": "hit", "detail": "Returned 2 docs"}
+{"timestamp": "2026-07-01T17:49:21.818671", "tool_name": "get_scholarship_info", "args": {"beasiswa": "kip"}, "status": "hit", "detail": "Mapped to Beasiswa Kartu Indonesia Pintar (KIP-K) Itenas 2026.json"}
+{"timestamp": "2026-07-04T01:39:03.864874", "tool_name": "get_admission_path", "args": {"jalur": "semua"}, "status": "hit", "detail": "Daftar semua jalur"}
+{"timestamp": "2026-07-04T01:39:21.306907", "tool_name": "get_admission_path", "args": {"jalur": "pmdk"}, "status": "hit", "detail": "Mapped to pmdk.json"}
+{"timestamp": "2026-07-04T01:40:23.605172", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}
+{"timestamp": "2026-07-04T17:44:48.303902", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-07-04T17:56:17.406756", "tool_name": "get_tuition_fee", "args": {"major": "informatika"}, "status": "hit", "detail": "Mapped to informatika.json"}
+{"timestamp": "2026-07-04T17:56:18.356493", "tool_name": "get_tuition_fee", "args": {"major": "sistem informasi"}, "status": "hit", "detail": "Mapped to sistem_informasi.json"}

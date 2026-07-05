@@ -1,2 +1,0 @@
-# Data Ekstraksi VLM: Itenas-Edufair
-

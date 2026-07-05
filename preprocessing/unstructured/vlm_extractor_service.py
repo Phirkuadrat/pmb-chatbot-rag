@@ -80,16 +80,16 @@ class VLMExtractor:
                 print(f"\n  [RATE LIMIT API] Google API Kuota habis. Menunggu {wait_time} detik untuk retry ke-{attempt+1}...")
                 time.sleep(wait_time)
             except Exception as e:
-                # Untuk exception SDK baru (biasanya tipe Exception beda tapi mengandung 429)
-                if "429" in str(e) or "Quota exceeded" in str(e):
+                # Untuk exception SDK baru (biasanya tipe Exception beda tapi mengandung 429 atau 503)
+                if "429" in str(e) or "Quota exceeded" in str(e) or "503" in str(e):
                     wait_time = 60
-                    print(f"\n  [RATE LIMIT API] Google API Kuota habis (429). Menunggu {wait_time} detik untuk retry ke-{attempt+1}...")
+                    print(f"\n  [RATE LIMIT/BUSY API] Server Google sibuk/habis kuota (429/503). Menunggu {wait_time} detik untuk retry ke-{attempt+1}...")
                     time.sleep(wait_time)
                 else:
                     print(f"  [ERROR] Gagal memproses VLM: {e}")
                     return ""
         
-        print("  [ERROR FATAL] Gagal setelah beberapa kali retry akibat Rate Limit.")
+        print("  [ERROR FATAL] Gagal setelah beberapa kali retry akibat Rate Limit/Server Busy.")
         return ""
 
     def process_pdf(self, pdf_path: str, out_dir: str, start_page: int = 1, end_page: int = None):
@@ -149,125 +149,16 @@ class VLMExtractor:
             
         print(f"[OK] Selesai! Disimpan di: {out_path}")
 
-    def extract_image_vlm(self, pil_image: Image.Image, page_num: int, img_idx: int) -> str:
-        """Kirim gambar (hasil crop dari PDF) ke VLM untuk dideskripsikan."""
-        prompt = f"""
-        Ini adalah gambar yang diekstrak dari halaman {page_num} dokumen profil program studi sebuah kampus.
-        Tugasmu: Deskripsikan informasi faktual yang ada dalam gambar ini dalam kalimat prosa natural.
-        - Jika berisi tabel atau daftar, tuliskan isinya sebagai kalimat: "Tabel ini memuat..."
-        - Jika berisi foto kegiatan mahasiswa, cukup tulis satu kalimat deskripsi singkat.
-        - Jika berisi infografis data/angka, ekstrak angka dan labelnya.
-        - Jika gambar dekoratif tanpa informasi faktual (logo, background, ornamen), kembalikan string kosong.
-        """
-        return self.extract_page(pil_image, prompt, max_retries=3)
-
-    def process_hybrid_page(self, page, filename: str, page_num: int) -> str:
-        """
-        Mengekstrak teks murni dan mendeteksi gambar untuk diproses VLM.
-        Hasilnya diurutkan berdasarkan posisi vertikal (Y) dari atas ke bawah.
-        """
-        # Ambil semua blok teks dari PDF
-        blocks = page.get_text("blocks")
-        items = []
-
-        for block in blocks:
-            if block[6] == 0:  # Deteksi blok teks biasa
-                text = block[4].strip()
-                if text:
-                    items.append((block[1], text))
-                    
-        # Deteksi gambar di dalam halaman
-        image_list = page.get_images(full=True)
-        api_called = False
-        img_count = 0
-
-        for img in image_list:
-            xref = img[0]
-            try:
-                rects = page.get_image_rects(xref)
-            except Exception:
-                continue
-
-            for rect in rects:
-                # Abaikan ornamen atau gambar kecil
-                if rect.width < 100 or rect.height < 100:
-                    continue
-                    
-                img_count += 1
-                y0 = rect.y0
-                print(f"    [Hybrid] Menemukan gambar di y={y0:.1f} ({rect.width:.1f}x{rect.height:.1f} px), memanggil VLM...")
-                
-                # Potong gambar sesuai area
-                mat = fitz.Matrix(150 / 72, 150 / 72)
-                pix = page.get_pixmap(matrix=mat, clip=rect)
-                img_bytes = pix.tobytes("png")
-                pil_img = Image.open(io.BytesIO(img_bytes))
-
-                # Minta deskripsi gambar ke VLM
-                description = self.extract_image_vlm(pil_img, page_num, img_count)
-                if description.strip():
-                    items.append((y0, f"[Informasi dari gambar]: {description.strip()}"))
-                    api_called = True
-
-                # Jeda API jika VLM baru saja dipanggil
-                if api_called:
-                    time.sleep(5)
-                    api_called = False
-
-        # Urutkan elemen dari atas ke bawah halaman
-        items.sort(key=lambda x: x[0])
-
-        # Gabungkan hasil teks dan teks dari gambar
-        return "\n\n".join(content for _, content in items if content.strip())
-
-    def process_hybrid_pdf(self, pdf_path: str, out_dir: str):
-        """Proses PDF campuran teks+gambar dengan Hybrid Extraction."""
-        if not os.path.exists(pdf_path):
-            print(f"File tidak ditemukan: {pdf_path}")
-            return
-
-        filename = os.path.basename(pdf_path)
-        base_name = os.path.splitext(filename)[0]
-        out_path = os.path.join(out_dir, f"{base_name}_hybrid_clean.txt")
-
-        print(f"\n=== Memproses HYBRID: {filename} ===")
-        doc = fitz.open(pdf_path)
-        total_pages = len(doc)
-        all_text_parts = []
-
-        for i, page in enumerate(doc):
-            page_num = i + 1
-            print(f"-> Halaman {page_num}/{total_pages}...")
-            page_content = self.process_hybrid_page(page, filename, page_num)
-            if page_content.strip():
-                all_text_parts.append(page_content.strip())
-
-        doc.close()
-
-        final_text = "\n\n".join(all_text_parts)
-        os.makedirs(out_dir, exist_ok=True)
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(final_text)
-
-        print(f"[OK] Hybrid Extraction selesai! Disimpan di: {out_path}")
-
-
 def main():
     parser = argparse.ArgumentParser(description="VLM Extractor Service for Documents")
     parser.add_argument("--file", type=str, help="Path ke satu file PDF yang ingin diekstrak", required=True)
     parser.add_argument("--outdir", type=str, default="c:/laragon/www/pmb-chatbot-rag/preprocessing/unstructured/clean", help="Folder output")
     parser.add_argument("--start-page", type=int, default=1, help="Halaman awal (1-indexed, default: 1)")
     parser.add_argument("--end-page", type=int, default=None, help="Halaman akhir inklusif (default: semua halaman)")
-    parser.add_argument("--mode", type=str, default="vlm", choices=["vlm", "hybrid"],
-                        help="Mode ekstraksi: 'vlm' (seluruh halaman ke VLM) atau 'hybrid' (teks asli + VLM gambar)")
-    
+
     args = parser.parse_args()
     extractor = VLMExtractor()
-    
-    if args.mode == "hybrid":
-        extractor.process_hybrid_pdf(args.file, args.outdir)
-    else:
-        extractor.process_pdf(args.file, args.outdir, start_page=args.start_page, end_page=args.end_page)
+    extractor.process_pdf(args.file, args.outdir, start_page=args.start_page, end_page=args.end_page)
 
 if __name__ == "__main__":
     main()

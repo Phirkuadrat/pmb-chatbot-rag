@@ -1,0 +1,11 @@
+LOG HASIL EMBEDDING VEKTOR
+==================================================
+Tanggal & Jam    : 22 June 2026, 20:57:24
+Model Embedding  : paraphrase-multilingual-MiniLM-L12-v2
+Dimensi Vektor   : 384 dimensi
+Total Vektor     : 183 vektor
+==================================================
+
+[Chunk 1]
+ID Unik     : 8aa34f3939fde721e6daa4b6698fa08f_0
+Sumber File : preprocessing\unstructured\clean\153 - SK Peraturan Akademik Itenas_2025_clean.txt

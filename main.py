@@ -6,15 +6,14 @@ import logging
 
 # Configure basic logging for Production visibility
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="Chatbot PMB Itenas API",
-    description="Backend RAG menggunakan Llama 3.3 70B, JSON, dan ChromaDB",
-    version="1.0.0"
+    description="Chatbot PMB Itenas API adalah backend RAG menggunakan Qwen3 32B untuk menjawab pertanyaan seputar PMB Itenas",
+    version="1.0.0",
 )
 
 app.add_middleware(
@@ -26,11 +25,8 @@ app.add_middleware(
 
 app.include_router(chat_router, prefix="/api/v1")
 
+
 @app.get("/")
 async def root():
     logger.info("Root healthcheck endpoint called")
-    return {
-        "message": "Server Chatbot PMB Itenas aktif!",
-        "docs": "/docs"
-    }
-
+    return {"message": "Server Chatbot PMB Itenas aktif!", "docs": "/docs"}

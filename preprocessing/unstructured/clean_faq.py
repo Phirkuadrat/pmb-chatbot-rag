@@ -1,28 +1,20 @@
 import os
-import json
-import fitz
-from langchain_core.messages import SystemMessage, HumanMessage
+from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage
 from langchain_groq import ChatGroq
-from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 
-# Konfigurasi LLM via Groq untuk merapikan teks
-# Menggunakan model Llama
-llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
-    temperature=0.1,
-    max_tokens=2048,
-    api_key=os.getenv("GROQ_API_KEY", "")
+# Load environment variables
+load_dotenv()
 
-)
-
-def extract_and_clean_faq(pdf_path: str, clean_path: str):
-    print(f"Membaca PDF: {pdf_path}")
-    doc = fitz.open(pdf_path)
-    raw_text = ""
-    for page in doc:
-        raw_text += page.get_text() + "\n"
+def clean_raw_faq(raw_txt_path: str, clean_md_path: str) -> str:
+    print("Merapikan dan menata ulang teks FAQ menggunakan LLM (Groq Llama 3.3)...")
+    
+    if not os.path.exists(raw_txt_path):
+        raise FileNotFoundError(f"File mentah tidak ditemukan: {raw_txt_path}. Jalankan extract_faq.py terlebih dahulu.")
         
-    print("Merapikan teks menggunakan LLM (Groq)...")
+    with open(raw_txt_path, "r", encoding="utf-8") as f:
+        raw_text = f.read()
+        
     prompt = f"""
     Rapihkan teks mentah hasil ekstraksi PDF berikut menjadi dokumen Markdown yang sangat rapi.
     
@@ -35,70 +27,25 @@ def extract_and_clean_faq(pdf_path: str, clean_path: str):
     {raw_text}
     """
     
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0.1,
+        max_tokens=2048,
+        api_key=os.getenv("GROQ_API_KEY", "")
+    )
+    
     response = llm.invoke([HumanMessage(content=prompt)])
     clean_text = response.content.strip()
     
-    with open(clean_path, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(clean_md_path), exist_ok=True)
+    with open(clean_md_path, "w", encoding="utf-8") as f:
         f.write(clean_text)
         
-    print(f"[OK] Cleaning selesai. Hasil disimpan di: {clean_path}")
+    print(f"[OK] Pembersihan selesai! File bersih disimpan di: {clean_md_path}")
     return clean_text
 
-def chunk_text(clean_text: str, chunks_output_path: str):
-    print("Memotong teks menjadi dokumen-dokumen kecil (Chunking)...")
-    
-    # Pisahkan berdasarkan Heading, lalu berdasar karakter
-    headers_to_split_on = [
-        ("#", "Header 1"),
-        ("##", "Header 2"),
-        ("###", "Header 3"),
-    ]
-    markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on)
-    md_header_splits = markdown_splitter.split_text(clean_text)
-    
-    # Pecah lagi jika ada bagian yang terlalu panjang (meski FAQ umumnya pendek)
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=600,
-        chunk_overlap=50
-    )
-    
-    final_chunks = text_splitter.split_documents(md_header_splits)
-    
-    # Simpan hasil chunk ke file JSON / Markdown agar user bisa baca
-    output_data = []
-    markdown_preview = "# Hasil Chunking FAQ\n\n"
-    
-    for i, chunk in enumerate(final_chunks):
-        metadata = chunk.metadata
-        content = chunk.page_content
-        
-        output_data.append({
-            "chunk_id": i + 1,
-            "metadata": metadata,
-            "content": content
-        })
-        
-        # Format ke Markdown untuk di-preview
-        meta_str = " | ".join([f"{k}: {v}" for k, v in metadata.items()])
-        markdown_preview += f"### Chunk {i + 1}\n"
-        if meta_str:
-            markdown_preview += f"**Konteks**: *{meta_str}*\n\n"
-        markdown_preview += f"> {content}\n\n"
-        markdown_preview += "---\n\n"
-
-    with open(chunks_output_path, "w", encoding="utf-8") as f:
-        f.write(markdown_preview)
-
-    print(f"[OK] Chunking selesai. Menghasilkan {len(final_chunks)} potongan dokumen.")
-    print(f"Hasil chunk bisa dilihat di: {chunks_output_path}")
-
 if __name__ == "__main__":
-    from dotenv import load_dotenv
-    load_dotenv()
+    raw_txt_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\raw\FAQ_PMB_Itenas_2026_raw.txt"
+    clean_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\clean\FAQ_PMB_Itenas_2026_clean.txt"
     
-    pdf_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\raw\FAQ PMB Itenas 2026.pdf"
-    clean_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\clean\FAQ_PMB_Itenas_2026_clean.md"
-    chunks_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\clean\FAQ_chunks_preview.md"
-    
-    cleaned = extract_and_clean_faq(pdf_file, clean_file)
-    chunk_text(cleaned, chunks_file)
+    clean_raw_faq(raw_txt_file, clean_file)

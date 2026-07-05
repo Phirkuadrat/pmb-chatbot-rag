@@ -7,3 +7,5 @@ __pycache__/
 
 # Eval cache
 .deepeval/
+ragas_result_evaluation/
+scratch/

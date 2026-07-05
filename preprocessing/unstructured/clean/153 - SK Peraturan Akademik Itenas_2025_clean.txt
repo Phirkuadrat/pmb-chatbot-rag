@@ -24,7 +24,6 @@ c. Nomor 210/Kpts/YPDSN/2025 tentang Standar Pendidikan Tinggi Institut Teknolog
 
 [Halaman 3]
 MEMUTUSKAN
-TENT ANG
 Menetapkan: KEPUTUSAN
 REKTOR
 INSTITUT
@@ -67,7 +66,6 @@ bahan kajian, proses dan penilaian yang digunakan sebagai pedoman penyelenggaraa
 dengan tujuan untuk meningkatkan pemahaman materi kuliah melalui latihan soal dan diskusi.
 
 [Halaman 4]
-e-mall: rektorat@itenas.ac.id
 17. Asistensi adalah kegiatan pembelajaran terstruktur yang dibimbing oleh dosen atau asisten dosen
 dengan tujuan untuk rneningkatkan kemampuan mahasiswa dalam mata kuliah yang bersifat perancangan.
 18. Rekognisi Pembelajaran Lampau (RPL) adalah pengakuan terhadap capaian pembelajaran yang diperoleh
@@ -149,7 +147,7 @@ terkait.
 
 [Halaman 6]
 BAB Ill
-PROSESPEMBELAJARAN
+PROSES PEMBELAJARAN
 Pasal5
 Bahasa Pengantar
 1. Itenas menyelenggarakan pendidikan
@@ -168,7 +166,7 @@ Semester Antara
 1. Semester Antara adalah semester yang diselenggarakan antara Semester Genap suatu tahun akademik
 dengan Semester Ganjil tahun akademik berikutnya.
 2. Proses pembelajaran efektif pada Semester Antara sekurang-kurangnya 16 (enam belas) kali tatap muka
-tennasuk ETS dan EAS, yang setara dengan kegiatan dalam satu Semester Ganjil atau Semester Genap.
+termasuk ETS dan EAS, yang setara dengan kegiatan dalam satu Semester Ganjil atau Semester Genap.
 3. Penyelenggaraan Semester Antara bertujuan untuk membantu mahasiswa menyelesaikan masa studinya
 tepat waktu dengan memberikan kesempatan kepada mahasiswa memperbaiki nilai mata kuliah
 yang sudah pemah ditempuh atau dalam rangka meningkatkan IPK.
@@ -185,12 +183,11 @@ di Itenas diselenggarakan dengan menerapkan Sistem Kredit Semester (SKS) dan Sis
 satuan kredit semester (sks) untuk menyatakan beban studi mahasiswa,
 beban kerja dosen, pengalaman belajar dan beban penyelenggaraan program akademik.
 3. satuan kredit semester (sks) adalah takaran waktu kegiatan pembelajaran yang di bebankan pada
-mahasiswa per minggu per semester melalui berbagai bentuk kegiatan pembelajaran atau besamya
+mahasiswa per minggu per semester melalui berbagai bentuk kegiatan pembelajaran atau besarnya
 program studi.
 pengakuan atas keberhasilan usaha mahasiswa dalam mengikuti kegiatan kurikuler di suatu
 
 [Halaman 7]
-JI. PHH. Mu1tofa No. 23 Bandung 40124 Indonesia, Telepon: +62-22-7272215, Fax: +62-22-7202892
 4. Sistem Kredit Kemahasiswaan (SKK) adalah sistem penyelenggaraan kegiatan kemahasiswaan
 dengan menggunakan satuan kredit kemahasiswaan (skk) untuk menyatakan beban kegiatan
 dan pengalaman belajar mahasiswa sebagai salah satu usaha peningkatan capaian pembelajaran lulusan
@@ -230,7 +227,6 @@ e. prestasi mahasiswa dalam kegiatan tersebut.
 kokurikuler dan ekstrakurikuler, prestasi atau posisi mahasiswa dalam kegiatan seperti yang dimaksud pada ayat 1 pasal ini diatur dalam Lampiran yang merupakan bagian tidak terpisahkan dari Keputusan ini.
 
 [Halaman 8]
-JI. PHH. Mu1tofa No. 23 Bandung 40124 Indonesia, Telepon: +62-22-7272215, Fax: +62-22-7202892
 Pasal12
 Pemenuhan Kurikulum
 1. Mahasiswa wajib memenuhi ketentuan beban sks dan·skk yang diatur dalam kurikulum program studi.
@@ -274,7 +270,6 @@ yang telah ditetapkan.
 dalam ujian atau bentuk penilaian lainnya.
 
 [Halaman 9]
-JI. PHH. Mu1tofa No. 23 Bandung 40124 Indonesia, Telepon: +62-22-7272215, Fax: +62-22-7202892
 Pasal16
 Etika Akademik
 1. Mahasiswa wajib menjunjung tinggi nilai kejujuran, tanggung jawab, dan integritas akademik.
@@ -389,7 +384,7 @@ perkuliahan sesuai jadwal dalam Kalender Akademik.
 dari UKT.
 Pasal23
 Pengambilan Beban sks per Semester
-1. Beban belajar mahasiswa Program Sariana tiap Semester Reguler diatur sebagai berikut:
+1. Beban belajar mahasiswa Program Sarjana tiap Semester Reguler diatur sebagai berikut:
 a. mahasiswa tahun pertama memiliki beban belajar yang disamakan dengan jumlah sks/semester
 di semester 1 (satu) sesuai dengan program studinya;
 b. mahasiswa selain seperti yang dimaksud pada ayat 1 huruf a pasal int yang memiliki IPS
@@ -400,7 +395,7 @@ lebih besar dari 2,75 (dua koma tujuh lima) sampai dengan 3,00 (tiga koma nol no
 mata kuliah dengan beban sebanyak-banyaknya 22 (dua puluh dua) sks;
 d. mahasiswa selain seperti yang dimaksud pada ayat 1 huruf a pasal ini, yang memiliki IPS
 lebih besar dari 3,00 (tiga koma nol nol) dapat mengambil mata kuliah dengan beban sebanyak-banyaknya 24 (dua puluh empat) sks; dan
-e. besamya jumlah sks yang dapat diambil seperti yang dimaksud pada ayat 1 huruf b, c, dan d pasal ini
+e. besarnya jumlah sks yang dapat diambil seperti yang dimaksud pada ayat 1 huruf b, c, dan d pasal ini
 didasarkan kepada IPS semester sebelumnya.
 
 [Halaman 12]
@@ -413,7 +408,7 @@ yang memiliki IPS kurang atau sama dengan 3,50 (tiga koma lima nol) dapat mengam
 di semester 1 (satu) sesuai dengan program studinya;
 c. mahasiswa selain seperti yang dimaksud pada ayat 3 huruf a pasal ini, yang memiliki IPS
 lebih besar dari 3,50 (tiga koma lima nol) dapat mengambil mata kuliah dengan beban sebanyak-banyaknya 14 (empat belas) sks; dan
-d. besamya jumlah sks yang dapat diambil seperti yang dimaksud pada ayat 3 huruf b dan c pasal ini
+d. besarnya jumlah sks yang dapat diambil seperti yang dimaksud pada ayat 3 huruf b dan c pasal ini
 didasarkan kepada IPS semester sebelumnya.
 Pasal24
 Proses Registrasi
@@ -448,7 +443,7 @@ Mahasiswa Tidak Aktif
 Sistem Informasi Akademik pada semester yang bersangkutan.
 2. Mahasiswa tidak aktif seperti yang dimaksud pada ayat 1 pasal ini termasuk mahasiswa dengan status
 cuti kuliah.
-3. Mahasiswa Program Sa~ana yang tidak aktif selama 4 (empat) semester berturut-turut dinyatakan
+3. Mahasiswa Program Sarjana yang tidak aktif selama 4 (empat) semester berturut-turut dinyatakan
 mengundurkan diri dan tidak lagi berstatus sebagai mahasiswa Itenas.
 4. Mahasiswa Program Magister yang tidak aktif selama 2 (dua) semester berturut-turut dinyatakan
 mengundurkan diri dan tidak lagi berstatus sebagai mahasiswa Itenas.
@@ -475,7 +470,7 @@ pendaftaran ulang mahasiswa aktif.
 Pasal29
 Mahasiswa Berkegiatan di Luar Kampus
 1. Mahasiswa dapat melakukan kegiatan akademik di luar kampus Itenas secara penuh dalam suatu
-semester dengan ketentuan harus berstatus sebagai mahasiswa aktif dan mendapat persetujuan Oekan.
+semester dengan ketentuan harus berstatus sebagai mahasiswa aktif dan mendapat persetujuan Dekan.
 2. Rencana kegiatan di luar kampus wajib tercatat dalam Rencana Studi Semester untuk semester yang
 3. Biaya penyelenggaraan pendidikan bagi mahasiswa berkegiatan di luar kampus di atur dalam peraturan
 tersendiri yang ditetapkan oleh Rektor.
@@ -534,7 +529,7 @@ c. memberikan arahan lainnya yang dianggap perlu, terkait dengan keberhasilan ke
 5. Mahasiswa
 wajib memperhatikan peringatan Dosen Wali mengenai prestasi akademik dan batas waktu studi.
 BABIX
-PENILAIAN DAN EV ALUASI HASIL BELAJAR
+PENILAIAN DAN EVALUASI HASIL BELAJAR
 Pasal35
 Penilaian Proses dan Hasil Belajar
 1. Penilaian proses dan hasil belajar dilakukan bertahap yaitu terhadap setiap Subcapaian Pembelajaran
@@ -569,7 +564,6 @@ akademik atau tidak sedang dalam status cuti.
 yang berlaku untuk mata kuliah tersebut.
 
 [Halaman 16]
-e-mall: rektorat@itenas.ac.id
 Pasal37
 Tata Tertib Kuis dan Ujian
 1. Mahasiswa wajib mematuhi Tata Tertib dan ~tika Akademik seperti yang dimaksud pada Pasal 14
@@ -649,14 +643,17 @@ Penilaian Hasil Belajar Tiap Mata Kuliah
 1 pasal ini dikonversikan menjadi nilai huruf yang masing-masing memiliki indeks nilai dan kategori.
 3. Ketentuan nilai angka, nilai huruf, indeks nilai, dan kategori seperti yang dimaksud pada ayat 2 pasal ini,
 tercantum dalam tabel sebagai berikut:
-NO.
-NILAI HURUF
-INDEKS NILAI
-NILAIANGKA
-KATEGORI
-1 A 4 2 80 sampai dengan 100 Amat sangat baik 2 AB 3,5 73 sampai dengan < 80 Sangat baik 3 B 3 65 sampai dengan < 73 Baik 4 BC 2,5 60 sampai dengan < 65 Cukup baik 5 c 2 50 sampai dengan < 60 Cukup 6 D 1 40 sampai dengan < 50 Kurang baik 7 E 0 < 40 Gaga I
+Tabel Penilaian Hasil Belajar Mata Kuliah:
+| No | Nilai Huruf | Indeks Nilai | Nilai Angka | Kategori |
+|---|---|---|---|---|
+| 1 | A | 4 | 80 sampai dengan 100 | Amat sangat baik |
+| 2 | AB | 3,5 | 73 sampai dengan < 80 | Sangat baik |
+| 3 | B | 3 | 65 sampai dengan < 73 | Baik |
+| 4 | BC | 2,5 | 60 sampai dengan < 65 | Cukup baik |
+| 5 | C | 2 | 50 sampai dengan < 60 | Cukup |
+| 6 | D | 1 | 40 sampai dengan < 50 | Kurang baik |
+| 7 | E | 0 | < 40 | Gagal |
 
-[Halaman 18]
 Pasal43
 Standar Minimal Nilai Kelulusan Mata Kuliah
 1. Standar minimal nilai kelulusan mata kuliah dibedakan berdasarkan program pendidikan akademik.
@@ -697,7 +694,7 @@ Pasal45
 Persyaratan Kelulusan Mahasiswa
 1. Mahasiswa dinyatakan lulus program pendidikan setelah melalui sidang yudisium yang dilakukan oleh
 Program Studi bagi mahasiswa yang telah memenuhi semua program SKS, SKK, dan persyaratan lainnya.
-2. Persyaratan kelulusan mahasiswa Program Sa8ana, yaitu:
+2. Persyaratan kelulusan mahasiswa Program Sarjana, yaitu:
 a. lulus semua mata kuliah sesuai dengan kurikulum program studinya;
 b. memiliki IPK sekurang-kurangnya 2,00 (dua koma nol nol);
 c. memiliki nilai sekurang-kurangnya huruf Buntuk mata kuliah Tugas Akhir/Skripsi;
@@ -717,7 +714,7 @@ dengan status publish sebagai penulis pertama dan atau korespondensi; dan
 d. Memiliki nilai EPT sekurang-kurangnya 500 (lima ratus).
 Pasal46
 Predikat Kelulusan
-1. Predikat kelulusan Program Satjana terdiri atas:
+1. Predikat kelulusan Program Sarjana terdiri atas:
 a. Pujian Tertinggi,
 apabila mencapai IPK lebih dari 3,75, dengan masa studi selama-lamanya 8 (delapan) semester;
 b. Dengan Pujian,
@@ -756,7 +753,6 @@ Ijazah
 3. Ijazah hanya dibuat satu kali.
 4. Ijazah yang hilang diganti dengan surat keterangan.
 5. Surat keterangan sebagai pengganti ijazah yang hilang ditandatangani oleh Rektor.
-
 Pasal49
 Gelar Akademik
 2. Penggunaan Gelar Akademik sesuai dengan peraturan yang berlaku.
@@ -773,7 +769,6 @@ Transkrip Kegiatan Kemahasiswaan
 di Itenas.
 
 [Halaman 21]
-webllte: http://www.itenas.ac.id
 Pasal52
 Surat Keterangan Pendamping Ijazah
 1. Surat Keterangan Pendamping Ijazah (SKPI) adalah surat pernyataan resmi yang dikeluarkan oleh Itenas,
@@ -808,7 +803,7 @@ Batas Waktu Studi Mahasiswa Jalur RPL
 2. Batas waktu studi mahasiswa transfer atau mahasiswa pindahan
 Program Sarjana adalah
 1. Masa studi untuk mahasiswa RPL diatur dalam peraturan tersendiri yang ditetapkan oleh Rektor.
-14 semester - (iurnlah perolehan sks atau transfer sks/18), jika hasil berupa pecahan,
+14 semester - (jumlah perolehan sks atau transfer sks/18), jika hasil berupa pecahan,
 maka dibulatkan setingkat lebih tinggi.
 3. Batas waktu studi
 mahasiswa transfer atau mahasiswa pindahan Program Magister adalah
@@ -824,7 +819,7 @@ studi mahasiswa transfer atau mahasiswa pindahan Program Sarjana adalah
 14 semester - Uumlah perolehan sks atau transfer sks/18), jika hasil berupa pecahan,
 maka dibulatkan setingkat lebih tinggi.
 3. Batas waktu studi mahasiswa transfer atau mahasiswa pindahan Program Magister adalah
-8 semester - (iumlah transfer sks/9), jika hasil berupa pecahan, maka dibulatkan setingkat lebih tinggi.
+8 semester - (jumlah transfer sks/9), jika hasil berupa pecahan, maka dibulatkan setingkat lebih tinggi.
 Pasal59
 Peringatan Batas Masa Studi
 1. Itenas dapat menyampaikan surat peringatan mengenai batas masa studi kepada mahasiswa berdasarkan
@@ -838,7 +833,7 @@ a. pada akhir semester kedua sejak dinyatakan
 sebagai mahasiswa aktif Itenas memperoleh IPS kurang dari 3,00 (tiga koma nol nol) dan/atau jumlah kelulusan mata kuliah kurang dari 10 sks; atau
 b. batas masa studi yang tersisa tinggal 1 (satu) tahun akademik.
 BAB XII
-PROSEDUR PENGAJUAN CUTI, PENGUNDURAN DIRI, DANPINDAH PROGRAM STUDI
+PROSEDUR PENGAJUAN CUTI, PENGUNDURAN DIRI, DAN PINDAH PROGRAM STUDI
 Pasal60
 Prosedur Pengajuan Cuti
 1. Mahasiswa yang ingin mengajukan cuti pada suatu semester tertentu wajib mengajukan permohonan
@@ -878,7 +873,7 @@ dijalani.
 2. Kegiatan pembelajaran di luar kampus meliputi:
 a. magang di dunia industri atau instansi pemerintah dan swasta;
 b. studi/proyek independen;
-c. Kuliah KeTa Nyata Tematik (KKNT) sesuai bidang program studi;
+c. Kuliah Kerja Nyata Tematik (KKNT) sesuai bidang program studi;
 d. penelitian pada lembaga penelitian;
 e. proyek kemanusiaan;
 f. kegiatan kewirausahaan; dan
@@ -894,7 +889,7 @@ Kegiatan studi/proyek independen merupakan bentuk pembelajaran yang mengakomodas
 mahasiswa yang memiliki passion untuk mewujudkan karya besar atau karya dari ide yang inovatif.
 Kegiatan ini juga dapat berupa mempelajari kompetensi yang spesifik, praktis, dan dibutuhkan di masa
 depan serta mempraktekkan kompetensi tersebut dalam sebuah proyek riil.
-Mahasiswa dapat mengembangkan sebuah proyek berdasarkan topik khusus dan dapat dikeTakan
+Mahasiswa dapat mengembangkan sebuah proyek berdasarkan topik khusus dan dapat dikerjakan
 bersama dengan mahasiswa lain. Pelaksanaan studi/proyek independent wajib dibimbing oleh dosen
 pembimbing yang dilakukan selama 2 (dua) s.d 4 (empat) bulan dan dapat dikonversi
 sebanyak-banyaknya 10 s.d 20 sks.
@@ -933,28 +928,29 @@ diselenggarakan oleh Dikti, sedangkan untuk lomba tingkat internasional dan lomb
 peraturan tersendiri.
 
 [Halaman 26]
+Tabel Konversi SKS Kegiatan Lomba Nasional (Program Dikti):
+| No | Jenis Kegiatan | Lolos Seleksi Wilayah | Finalis / Maju ke Final | Menjadi Juara Tingkat Nasional |
+|---|---|---|---|---|
+| 1 | Pagelaran mahasiswa nasional bidang TIK | 2 | 2 | 4 |
+| 2 | Kompetisi mahasiswa nasional bidang ilmu bisnis, manajemen dan keuangan | 2 | 2 | 4 |
+| 3 | National University Debating Champion (NUDC) | 2 | 2 | 4 |
+| 4 | Kompetisi bangunan gedung Indonesia | 2 | 2 | 4 |
+| 5 | Kontes kapal cepat tak berawak nasional | 2 | 2 | 4 |
+| 6 | Kontes mobil hemat energi | 2 | 2 | 4 |
+| 7 | Olimpiade nasional matematika dan IPA | 2 | 2 | 4 |
+| 8 | Kontes robot Indonesia | 2 | 2 | 4 |
+| 9 | Kontes robot terbang Indonesia | 2 | 2 | 4 |
+| 10 | Lomba inovasi digital mahasiswa | 2 | 2 | 4 |
+
+Tabel Konversi SKS Program Kemahasiswaan Nasional:
+| No | Jenis Program | Lolos | Selesai / PIMNAS |
+|---|---|---|---|
+| 1 | Program pembinaan mahasiswa wirausaha | 2 | 4 |
+| 2 | Program holistik pembinaan dan pemberdayaan desa | 2 | 4 |
+| 3 | Program Kreativitas Mahasiswa (PKM) | 2 | 5 |
+| 4 | Program Penguatan Kapasitas Organisasi Kemahasiswaan (PPK Ormawa) | 2 | 4 |
+
 No.
-Jenis Kegiatan Konversi sks Lolos Lolos Seleksi Wilayah Menjadi Juara Final dan maju ke Finalis Tinakat Nasional
-1. Pagelaran mahasiswa nasional
-2 2 4 bidana TIK Kompetisi mahasiswa nasional
-2. bidang ilmu bisnis, manajemen
-2 2 4 dan keuangan
-3. National University Debating
-2 2 4 Camoion (NUDC)
-4. Kompetisi bangunan gedung
-2 2 4 Indonesia
-5. Kontes kapal cepat tak berawak
-2 2 4 nasional
-6. Kontes mobil hemat energi
-2 2 4
-7. Olimpide nasional matematika dan
-2 2 4 IPA
-8. Kontes robot Indonesia
-2 2 4
-9. Kontes robot terbang Indonesia
-2 2 4
-10. Lomba inovasi digital mahasiswa
-2 2 4 No.
 Jenis Program Konversi sks Lolos Selesai
 PIMNAS
 2. Program holistik pembinaan dan pemberdayaan
@@ -1035,7 +1031,6 @@ iv. indeks pengali poin untuk jenis kokurikuler atau ekstrakurikuler; atau
 v. indeks pengali poin untuk status peserta pada setiap jenis kegiatan.
 iii. indeks pengali poin untuk status penyelenggara;
 Indeks Pengali Poin sesuai tingkat, lama kegiatan dan status penyelenggara, dan jenis kokurikuler atau ekstrakurikuler seperti pada Tabel 1. Indeks Pengali Poin Kegiatan SKK
-
 ### A. Tingkat Kegiatan
 | No | Tingkat Kegiatan | Indeks Pengali Poin |
 |---|---|---|
@@ -1091,8 +1086,7 @@ Tabel 2. Indeks Penilaian Kegiatan Publikasi
 | Penulis Pertama | 5,0 | 5,0 | 4,0 | 3,0 | 4,0 | 3,0 | 2,0 | - |
 | Non Pertama | 4,0 | 4,0 | 3,0 | 2,0 | 3,0 | 2,0 | 1,0 | - |
 
-Keterangan:
-1l persyaratan jurnal dan prosiding mengikuti kriteria yang ditentukan oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
+Keterangan:1l persyaratan jurnal dan prosiding mengikuti kriteria yang ditentukan oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
 ii. Indeks Pengali Poin untuk Kegiatan mendapatkan sertifikat Hak Kekayaan Intelektual (HKI)
 • Hak Paten dan paten sederhana.
 • Hak Desain Industri, desain sirkuit terpadu, merek.
@@ -1160,4 +1154,4 @@ Merdeka tidak tergantung kepada status penyelenggara kegiatan.
 a. pendataan setiap kegiatan SKK dilakukan oleh mahasiswa secara online pada sistem informasi
 akademik.
 b. pendataan setiap kegiatan SKK dilakukan selambat-lambatnya 1 (satu) bulan setelah kegiatan
-berlangsung dan apabila melebihi batas waktu yang telah ditentukan, maka dianggap tidak memenuhui persyaratan.
+berlangsung dan apabila melebihi batas waktu yang telah ditentukan, maka dianggap tidak memenuhi persyaratan.

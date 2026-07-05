@@ -57,9 +57,14 @@ def init_db():
         context_precision REAL,
         context_recall REAL,
         context_relevancy REAL,
+        error_log TEXT,
         FOREIGN KEY (run_id) REFERENCES eval_runs (id) ON DELETE CASCADE
     )
     """)
+    try:
+        cursor.execute("ALTER TABLE eval_details ADD COLUMN error_log TEXT")
+    except sqlite3.OperationalError:
+        pass
     conn.commit()
     conn.close()
 
@@ -73,13 +78,19 @@ API_URL = f"{_BASE}/chat"
 def query_chatbot(q: str, session_id: str):
     """Memanggil Chatbot API secara independen menggunakan Session ID unik."""
     try:
-        r = requests.post(API_URL, json={"query": q, "session_id": session_id}, timeout=60)
+        import requests
+        # Timeout 120s karena model Qwen3-32b butuh waktu lebih lama
+        r = requests.post(API_URL, json={"query": q, "session_id": session_id}, timeout=120)
         if r.status_code == 200:
             data = r.json().get("data", {})
-            return data.get("answer", ""), data.get("retrieval_context", [])
+            return data.get("answer", ""), data.get("retrieval_context", []), "OK"
+        else:
+            return "", [], f"HTTP {r.status_code}: {r.text[:100]}"
+    except requests.exceptions.Timeout:
+        return "", [], "API Timeout (>120s)"
     except Exception as e:
         st.warning(f"⚠️ API Chatbot Error: {e}")
-    return "", []
+        return "", [], f"Error: {str(e)[:100]}"
 
 def save_run_to_db(run_timestamp, dataset_rows, scores_by_metric):
     """Menyimpan ringkasan run dan detail penilaian ke database SQLite."""
@@ -112,8 +123,8 @@ def save_run_to_db(run_timestamp, dataset_rows, scores_by_metric):
         cursor.execute("""
         INSERT INTO eval_details (
             run_id, question, expected_output, actual_output, 
-            faithfulness, answer_relevance, context_precision, context_recall, context_relevancy
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            faithfulness, answer_relevance, context_precision, context_recall, context_relevancy, error_log
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             run_id,
             row["user_input"],
@@ -123,7 +134,8 @@ def save_run_to_db(run_timestamp, dataset_rows, scores_by_metric):
             scores_by_metric["answer_relevancy"][i],
             scores_by_metric["context_precision"][i],
             scores_by_metric["context_recall"][i],
-            scores_by_metric["llm_context_precision_without_reference"][i]
+            scores_by_metric["llm_context_precision_without_reference"][i],
+            row.get("error_log", "")
         ))
         
     conn.commit()
@@ -146,7 +158,7 @@ def get_run_details_from_db(run_id):
 
 # --- CORE EVALUATION LOGIC ---
 def execute_eval_pipeline(df: pd.DataFrame):
-    """Jalankan evaluasi menggunakan RAGAS dengan model juri Gemini."""
+    """Jalankan evaluasi menggunakan RAGAS dengan LLM juri via OpenRouter."""
     from datasets import Dataset
     from ragas import evaluate
     from ragas.metrics import (
@@ -157,45 +169,90 @@ def execute_eval_pipeline(df: pd.DataFrame):
         LLMContextPrecisionWithoutReference
     )
     from ragas.run_config import RunConfig
-    from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+    from app.core.config import settings
     
-    gemini_key = os.getenv("GEMINI_API_KEY")
-    if not gemini_key:
-        st.error("🔑 GEMINI_API_KEY tidak ditemukan di file .env. Pastikan kunci telah diisi.")
+    # --- STEP 1: Inisialisasi model LLM evaluator ---
+    or_key = settings.openrouter_eval_api_key or settings.openrouter_api_key
+    
+    if or_key:
+        try:
+            import re as _re
+            from langchain_openai import ChatOpenAI
+            from langchain_huggingface import HuggingFaceEmbeddings
+
+            class CleanJSONLLM(ChatOpenAI):
+                @staticmethod
+                def _strip_md(text: str) -> str:
+                    """Hapus markdown code block dari respons LLM agar JSON bisa di-parse."""
+                    if not isinstance(text, str):
+                        return text
+                    text = text.strip()
+                    m = _re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', text)
+                    return m.group(1).strip() if m else text
+                def _clean_result(self, result):
+                    """Bersihkan semua GenerationChunk dalam LLMResult."""
+                    for gen_list in result.generations:
+                        for g in gen_list:
+                            if hasattr(g, 'message') and isinstance(getattr(g.message, 'content', None), str):
+                                g.message.content = self._strip_md(g.message.content)
+                            try:
+                                if isinstance(getattr(g, 'text', None), str):
+                                    object.__setattr__(g, 'text', self._strip_md(g.text))
+                            except Exception:
+                                pass
+                    return result
+                def _generate(self, messages, stop=None, run_manager=None, **kwargs):
+                    return self._clean_result(
+                        super()._generate(messages, stop=stop, run_manager=run_manager, **kwargs)
+                    )
+                async def _agenerate(self, messages, stop=None, run_manager=None, **kwargs):
+                    return self._clean_result(
+                        await super()._agenerate(messages, stop=stop, run_manager=run_manager, **kwargs)
+                    )
+
+            llm = CleanJSONLLM(
+                api_key=or_key,
+                base_url="https://openrouter.ai/api/v1",
+                model=settings.eval_llm_model_name,
+                temperature=0,
+                max_tokens=1200
+            )
+            embeddings = HuggingFaceEmbeddings(
+                model_name="paraphrase-multilingual-MiniLM-L12-v2"
+            )
+        except Exception as e:
+            st.error(f"❌ Gagal memuat model Evaluator: {e}")
+            return None
+    elif settings.gemini_api_key:
+        from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+        try:
+            llm = ChatGoogleGenerativeAI(
+                model="gemini-2.5-flash",
+                google_api_key=settings.gemini_api_key,
+                temperature=0,
+                max_tokens=2000
+            )
+            embeddings = GoogleGenerativeAIEmbeddings(
+                model="models/gemini-embedding-001",
+                google_api_key=settings.gemini_api_key
+            )
+        except Exception as e:
+            st.error(f"❌ Gagal memuat model Evaluator (Gemini): {e}")
+            return None
+    else:
+        st.error("🔑 Kunci API tidak ditemukan di file .env.")
         return None
         
-    os.environ["GOOGLE_API_KEY"] = gemini_key
+    # --- STEP 2: Setup semua metrik Ragas ---
+    context_relevancy_metric = LLMContextPrecisionWithoutReference()
+    all_metrics = [faithfulness, answer_relevancy, context_recall, context_precision, context_relevancy_metric]
     
-    # 1. Inisialisasi LLM & Embeddings Juri
-    try:
-        llm = ChatGoogleGenerativeAI(
-            model="gemini-flash-latest",
-            temperature=0,
-            model_kwargs={"response_mime_type": "application/json"}
-        )
-        embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/gemini-embedding-001"
-        )
-    except Exception as e:
-        st.error(f"❌ Gagal memuat SDK Gemini: {e}")
-        return None
-        
-    # 2. Inisialisasi Metrik
-    context_relevancy = LLMContextPrecisionWithoutReference()
-    metrics_map = {
-        "faithfulness": faithfulness,
-        "answer_relevancy": answer_relevancy,
-        "context_recall": context_recall,
-        "context_precision": context_precision,
-        "llm_context_precision_without_reference": context_relevancy
-    }
-    
-    for m in metrics_map.values():
+    for m in all_metrics:
         m.llm = llm
         if hasattr(m, "embeddings"):
             m.embeddings = embeddings
             
-    # 3. Kumpulkan Jawaban Chatbot
+    # --- STEP 3: Kumpulkan jawaban chatbot ---
     dataset_rows = []
     progress_bar = st.progress(0, text="Mengumpulkan respon chatbot...")
     
@@ -206,80 +263,134 @@ def execute_eval_pipeline(df: pd.DataFrame):
         pct = (idx * 0.35) / len(df)
         progress_bar.progress(pct, text=f"Chatbot menjawab Q{idx+1}/{len(df)}: '{q[:40]}...'")
         
-        # Unique session ID untuk menghindari kontaminasi memori percakapan
-        session_id = f"eval_run_{int(time.time())}_{idx}"
-        answer, raw_ctx = query_chatbot(q, session_id)
+        session_id = f"eval_{int(time.time())}_{idx}"
+        answer, raw_ctx, error_msg = query_chatbot(q, session_id)
         
-        # Normalisasi tipe data output
         clean_answer = "\n".join([str(a) for a in answer]) if isinstance(answer, list) else str(answer)
+        
+        row_error_log = error_msg
+        if not clean_answer.strip() and error_msg == "OK":
+            row_error_log = "Empty answer from LLM"
+        if not raw_ctx and error_msg == "OK":
+            row_error_log = "No context retrieved by agent" if row_error_log == "OK" else f"{row_error_log} | No context retrieved"
+            
+        n_ctx = len(raw_ctx) if isinstance(raw_ctx, list) else (1 if raw_ctx else 0)
+        st.caption(f"📄 Q{idx+1} — {n_ctx} chunk konteks ditarik | Status: {row_error_log}")
+        
+        def _ctx_to_readable(item) -> str:
+            import json as _json
+            if isinstance(item, dict):
+                raw = item.get("page_content", item.get("document", None))
+                if raw:
+                    return _ctx_to_readable(raw)
+                item = _json.dumps(item, ensure_ascii=False)
+            if not isinstance(item, str):
+                return str(item)
+            stripped = item.strip()
+            if stripped.startswith("{") or stripped.startswith("["):
+                try:
+                    parsed = _json.loads(stripped)
+                    if isinstance(parsed, dict):
+                        lines = []
+                        def _flat(d, prefix=""):
+                            for k, v in d.items():
+                                full_key = (f"{prefix} - {k}") if prefix else k
+                                if isinstance(v, dict):
+                                    _flat(v, full_key)
+                                elif isinstance(v, list):
+                                    for li in v:
+                                        if isinstance(li, dict):
+                                            _flat(li, full_key)
+                                        elif li is not None:
+                                            lines.append(f"{full_key}: {li}")
+                                elif v is not None:
+                                    lines.append(f"{full_key}: {v}")
+                        _flat(parsed)
+                        return "\n".join(lines) if lines else item
+                except Exception:
+                    pass
+            return item
+        
         clean_ctx = []
         if not raw_ctx:
             clean_ctx = ["No context retrieved."]
         elif isinstance(raw_ctx, list):
             for item in raw_ctx:
-                if isinstance(item, dict):
-                    clean_ctx.append(str(item.get("page_content", item.get("document", str(item)))))
-                else:
-                    clean_ctx.append(str(item))
+                clean_ctx.append(_ctx_to_readable(item))
         else:
-            clean_ctx = [str(raw_ctx)]
+            clean_ctx = [_ctx_to_readable(raw_ctx)]
             
         dataset_rows.append({
             "user_input": q,
             "response": clean_answer,
             "retrieved_contexts": clean_ctx,
-            "reference": ref
+            "reference": ref,
+            "error_log": row_error_log
         })
-        time.sleep(1) # Cooldown chatbot API
+        time.sleep(1) 
         
     progress_bar.progress(0.35, text="Chatbot selesai menjawab. Menyiapkan dataset Ragas...")
     
-    # Buat dataset Ragas
+    # --- STEP 4: Buat Ragas Dataset ---
     ragas_dataset = Dataset.from_dict({
-        "user_input": [r["user_input"] for r in dataset_rows],
-        "response": [r["response"] for r in dataset_rows],
-        "retrieved_contexts": [r["retrieved_contexts"] for r in dataset_rows],
-        "reference": [r["reference"] for r in dataset_rows]
+        "user_input":        [r["user_input"] for r in dataset_rows],
+        "response":          [r["response"] for r in dataset_rows],
+        "retrieved_contexts":[r["retrieved_contexts"] for r in dataset_rows],
+        "reference":         [r["reference"] for r in dataset_rows],
+        "question":          [r["user_input"] for r in dataset_rows],
+        "answer":            [r["response"] for r in dataset_rows],
+        "contexts":          [r["retrieved_contexts"] for r in dataset_rows],
+        "ground_truth":      [r["reference"] for r in dataset_rows],
     })
     
-    # 4. Evaluasi Sekuensial per Metrik (Mencegah Rate Limit)
-    scores_by_metric = {}
-    run_config = RunConfig(
-        max_workers=1,     # Satu per satu (sekuensial)
-        max_retries=15,     # Toleransi rate limit
-        max_wait=60        # Jeda tunggu backoff
-    )
+    # --- STEP 5: Jalankan evaluasi semua metrik sekaligus ---
+    import math
+    scores_by_metric = {k: [0.0] * len(dataset_rows) for k in
+                        ["faithfulness", "answer_relevancy", "context_precision", "context_recall", "llm_context_precision_without_reference"]}
     
-    metrics_count = len(metrics_map)
-    for index, (key, metric) in enumerate(metrics_map.items()):
-        pct = 0.35 + ((index * 0.60) / metrics_count)
-        label = key.replace("_", " ").title()
-        progress_bar.progress(pct, text=f"Juri Gemini menilai metrik: {label}...")
+    try:
+        import nest_asyncio
+        nest_asyncio.apply()
         
-        try:
-            res_eval = evaluate(
-                ragas_dataset,
-                metrics=[metric],
-                llm=llm,
-                embeddings=embeddings,
-                run_config=run_config,
-                show_progress=False
-            )
-            scores_list = res_eval.to_pandas()[key].tolist()
-            import math
-            scores_by_metric[key] = [0.0 if (x is None or (isinstance(x, float) and math.isnan(x))) else float(x) for x in scores_list]
-        except Exception as e:
-            err_msg = str(e)
-            if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
-                st.error("🚨 **Limit Kuota Harian API Gemini Tercapai.**")
-                st.warning("Batas gratis (Free Tier) API Gemini adalah 20 kali permintaan per hari. Silakan coba lagi besok atau gunakan billing berbayar untuk kapasitas tak terbatas.")
-            else:
-                st.error(f"⚠️ Kesalahan saat mengevaluasi metrik {label}: {err_msg[:100]}")
-            scores_by_metric[key] = [0.0] * len(dataset_rows)
-            
-        # Cooldown sleep selama 15 detik untuk menghindari penumpukan request
-        time.sleep(15)
+        progress_bar.progress(0.50, text="⚙️ Juri AI sedang menilai semua metrik...")
         
+        run_config = RunConfig(max_workers=4, max_retries=10, max_wait=60)
+        
+        res_eval = evaluate(
+            ragas_dataset,
+            metrics=all_metrics,
+            llm=llm,
+            embeddings=embeddings,
+            run_config=run_config,
+            show_progress=False,
+            raise_exceptions=False
+        )
+        
+        progress_bar.progress(0.85, text="✅ Evaluasi selesai! Mengekstrak skor...")
+        
+        df_res = res_eval.to_pandas()
+        st.toast(f"Kolom hasil Ragas: {list(df_res.columns)}", icon="🔍")
+        
+        def safe_col(col):
+            if col not in df_res.columns:
+                return [0.0] * len(dataset_rows)
+            return [0.0 if (v is None or (isinstance(v, float) and math.isnan(v))) else float(v)
+                    for v in df_res[col].tolist()]
+        
+        scores_by_metric["faithfulness"]                          = safe_col("faithfulness")
+        scores_by_metric["answer_relevancy"]                      = safe_col("answer_relevancy")
+        scores_by_metric["context_precision"]                     = safe_col("context_precision")
+        scores_by_metric["context_recall"]                        = safe_col("context_recall")
+        scores_by_metric["llm_context_precision_without_reference"] = safe_col("llm_context_precision_without_reference")
+    except Exception as e:
+        err_msg = str(e)
+        if "RESOURCE_EXHAUSTED" in err_msg or "429" in err_msg:
+            st.error("🚨 **Limit kuota API tercapai.** Coba lagi dalam beberapa menit.")
+        else:
+            st.error("⚠️ Error saat evaluasi RAGAS:")
+            with st.expander("Detail Error"):
+                st.code(err_msg)
+                
     progress_bar.progress(0.95, text="Menyimpan data evaluasi ke SQLite...")
     
     run_timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -593,6 +704,10 @@ with tab_detail:
                 with col_a:
                     st.markdown("**Actual Output (Jawaban Chatbot):**")
                     st.warning(rd["actual_output"] if rd["actual_output"].strip() else "[Jawaban chatbot kosong]")
+                    
+                err_log = rd.get("error_log", "")
+                if err_log and err_log != "OK":
+                    st.error(f"**Sistem Log / Error:** {err_log}")
                     
                 st.markdown("<br>**Hasil Metrik Evaluasi RAGAS:**", unsafe_allow_html=True)
                 cols_m = st.columns(5)

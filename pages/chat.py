@@ -6,13 +6,14 @@ import os
 # --- KONFIGURASI HALAMAN ---
 # Set initial_sidebar_state="collapsed" agar sidebar benar-benar hilang secara default
 # st.set_page_config(
-#     page_title="Tenice - Chatbot PMB Itenas", 
-#     page_icon="🎓", 
+#     page_title="Tenice - Chatbot PMB Itenas",
+#     page_icon="🎓",
 #     initial_sidebar_state="collapsed"
 # )
 
 # --- SUNTIKAN CUSTOM CSS ---
-st.markdown("""
+st.markdown(
+    """
 <style>
     /* Menyembunyikan tombol expand sidebar bawaan Streamlit */
     [data-testid="collapsedControl"] {
@@ -71,7 +72,9 @@ st.markdown("""
         margin-bottom: 2px;
     }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # --- INITIALIZATION ---
 if "session_id" not in st.session_state:
@@ -97,7 +100,8 @@ with col2:
         st.session_state.messages = []
         st.rerun()
 
-st.divider() 
+st.divider()
+
 
 def render_user_message(text):
     html = f"""
@@ -106,6 +110,7 @@ def render_user_message(text):
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
+
 
 def render_bot_message(text):
     html = f"""
@@ -117,28 +122,32 @@ def render_bot_message(text):
     st.markdown(html, unsafe_allow_html=True)
 
     # --- MENAMPILKAN RIWAYAT CHAT ---
+
+
 for msg in st.session_state.messages:
     if msg["role"] == "user":
         render_user_message(msg["content"])
     else:
         render_bot_message(msg["content"])
-        
+
         # Tampilkan sumber dokumen (jika ada) tepat di bawah gelembung
         if msg.get("sources"):
             with st.expander("📚 Lihat Sumber Referensi"):
                 for source in msg["sources"]:
-                    st.markdown(f"- **{source.get('document', 'Dokumen Internal')}** ({source.get('type', 'Data')})")
+                    st.markdown(
+                        f"- **{source.get('document', 'Dokumen Internal')}** ({source.get('type', 'Data')})"
+                    )
 
 # --- INPUT PENGGUNA ---
 if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
-    
+
     # 1. Tampilkan pesan pengguna di UI langsung
     render_user_message(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # 2. Buat tempat kosong (placeholder) untuk animasi mengetik bot
     message_placeholder = st.empty()
-    
+
     # Render animasi loading sementara
     html_loading = """
     <div class="chat-row row-bot">
@@ -147,29 +156,30 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
     </div>
     """
     message_placeholder.markdown(html_loading, unsafe_allow_html=True)
-    
+
     try:
         # Panggil API RAG Streaming
         response = requests.post(
-            API_STREAM_URL, 
+            API_STREAM_URL,
             json={"query": prompt, "session_id": st.session_state.session_id},
             stream=True,
-            timeout=45
+            timeout=45,
         )
-        
+
         if response.status_code == 200:
             answer = ""
             sources = []
-            
+
             # Baca aliran data (Server-Sent Events) baris demi baris
             for line in response.iter_lines():
                 if line:
-                    line_str = line.decode('utf-8')
+                    line_str = line.decode("utf-8")
                     if line_str.startswith("data: "):
                         import json
+
                         try:
                             data_chunk = json.loads(line_str[6:])
-                            
+
                             if data_chunk.get("type") == "chunk":
                                 answer += data_chunk.get("content", "")
                                 # Update UI dengan efek mengetik (kursor blok ▌)
@@ -179,8 +189,10 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
                                     <div class="chat-bubble bubble-bot">{answer}▌</div>
                                 </div>
                                 """
-                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
-                                
+                                message_placeholder.markdown(
+                                    html_answer, unsafe_allow_html=True
+                                )
+
                             elif data_chunk.get("type") == "metadata":
                                 sources = data_chunk.get("sources", [])
                                 # Hapus kursor berkedip di akhir kalimat
@@ -190,8 +202,10 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
                                     <div class="chat-bubble bubble-bot">{answer}</div>
                                 </div>
                                 """
-                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
-                                
+                                message_placeholder.markdown(
+                                    html_answer, unsafe_allow_html=True
+                                )
+
                             elif data_chunk.get("type") == "error":
                                 answer = "❌ Maaf Kak, saat ini server Tenice sedang sangat sibuk atau melampaui batas penggunaan (Sistem sedang beristirahat sebentar). Silakan coba lagi dalam beberapa menit ya, atau klik tombol **'Chat Baru'**."
                                 html_answer = f"""
@@ -200,22 +214,26 @@ if prompt := st.chat_input("Ketik pertanyaan Anda di sini..."):
                                     <div class="chat-bubble bubble-bot" style="border-color: red;">{answer}</div>
                                 </div>
                                 """
-                                message_placeholder.markdown(html_answer, unsafe_allow_html=True)
+                                message_placeholder.markdown(
+                                    html_answer, unsafe_allow_html=True
+                                )
                         except json.JSONDecodeError:
                             pass
-                            
+
             # Simpan respons ke state memory UI
-            st.session_state.messages.append({
-                "role": "assistant", 
-                "content": answer,
-                "sources": sources
-            })
-            
+            st.session_state.messages.append(
+                {"role": "assistant", "content": answer, "sources": sources}
+            )
+
             # Rerun agar expander sumber referensi muncul di posisi yang tepat
-            st.rerun() 
-            
+            st.rerun()
+
         else:
-            message_placeholder.markdown(f"**Error:** Layanan API bermasalah (Status {response.status_code})")
-            
+            message_placeholder.markdown(
+                f"**Error:** Layanan API bermasalah (Status {response.status_code})"
+            )
+
     except Exception as e:
-        message_placeholder.markdown(f"**Error Koneksi:** Gagal menghubungi server. Pastikan Uvicorn menyala. Detail: {str(e)}")
+        message_placeholder.markdown(
+            f"**Error Koneksi:** Gagal menghubungi server. Pastikan Uvicorn menyala. Detail: {str(e)}"
+        )

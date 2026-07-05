@@ -1,23 +1,5 @@
-"""
-Script pembersihan data untuk SK Peraturan Akademik Itenas_2025.pdf
-
-Strategi pembersihan:
-- Melewati halaman lembar pengesahan, penutup SK, dan contoh data pribadi mahasiswa
-- Menggabungkan baris pendek yang terpotong menjadi paragraf utuh
-- Memisahkan dan menandai setiap Pasal
-- Output berupa satu file TXT bersih
-"""
-
-import sys
 import re
 import os
-import fitz
-
-sys.stdout.reconfigure(encoding='utf-8')
-
-INPUT_PDF = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\raw\153 - SK Peraturan Akademik Itenas_2025.pdf"
-OUTPUT_DIR = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\clean"
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Halaman yang dikecualikan (0-indexed)
 SKIP_PAGES = {
@@ -28,48 +10,71 @@ SKIP_PAGES = {
 }
 
 def fix_split_words(text: str) -> str:
-    """
-    Memperbaiki kata yang terpenggal karena PDF memisahkan huruf kapital awal
-    ke dalam text box terpisah.
-    Contoh: "T eknologi" → "Teknologi", "T ahun" → "Tahun"
-    
-    CATATAN: Tidak menggabungkan dua kata kapital penuh yang memang harus terpisah
-    (misalnya "YAYASAN PENDIDIKAN" harus tetap terpisah).
-    """
-    # Hanya gabungkan: huruf kapital TUNGGAL diikuti spasi + kata huruf kecil
-    # Contoh: "T eknologi" → "Teknologi", "T ahun" → "Tahun"
-    # Tidak menyentuh: "A Nomor" (huruf kapital + nomor), atau antar kata kapital penuh
     text = re.sub(r'(?<!\w)([A-Z]) ([a-z]{2,})', lambda m: m.group(1) + m.group(2), text)
-
-    # Perbaiki spasi berlebih sebelum tanda baca
     text = re.sub(r'\s+([.,;:])', r'\1', text)
-
     return text
 
-
 def fix_known_terms(text: str) -> str:
-    """
-    Memperbaiki kesalahan encoding font l/I dan OCR typos lainnya yang umum terjadi.
-    """
     corrections = [
-        # Nama institusi
+        # === Koreksi OCR: huruf l (kecil) vs I (kapital) ===
         (r'\bltenas\b', 'Itenas'),
         (r'\bITENAS\b', 'ITENAS'),
         (r'\blnstitut\b', 'Institut'),
         (r'\blnstitute\b', 'Institute'),
         (r'\blndonesia\b', 'Indonesia'),
+        (r'\blndonesla\b', 'Indonesia'),
+        (r'\blndonnian\b', 'Indonesia'),
         (r'\blndeks\b', 'Indeks'),
+        (r'\bilndeks\b', 'indeks'),
         (r'\blndex\b', 'Index'),
         (r'\blPS\b', 'IPS'),
         (r'\blPK\b', 'IPK'),
         (r'\blll\b', 'III'),
         (r'\bll\b', 'II'),
-        # OCR Typo Perbaikan
-        (r'\bilndeks\b', 'indeks'),
         (r'\blntemasional\b', 'Internasional'),
         (r'\bKelas lntemasional\b', 'Kelas Internasional'),
-        (r'\blntemasional\b', 'internasional'),
         (r'\bintemasional\b', 'internasional'),
+        (r'\blnggris\b', 'Inggris'),
+        (r'\blnformasi\b', 'Informasi'),
+        (r'\bljazah\b', 'Ijazah'),
+        (r'\blntelektual\b', 'Intelektual'),
+        (r'\blndustri\b', 'Industri'),
+        (r'\bllmiah\b', 'Ilmiah'),
+        # === Koreksi OCR: kata umum terpotong/salah karakter ===
+        (r'\bSa[~8]ana\b', 'Sarjana'),          # Sa~ana / Sa8ana → Sarjana
+        (r'\bSariana\b', 'Sarjana'),              # Sariana → Sarjana
+        (r'\bSatjana\b', 'Sarjana'),              # Satjana → Sarjana
+        (r'\bSanana\b', 'Sarjana'),               # Sanana → Sarjana
+        (r'\bGanji!\b', 'Ganjil'),                # Ganji! → Ganjil
+        (r'\bGanji1\b', 'Ganjil'),                # Ganji1 → Ganjil
+        (r'TENT\s+ANG', 'TENTANG'),               # TENT ANG → TENTANG
+        (r'EV\s+ALUASI', 'EVALUASI'),             # EV ALUASI → EVALUASI
+        (r'PROSESPEMBELAJARAN', 'PROSES PEMBELAJARAN'),
+        (r'DANPINDAH', 'DAN PINDAH'),
+        (r'\bOlimpide\b', 'Olimpiade'),           # Olimpide → Olimpiade
+        (r'\bolimpide\b', 'olimpiade'),
+        (r'\bTinakat\b', 'Tingkat'),              # Tinakat → Tingkat
+        (r'\btinakat\b', 'tingkat'),
+        (r'\bCamoion\b', 'Champion'),             # Camoion → Champion
+        (r'\bKeTa\b', 'Kerja'),                   # KeTa → Kerja
+        (r'\bkeTa\b', 'kerja'),
+        (r'\bdikeTakan\b', 'dikerjakan'),
+        (r'\bSertta\b', 'Berita'),                # Sertta → Berita
+        (r'\bbidana\b', 'bidang'),                # bidana → bidang
+        (r'\bBidana\b', 'Bidang'),
+        (r'\bT anggal\b', 'Tanggal'),             # T anggal → Tanggal
+        (r'\bPeru\s+mus\b', 'Perumus'),           # Peru mus → Perumus
+        (r'\bOekan\b', 'Dekan'),                  # Oekan → Dekan
+        (r'\b~tika\b', 'Etika'),                  # ~tika → Etika
+        (r'\bternasuk\b', 'termasuk'),            # tennasuk → termasuk
+        (r'\btennasuk\b', 'termasuk'),
+        (r'\bmemenuhui\b', 'memenuhi'),           # memenuhui → memenuhi
+        (r'\biurnlah\b', 'jumlah'),               # iurnlah → jumlah
+        (r'\biumlah\b', 'jumlah'),                # iumlah → jumlah
+        (r'\biurnal\b', 'jurnal'),                # iurnal → jurnal
+        (r'\bKeTa\s+Nyata\b', 'Kerja Nyata'),
+        (r'\bKurikuler/Ekstrakurikuler', 'Kokurikuler/Ekstrakurikuler'),
+        # === Koreksi singkatan dan istilah institusi ===
         (r'\bPenaali\b', 'Pengali'),
         (r'\bpenaali\b', 'pengali'),
         (r'\bPenyelenaaara\b', 'Penyelenggara'),
@@ -85,47 +90,39 @@ def fix_known_terms(text: str) -> str:
         (r'\bpresiding\b', 'prosiding'),
         (r'\bPresiding\b', 'Prosiding'),
         (r'\b1l persyaratan\b', '1. persyaratan'),
-        # Tambahan typo baru
-        (r'\blnggris\b', 'Inggris'),
-        (r'\blnformasi\b', 'Informasi'),
-        (r'\blndonesla\b', 'Indonesia'),
-        (r'\blndonnia\b', 'Indonesia'),
-        (r'\bljazah\b', 'Ijazah'),
-        (r'\blntelektual\b', 'Intelektual'),
-        (r'\blndustri\b', 'Industri'),
-        (r'\bllmiah\b', 'Ilmiah'),
         (r'\bJumal llmiah\b', 'Jurnal Ilmiah'),
         (r'\bJurnal Jumal\b', 'Jurnal'),
         (r'\bMu,tof1\b', 'Mustofa'),
         (r'\bMuatofa\b', 'Mustofa'),
+        (r'\bMu1tofa\b', 'Mustofa'),
         (r'\blabel 2\b', 'Tabel 2'),
+        (r'\blndonesla\b', 'Indonesia'),
+        (r'\blndonnia\b', 'Indonesia'),
+        (r'\blndoneaia\b', 'Indonesia'),
+        (r'\bwebllte\b', 'website'),
+        (r'\be-mall\b', 'e-mail'),
+        (r'\bPenaali\b', 'Pengali'),
+        (r'\bSememester\b', 'Semester'),
+        (r'\bbesamya\b', 'besarnya'),
+        (r'\bbesamya\b', 'besarnya'),
+        (r'rektorat@itenas\.ac\.i<!', 'rektorat@itenas.ac.id'),
     ]
     for pattern, replacement in corrections:
         text = re.sub(pattern, replacement, text)
     return text
 
-
 def clean_page_text(raw_text: str) -> str:
-    """
-    Membersihkan teks mentah satu halaman PDF.
-    """
-    # === LANGKAH 1: Perbaiki kata yang terpenggal oleh spasi ===
     raw_text = fix_split_words(raw_text)
-
-    # === LANGKAH 2: Koreksi kesalahan encoding font l/I ===
     raw_text = fix_known_terms(raw_text)
-
+    
     lines = raw_text.split("\n")
     cleaned_lines = []
-
+    
     for line in lines:
         line = line.strip()
-
-        # Buang baris kosong berulang
         if not line:
             continue
-
-        # Buang header/footer berulang yang tidak informatif
+            
         skip_patterns = [
             r"^YAYASAN PENDIDIKAN DAYANG SUMBI",
             r"^INSTITUT TEKNOLOGI NASIONAL",
@@ -135,13 +132,12 @@ def clean_page_text(raw_text: str) -> str:
             r"^e-mail:",
             r"^Lampiran Surat Keputusan Rektor",
             r"^PERATURAN AKADEMIK$",
-            r"^INSTITUTTTEKNOLOGI",   # setelah merge
+            r"^INSTITUTTTEKNOLOGI",
             r"^INSTITUTTEKNOLOGI",
             r"^Nomor:\s*153/",
             r"^SK-Rektor/",
             r"^Revisi ke:",
-            r"^TENTANG$",           # heading berulang yang tidak perlu (ada di halaman 2)
-            r"^Tanggal\s*:",
+            r"^TENTANG$",
             r"^Tanggal\s*:",
             r"^Telepon:",
             r"^Fax:",
@@ -149,65 +145,96 @@ def clean_page_text(raw_text: str) -> str:
         should_skip = any(re.match(p, line, re.IGNORECASE) for p in skip_patterns)
         if should_skip:
             continue
-
+            
         cleaned_lines.append(line)
-
-    # === LANGKAH 2: Gabungkan nomor/huruf yang terpisah dari teksnya ===
-    # Contoh: ["1.", "bahwa Pemerintah..."] → ["1. bahwa Pemerintah..."]
+        
     joined_lines = []
     i = 0
     while i < len(cleaned_lines):
         line = cleaned_lines[i]
-        # Cek apakah baris ini hanya berisi marker daftar: "1." / "a." / "i." / "ii."
         is_orphan_marker = bool(re.match(r'^(\d+\.|[a-z]{1,3}\.|[ivxlc]+\.)$', line.strip()))
         if is_orphan_marker and i + 1 < len(cleaned_lines):
-            # Gabungkan dengan baris berikutnya
             joined_lines.append(line.strip() + " " + cleaned_lines[i + 1].strip())
             i += 2
         else:
             joined_lines.append(line)
             i += 1
-
-    # === LANGKAH 3: Gabungkan baris pendek yang terpenggal menjadi paragraf ===
+            
     merged = []
     buffer = ""
     for line in joined_lines:
         is_heading = bool(re.match(r"^(Pasal\s*\d+|BAB\s+[IVXLC]+|[A-Z][A-Z\s]{4,}$)", line))
         is_numbered = bool(re.match(r"^\d+\.", line) or re.match(r"^[a-z]\.", line))
         is_bullet = line.startswith(("•", "-", "–"))
-
+        
         if is_heading or is_numbered or is_bullet:
-            # Simpan buffer sebelumnya dulu
             if buffer:
                 merged.append(buffer.strip())
                 buffer = ""
             merged.append(line)
         elif len(line) < 60 and not line.endswith((".", ":", ";")):
-            # Baris pendek yang kemungkinan terpenggal — gabungkan dengan buffer
             buffer = (buffer + " " + line).strip()
         else:
-            # Baris penuh — simpan buffer dulu, lalu tambahkan baris ini
             if buffer:
                 buffer = (buffer + " " + line).strip()
-                # Jika buffer sudah cukup panjang, flush
                 if len(buffer) > 100 or line.endswith((".", ":", ";")):
                     merged.append(buffer.strip())
                     buffer = ""
             else:
                 merged.append(line)
-
+                
     if buffer:
         merged.append(buffer.strip())
-
+        
     return "\n".join(merged)
 
-
 def clean_tables(text: str) -> str:
-    # 1. Format Tabel 1
-    # We will match the messy Tabel 1 block and replace it with a clean markdown version.
+    # Tabel nilai huruf (Pasal 42) - rekonstruksi dari baris tersebar
+    nilai_huruf_pattern = r"NO\.\s*NILAI HURUF\s*INDEKS NILAI\s*NILAIANGKA\s*KATEGORI.*?(?=Pasal\s*43)"
+    nilai_huruf_replacement = """Tabel Penilaian Hasil Belajar Mata Kuliah:
+| No | Nilai Huruf | Indeks Nilai | Nilai Angka | Kategori |
+|---|---|---|---|---|
+| 1 | A | 4 | 80 sampai dengan 100 | Amat sangat baik |
+| 2 | AB | 3,5 | 73 sampai dengan < 80 | Sangat baik |
+| 3 | B | 3 | 65 sampai dengan < 73 | Baik |
+| 4 | BC | 2,5 | 60 sampai dengan < 65 | Cukup baik |
+| 5 | C | 2 | 50 sampai dengan < 60 | Cukup |
+| 6 | D | 1 | 40 sampai dengan < 50 | Kurang baik |
+| 7 | E | 0 | < 40 | Gagal |
+
+"""
+    text = re.sub(nilai_huruf_pattern, nilai_huruf_replacement, text, flags=re.DOTALL)
+
+    # Tabel Konversi SKS Lomba (Halaman 26) - rekonstruksi dari baris tersebar
+    konversi_lomba_pattern = r"No\.\s*Jenis Kegiatan\s*Konversi sks.*?(?=B\. PEDOMAN SISTEM KREDIT|No\.\s*Jenis Program)"
+    konversi_lomba_replacement = """Tabel Konversi SKS Kegiatan Lomba Nasional (Program Dikti):
+| No | Jenis Kegiatan | Lolos Seleksi Wilayah | Finalis / Maju ke Final | Menjadi Juara Tingkat Nasional |
+|---|---|---|---|---|
+| 1 | Pagelaran mahasiswa nasional bidang TIK | 2 | 2 | 4 |
+| 2 | Kompetisi mahasiswa nasional bidang ilmu bisnis, manajemen dan keuangan | 2 | 2 | 4 |
+| 3 | National University Debating Champion (NUDC) | 2 | 2 | 4 |
+| 4 | Kompetisi bangunan gedung Indonesia | 2 | 2 | 4 |
+| 5 | Kontes kapal cepat tak berawak nasional | 2 | 2 | 4 |
+| 6 | Kontes mobil hemat energi | 2 | 2 | 4 |
+| 7 | Olimpiade nasional matematika dan IPA | 2 | 2 | 4 |
+| 8 | Kontes robot Indonesia | 2 | 2 | 4 |
+| 9 | Kontes robot terbang Indonesia | 2 | 2 | 4 |
+| 10 | Lomba inovasi digital mahasiswa | 2 | 2 | 4 |
+
+Tabel Konversi SKS Program Kemahasiswaan Nasional:
+| No | Jenis Program | Lolos | Selesai / PIMNAS |
+|---|---|---|---|
+| 1 | Program pembinaan mahasiswa wirausaha | 2 | 4 |
+| 2 | Program holistik pembinaan dan pemberdayaan desa | 2 | 4 |
+| 3 | Program Kreativitas Mahasiswa (PKM) | 2 | 5 |
+| 4 | Program Penguatan Kapasitas Organisasi Kemahasiswaan (PPK Ormawa) | 2 | 4 |
+
+"""
+    text = re.sub(konversi_lomba_pattern, konversi_lomba_replacement, text, flags=re.DOTALL)
+
+    # Tabel 1
     tabel1_pattern = r"Tabel 1\..*?D\.2 Ekstrakurikuler 1,0"
     tabel1_replacement = """Tabel 1. Indeks Pengali Poin Kegiatan SKK
-
 ### A. Tingkat Kegiatan
 | No | Tingkat Kegiatan | Indeks Pengali Poin |
 |---|---|---|
@@ -239,10 +266,9 @@ def clean_tables(text: str) -> str:
 |---|---|---|
 | D.1 | Kokurikuler | 1,5 |
 | D.2 | Ekstrakurikuler | 1,0 |"""
-
     text = re.sub(tabel1_pattern, tabel1_replacement, text, flags=re.DOTALL)
 
-    # 2. Format Tabel 2
+    # Tabel 2
     tabel2_pattern = r"Tabel 2\. Indeks Penilaian Kegiatan Publikasi.*?(?=1l\s+persyaratan|ii\.)"
     tabel2_replacement = """Tabel 2. Indeks Penilaian Kegiatan Publikasi
 | Posisi | Jurnal Ilmiah Internasional | Jurnal Ilmiah Nasional (S1/S2) | Jurnal Ilmiah Nasional (S3/S4) | Jurnal Ilmiah Nasional (S5/S6) | Prosiding Internasional | Prosiding Nasional | Media Populer | Blog |
@@ -251,11 +277,10 @@ def clean_tables(text: str) -> str:
 | Penulis Pertama | 5,0 | 5,0 | 4,0 | 3,0 | 4,0 | 3,0 | 2,0 | - |
 | Non Pertama | 4,0 | 4,0 | 3,0 | 2,0 | 3,0 | 2,0 | 1,0 | - |
 
-Keterangan:
-"""
+Keterangan:"""
     text = re.sub(tabel2_pattern, tabel2_replacement, text, flags=re.DOTALL)
 
-    # 3. Format Tabel 3
+    # Tabel 3
     tabel3_pattern = r"Tabel 3\. Indeks Pengali Poin Hak Kekayaan.*?(?=iii\.)"
     tabel3_replacement = """Tabel 3. Indeks Pengali Poin Hak Kekayaan Intelektual (HKI)
 | Posisi | Hak Paten / Paten Sederhana | Hak Desain Industri, Desain Sirkuit Terpadu, Merek | Hak Cipta |
@@ -266,7 +291,7 @@ Keterangan:
 """
     text = re.sub(tabel3_pattern, tabel3_replacement, text, flags=re.DOTALL)
 
-    # 4. Format Tabel 4
+    # Tabel 4
     tabel4_pattern = r"Tabel 4\..*?Tabel 4\. Indeks Pengali Poin Kegiatan Workshop.*?(?=iv\.)"
     tabel4_replacement = """Tabel 4. Indeks Pengali Poin Kegiatan Workshop/Training/Seminar
 | No | Status | Indeks Pengali Poin |
@@ -278,7 +303,7 @@ Keterangan:
 """
     text = re.sub(tabel4_pattern, tabel4_replacement, text, flags=re.DOTALL)
 
-    # 5. Format Tabel 5
+    # Tabel 5
     tabel5_pattern = r"Tabel 5\..*?Tabel 5\. Indeks Pengali Poin Kegiatan Organisasi.*?(?=v\.)"
     tabel5_replacement = """Tabel 5. Indeks Pengali Poin Kegiatan Organisasi/Kepanitiaan
 | No | Status | Organisasi | Panitia |
@@ -291,7 +316,7 @@ Keterangan:
 """
     text = re.sub(tabel5_pattern, tabel5_replacement, text, flags=re.DOTALL)
 
-    # 6. Format Tabel 6
+    # Tabel 6
     tabel6_pattern = r"Tabel 6\..*?Tabel 6\. Indeks Pengali Poin Kegiatan Mengikuti Perlombaan.*?(?=vi\.)"
     tabel6_replacement = """Tabel 6. Indeks Pengali Poin Kegiatan Mengikuti Perlombaan (Tidak Tergantung Pada Lama Kegiatan)
 | No | Status | Kokurikuler | Ekstrakurikuler |
@@ -306,71 +331,56 @@ Keterangan:
 
 """
     text = re.sub(tabel6_pattern, tabel6_replacement, text, flags=re.DOTALL)
-
     return text
 
-
-def process_sk_pdf(input_path: str, output_dir: str):
-    doc = fitz.open(input_path)
-    total = len(doc)
-    print(f"Membuka: {os.path.basename(input_path)} ({total} halaman)")
-
+def clean_raw_sk(raw_txt_path: str, clean_txt_path: str) -> str:
+    print("Merapikan, memfilter halaman, dan merekonstruksi tabel SK...")
+    
+    if not os.path.exists(raw_txt_path):
+        raise FileNotFoundError(f"File mentah tidak ditemukan: {raw_txt_path}. Jalankan extract_sk.py terlebih dahulu.")
+        
+    with open(raw_txt_path, "r", encoding="utf-8") as f:
+        raw_text = f.read()
+        
+    parts = re.split(r'--- HALAMAN (\d+) ---\n', raw_text)
+    
+    pages = {}
+    for j in range(1, len(parts), 2):
+        page_num = int(parts[j])
+        page_text = parts[j+1]
+        pages[page_num] = page_text
+        
     all_sections = []
     pages_kept = 0
     pages_skipped = 0
-
-    for i in range(total):
-        if i in SKIP_PAGES:
-            print(f"  [SKIP] Halaman {i+1} dikecualikan")
+    
+    for page_num in sorted(pages.keys()):
+        if (page_num - 1) in SKIP_PAGES:
             pages_skipped += 1
             continue
-
-        page = doc[i]
-        # Gunakan blocks yang diurutkan atas-bawah untuk urutan baca yang benar
-        blocks = sorted(page.get_text("blocks"), key=lambda b: (round(b[1] / 20), b[0]))
-        raw_text = "\n".join(b[4].strip() for b in blocks if b[4].strip())
-
-        cleaned = clean_page_text(raw_text)
+            
+        page_text = pages[page_num].strip()
+        cleaned = clean_page_text(page_text)
         if not cleaned.strip():
-            print(f"  [SKIP] Halaman {i+1} kosong setelah pembersihan")
             pages_skipped += 1
             continue
-
-        all_sections.append(f"[Halaman {i+1}]\n{cleaned}")
+            
+        all_sections.append(f"[Halaman {page_num}]\n{cleaned}")
         pages_kept += 1
-
-    doc.close()
-
-    # Gabungkan semua isi
+        
     full_text = "\n\n".join(all_sections)
-
-    # Normalisasi whitespace berganda
     full_text = re.sub(r"\n{3,}", "\n\n", full_text)
     full_text = re.sub(r" {2,}", " ", full_text)
-
-    # Format semua tabel berantakan menjadi Markdown terstruktur
     full_text = clean_tables(full_text)
-
-    # Simpan output
-    base = os.path.splitext(os.path.basename(input_path))[0]
-    output_path = os.path.join(output_dir, base + "_clean.txt")
-    with open(output_path, "w", encoding="utf-8") as f:
+    
+    os.makedirs(os.path.dirname(clean_txt_path), exist_ok=True)
+    with open(clean_txt_path, "w", encoding="utf-8") as f:
         f.write(full_text)
-
-    print(f"\nSelesai!")
-    print(f"  Halaman diproses : {pages_kept}")
-    print(f"  Halaman dilewati : {pages_skipped}")
-    print(f"  Total karakter   : {len(full_text)}")
-    print(f"  Output disimpan di: {output_path}")
-    return output_path
-
+        
+    print(f"[OK] Pembersihan selesai! File bersih disimpan di: {clean_txt_path}")
+    return full_text
 
 if __name__ == "__main__":
-    output = process_sk_pdf(INPUT_PDF, OUTPUT_DIR)
-    
-    # Preview hasil
-    print("\n--- PREVIEW 30 BARIS PERTAMA ---")
-    with open(output, encoding="utf-8") as f:
-        lines = f.readlines()
-    for line in lines[:30]:
-        print(line, end="")
+    raw_txt_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\raw\153 - SK Peraturan Akademik Itenas_2025_raw.txt"
+    clean_txt_file = r"c:\laragon\www\pmb-chatbot-rag\preprocessing\unstructured\clean\153 - SK Peraturan Akademik Itenas_2025_clean.txt"
+    clean_raw_sk(raw_txt_file, clean_txt_file)
